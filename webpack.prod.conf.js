@@ -3,7 +3,6 @@ const common = require('./webpack.common.conf');
 
 module.exports = merge(common, {
   mode: 'production',
-  plugins: [],
   module: {
     rules: [
       {
@@ -20,7 +19,7 @@ module.exports = merge(common, {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 75
+                quality: 85
               },
               // optipng.enabled: false will disable optipng
               optipng: {
