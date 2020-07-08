@@ -8,6 +8,13 @@ p {
   color: $color-green;
 }
 
+.flex {
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
 .box {
   width: 50px;
   height: 50px;
