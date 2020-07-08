@@ -1,11 +1,10 @@
 @import './variables/colors.scss';
 
-body {
-  background-color: $color-green;
-}
+@import './global-styles/fonts.scss';
+@import './global-styles/body-styles.scss';
 
 p {
-  color: $color-white;
+  color: $color-green;
 }
 
 .box {

@@ -21,7 +21,14 @@ module.exports = merge(common, {
         options: {
           name: '[name].[ext]',
         }
-      }
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      },
     ]
   }
 });

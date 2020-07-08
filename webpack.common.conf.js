@@ -65,7 +65,14 @@ module.exports = {
             options: { sourceMap: true }
           }
         ]
-      }
+      },
+      // {
+      //   test: /\.(woff|woff2)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: '[name].[ext]'
+      //   }
+      // },
     ],
   },
 };
