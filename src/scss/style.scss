@@ -1,5 +1,4 @@
-$color-green: green;
-$color-white: #ffffff;
+@import './variables/colors.scss';
 
 body {
   background-color: $color-green;
