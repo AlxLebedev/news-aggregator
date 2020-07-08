@@ -1,38 +1,5 @@
-@import './variables/colors.scss';
+@import './variables/var.scss';
 
 @import './global-styles/fonts.scss';
 @import './global-styles/body-styles.scss';
-
-p {
-  font-family: $font-roboto-slab;
-  color: $color-green;
-}
-
-.flex {
-  display: flex;
-  width: 300px;
-  justify-content: space-evenly;
-  padding: 15px;
-}
-
-.box {
-  width: 50px;
-  height: 50px;
-
-  &--one {
-    background-color: #3944ad;
-  }
-
-  &--two {
-    background-color: #cff153;
-  }
-}
-
-.attention {
-  width: 400px;
-  height: 400px;
-  background-image: url('../img/gift-photo-mobile@1x.jpg');
-  background-size: cover;
-  background-color: blue;
-}
 

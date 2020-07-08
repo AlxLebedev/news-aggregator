@@ -1,0 +1,27 @@
+// fonts
+
+$font-roboto-regular: "Roboto-regular", "Arial", "Helvetica", sans-serif;
+$font-roboto-medium: "Roboto-medium", "Arial", "Helvetica", sans-serif;;
+$font-roboto-slab: "Roboto-slab", "Arial", "Helvetica", sans-serif;
+$font-arial: "Arial", "Helvetica", sans-serif;
+
+// colors
+
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray: #929292;
+
+// pixel density
+
+$media-retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+
+// screen sizes
+
+$width-mobile: 320px;
+$width-tablet: 768px;
+$width-desktop: 1440px;
+
+// media queries
+
+$tablet: "min-width: #{$width-tablet}";
+$desktop: "min-width: #{$width-desktop}";
