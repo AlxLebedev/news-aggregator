@@ -1,0 +1,26 @@
+.social {
+  &__list {
+    @include reset-styles-list;
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    margin: auto;
+    display: flex;
+  }
+
+  &__image {
+    margin: auto;
+  }
+}
