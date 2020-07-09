@@ -17,17 +17,18 @@
           <li class="nav__item">
             <a class="nav__link nav__link--active">Главная</a>
           </li>
-          <li class="nav__item"><a href="#" class="nav__link">О проекте</a></li>
+          <li class="nav__item">
+            <a class="nav__link" href="#" >О проекте</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
-    <h1 class="main-heading">Поиск новостей</h1>
     <section class="finder">
+      <h1 class="finder__heading">Поиск новостей</h1>
       <div class="finder__wrapper">
         <div class="finder__description">
-          <h2 class="finder__heading">Что в мире торится?</h2>
+          <h2 class="finder__title">Что в мире торится?</h2>
           <p class="finder__explanation">
             Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
           </p>
@@ -35,6 +36,28 @@
         <div class="finder__search">
           <input class="finder__input" type="text" placeholder="Политика">
           <button class="button finder__button" type="button">Искать</button>
+        </div>
+      </div>
+    </section>
+    <section class="results">
+      <h2 class="results__heading">Результаты поиска</h2>
+      <div class="results__content">
+        <div class="results__header">
+          <h2 class="results__title">Результаты поиска</h2>
+          <a class="results__link" href="#">Посмотреть аналитику ></a>
+        </div>
+        <div class="results__articles">
+          <article class="article results__article">
+            <img class="article__image" src="./img/card-image.png" alt="инфо о картинке">
+             <div class="article__date">
+              <span class="article__day">2</span><span class="article__month">августа,</span><span class="article__year">2019</span>
+              <h3 class="article__title">Национальное достояние - парки</h3>
+              <p class="article__content">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...
+              </p>
+              <p class="article__owner">Лента.РУ</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>

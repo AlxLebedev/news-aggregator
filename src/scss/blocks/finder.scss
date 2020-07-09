@@ -5,11 +5,15 @@
   background-position: center;
   background-size: cover;
 
+  &__heading {
+    @include visually-hidden;
+  }
+
   &__wrapper {
     padding: 88px 16px 104px;
   }
 
-  &__heading {
+  &__title {
     @include reset-default-margin;
     font-family: $font-roboto-slab;
     font-size: 36px;
