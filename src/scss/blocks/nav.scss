@@ -1,0 +1,17 @@
+.nav {
+  &__list {
+    @include reset-styles-list;
+    display: flex;
+  }
+
+  &__item {
+    color: $color-gray-dark;
+    margin-right: 11px;
+    padding-bottom: 13px;
+
+    &--active {
+      color: $color-white;
+      border-bottom: 4px solid $color-white;
+    }
+  }
+}

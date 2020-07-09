@@ -1,0 +1,38 @@
+// link reset
+
+@mixin reset-styles-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+// list reset
+
+@mixin reset-styles-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// heading reset
+
+@mixin reset-styles-heading {
+  margin: 0;
+}
+
+// button reset
+
+@mixin reset-styles-button {
+  border: 0;
+}
+
+// visually-hidden
+
+@mixin visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}

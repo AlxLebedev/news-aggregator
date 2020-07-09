@@ -1,0 +1,19 @@
+.header {
+  border-bottom: 1px solid $color-gray-dark;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 0;
+  }
+
+  &__logo {
+    @include reset-styles-link;
+    font-family: $font-roboto-slab;
+    font-weight: bold;
+
+    &--color-white {
+      color: $color-white;
+    }
+  }
+}

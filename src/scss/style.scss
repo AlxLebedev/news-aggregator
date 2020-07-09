@@ -1,5 +1,8 @@
 @import './variables/var.scss';
+@import './mixins/mixins.scss';
 
 @import './global-styles/fonts.scss';
 @import './global-styles/body-styles.scss';
 
+@import './blocks/header.scss';
+@import './blocks/nav.scss';
