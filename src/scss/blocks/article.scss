@@ -1,0 +1,49 @@
+.article {
+  &__image {
+    display: block;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  &__wrapper {
+    background-color: $color-white;
+    padding: 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &__date {
+    font-size: 18px;
+    color: $color-gray-dark;
+    margin-bottom: 15px;
+  }
+
+  &__date-item {
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    @include reset-default-margin;
+    font-family: $font-roboto-slab;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    margin-bottom: 5px;
+  }
+
+  &__owner {
+    @include reset-default-margin;
+    font-family: $font-roboto-slab;
+    line-height: 20px;
+    color: $color-gray-dark;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
