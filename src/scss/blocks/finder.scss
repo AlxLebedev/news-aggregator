@@ -5,6 +5,10 @@
   background-position: center;
   background-size: cover;
 
+  @media ($tablet) {
+    background-image: url('../img/main-background-tablet@x1.png');
+  }
+
   &__heading {
     @include visually-hidden;
   }
