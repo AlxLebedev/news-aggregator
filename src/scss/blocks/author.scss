@@ -1,0 +1,25 @@
+.author {
+  &__wrapper {
+    padding: 32px 16px;
+  }
+
+  &__photo-container {
+    display: flex;
+  }
+
+  &__photo {
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-family: $font-roboto-slab;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  &__bio {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
