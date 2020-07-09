@@ -4,6 +4,7 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding: 30px 16px;
   }
 
@@ -21,5 +22,9 @@
   &__nav-item {
     color: $color-black;
     margin-bottom: 30px;
+
+    &:first-child {
+      margin-top: 8px;
+    }
   }
 }
