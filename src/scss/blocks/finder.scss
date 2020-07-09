@@ -66,5 +66,9 @@
     &:active {
       background-color: $color-blue;
     }
+
+    @media ($tablet) {
+      position: static;
+    }
   }
 }

@@ -11,6 +11,10 @@
     &:last-child {
       margin-right: 0;
     }
+
+    @media ($tablet) {
+      margin-right: 34px;
+    }
   }
 
   &__link {
@@ -29,6 +33,11 @@
     &--active {
       color: $color-white;
       border-bottom: 4px solid $color-white;
+    }
+
+    @media ($tablet) {
+      font-size: 18px;
+      padding-bottom: 16px;
     }
   }
 }

@@ -10,6 +10,10 @@
     display: flex;
     justify-content: space-between;
     padding: 16px 16px;
+
+    @media ($tablet) {
+      padding: 22px 40px 18px;
+    }
   }
 
   &__logo {
@@ -28,6 +32,10 @@
 
     &--color-white {
       color: $color-white;
+    }
+
+    @media ($tablet) {
+      font-size: 20px;
     }
   }
 }
