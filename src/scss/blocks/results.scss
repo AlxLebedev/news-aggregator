@@ -5,10 +5,20 @@
 
   &__content {
     padding: 32px 16px 44px;
+
+    @media ($tablet) {
+      padding: 40px;
+    }
   }
 
   &__header {
     margin-bottom: 35px;
+
+    @media ($tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -17,6 +27,10 @@
     font-size: 30px;
     line-height: 34px;
     margin-bottom: 16px;
+
+    @media ($tablet) {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
@@ -48,6 +62,10 @@
     &:last-child {
       margin: 0;
     }
+
+    @media ($tablet) {
+      width: 224px;
+    }
   }
 
   &__button {
@@ -61,6 +79,10 @@
 
     &:active {
       opacity: 0.6;
+    }
+
+    @media ($tablet) {
+      width: 240px;
     }
   }
 }

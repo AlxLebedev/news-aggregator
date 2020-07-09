@@ -3,6 +3,10 @@
     display: block;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
+    @media ($tablet) {
+      width: 224px;
+    }
   }
 
   &__wrapper {
@@ -16,6 +20,10 @@
     font-size: 18px;
     color: $color-gray-dark;
     margin-bottom: 15px;
+
+    @media ($tablet) {
+      margin-bottom: 12px;
+    }
   }
 
   &__date-item {
@@ -32,10 +40,19 @@
     font-size: 22px;
     line-height: 26px;
     margin-bottom: 10px;
+
+    @media ($tablet) {
+      line-height: 24px;
+    }
   }
 
   &__content {
     margin-bottom: 5px;
+
+    @media ($tablet) {
+      line-height: 22px;
+      margin-bottom: 12px;
+    }
   }
 
   &__owner {
