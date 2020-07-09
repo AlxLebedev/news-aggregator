@@ -3,13 +3,14 @@
 
   &__wrapper {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding: 30px 16px;
   }
 
   &__copyright {
     @include reset-default-margin;
     color: $color-gray-dark;
+    width: 100%;
     order: 2;
   }
 
