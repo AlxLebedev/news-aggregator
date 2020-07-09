@@ -11,6 +11,10 @@
 
   &__wrapper {
     padding: 88px 16px 104px;
+
+    @media ($tablet) {
+      padding: 104px 160px 104px;
+    }
   }
 
   &__title {
@@ -22,6 +26,10 @@
 
   &__description {
     margin-bottom: 64px;
+
+    @media ($tablet) {
+      margin-bottom: 24px;
+    }
   }
 
   &__explanation {
@@ -29,9 +37,15 @@
     margin-top: 16px;
     font-size: 20px;
     line-height: 26px;
+
+    @media ($tablet) {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &__search {
+    box-sizing: border-box;
     position: relative;
     display: flex;
     justify-content: center;
@@ -39,6 +53,11 @@
     height: 56px;
     border-radius: 100px;
     background-color: $color-white;
+
+    @media ($tablet) {
+      justify-content: space-between;
+      padding-left: 25px;
+    }
   }
 
   &__input {
@@ -49,6 +68,12 @@
 
     &::placeholder {
       font-size: 16px;
+    }
+
+    @media ($tablet) {
+      padding-right: 20px;
+      width: 280px;
+      flex-grow: 1;
     }
   }
 
@@ -69,6 +94,8 @@
 
     @media ($tablet) {
       position: static;
+      width: 160px;
+      margin: 0;
     }
   }
 }
