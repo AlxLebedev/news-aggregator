@@ -1,0 +1,11 @@
+.button {
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.3s;
+}

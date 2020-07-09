@@ -7,7 +7,20 @@
   &__item {
     color: $color-gray-dark;
     margin-right: 11px;
+  }
+
+  &__link {
+    @include reset-styles-link;
     padding-bottom: 13px;
+    transition: 0.3s;
+
+    &[href]:hover {
+      opacity: 0.7;
+    }
+
+    &[href]:active {
+      opacity: 0.5;
+    }
 
     &--active {
       color: $color-white;

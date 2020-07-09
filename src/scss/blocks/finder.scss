@@ -1,0 +1,61 @@
+.finder {
+  color: $color-white;
+  background-image: url('../img/main-background-mobile@x1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__wrapper {
+    padding: 88px 16px 104px;
+  }
+
+  &__heading {
+    @include reset-default-margin;
+    font-family: $font-roboto-slab;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  &__description {
+    margin-bottom: 64px;
+  }
+
+  &__explanation {
+    @include reset-default-margin;
+    margin-top: 16px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+    border-radius: 100px;
+    background-color: $color-white;
+  }
+
+  &__input {
+    font-size: 16px;
+    width: 80%;
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 72px;
+    width: 100%;
+    height: 56px;
+    font-size: 18px;
+    border-radius: 100px;
+    color: $color-white;
+    background-color: $color-blue;
+  }
+}

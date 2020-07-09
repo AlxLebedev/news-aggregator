@@ -6,7 +6,7 @@
   <meta name="description" content="Сайт находит актуальные новости по введенному запросу">
   <meta name="keywords" content="агрегатор новостей, анализатор новостей, свежие новости, поиск новостей">
   <meta name="author" content="Алексей Лебедев">
-  <title>Агругатор новостей</title>
+  <title>Агрегатор новостей</title>
 </head>
 <body>
   <header class="header header--page-index">
@@ -14,14 +14,30 @@
       <a class="header__logo header__logo--color-white" href="index.html">NewsAnalyzer</a>
       <nav class="nav header__nav">
         <ul class="nav__list">
-          <li class="nav__item nav__item--active">Главная</li>
-          <li class="nav__item">О проекте</li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--active">Главная</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">О проекте</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
-    
+    <h1 class="main-heading">Поиск новостей</h1>
+    <section class="finder">
+      <div class="finder__wrapper">
+        <div class="finder__description">
+          <h2 class="finder__heading">Что в мире торится?</h2>
+          <p class="finder__explanation">
+            Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
+          </p>
+        </div>
+        <div class="finder__search">
+          <input class="finder__input" type="text" placeholder="Политика">
+          <button class="button finder__button" type="button">Искать</button>
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
 

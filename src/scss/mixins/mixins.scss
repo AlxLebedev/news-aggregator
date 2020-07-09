@@ -13,16 +13,10 @@
   padding: 0;
 }
 
-// heading reset
+// default margin reset
 
-@mixin reset-styles-heading {
+@mixin reset-default-margin {
   margin: 0;
-}
-
-// button reset
-
-@mixin reset-styles-button {
-  border: 0;
 }
 
 // visually-hidden
