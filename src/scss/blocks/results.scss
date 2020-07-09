@@ -52,6 +52,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media ($tablet) {
+      max-width: 800px;
+      margin: auto;
+    }
   }
 
   &__article {
