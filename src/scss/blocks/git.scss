@@ -1,0 +1,17 @@
+.git {
+  &__wrapper {
+    padding: 30px 16px;
+  }
+
+  &__title {
+    font-family: $font-roboto-slab;
+    font-size: 30px;
+    line-height: 40px;
+    width: 60%;
+  }
+
+  &__button {
+    padding: 15px 70px;
+    margin-top: 24px;
+  }
+}
