@@ -18,7 +18,7 @@
 
   &__date {
     font-size: 18px;
-    color: $color-gray-dark;
+    color: $color-gray-havy-dark;
     margin-bottom: 15px;
 
     @media ($tablet) {
@@ -59,7 +59,7 @@
     @include reset-default-margin;
     font-family: $font-roboto-slab;
     line-height: 20px;
-    color: $color-gray-dark;
+    color: $color-gray-havy-dark;
     font-weight: bold;
     text-transform: uppercase;
   }

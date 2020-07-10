@@ -89,11 +89,11 @@
     background-color: $color-blue;
 
     &:hover {
-      background-color: $color-blue-dark;
+      background-color: $color-blue-light;
     }
 
     &:active {
-      background-color: $color-blue;
+      background-color: $color-blue-dark;
     }
 
     @media ($tablet) {
