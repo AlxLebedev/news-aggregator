@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Страница выводит статистику по введенному запросу">
+  <meta name="keywords" content="статистика новостей, агрегатор новостей, анализатор новостей, свежие новости, поиск новостей">
+  <meta name="author" content="Алексей Лебедев">
   <title>Статистика</title>
 </head>
 <body>
@@ -20,5 +23,28 @@
       </nav>
     </div>
   </header>
+  <main>
+    <section class="stat">
+      <div class="stat__wrapper">
+        <h1 class="stat__heading">Статистика по введенному запросу новостей</h1>
+        <h2 class="stat__title">Вы спросили:<span class="stat__request">«Путешествия»</span></h2>
+        <dl class="stat__list">
+          <div class="stat__list-group">
+            <dt class="stat__list-title">Новостей за неделю:</dt>
+            <dd class="stat__list-value">33&nbsp;324</dd>
+          </div>
+          <div class="stat__list-group">
+            <dt class="stat__list-title">Упоминаний в заголовках:</dt>
+            <dd class="stat__list-value">235</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section class="analytics">
+      <div class="analytics__wrapper">
+        <h2 class="analytics__title">Аналитика по дням</h2>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

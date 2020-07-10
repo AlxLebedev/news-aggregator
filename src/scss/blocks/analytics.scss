@@ -1,0 +1,15 @@
+.analytics {
+  background-color: $color-gray-default;
+
+  &__wrapper {
+    padding: 24px 16px 38px;
+  }
+
+  &__title {
+    @include reset-default-margin;
+    font-family: $font-roboto-slab;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: normal;
+  }
+}

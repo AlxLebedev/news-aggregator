@@ -1,0 +1,40 @@
+.stat {
+  &__heading {
+    @include visually-hidden;
+  }
+
+  &__wrapper {
+    padding: 16px 16px 24px;
+  }
+
+  &__title {
+    @include reset-default-margin;
+    font-family: $font-roboto-slab;
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: normal;
+    margin-bottom: 16px;
+  }
+
+  &__request {
+    display: block;
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__list-group {
+    display: flex;
+  }
+
+  &__list-title {
+    font-size: 18px;
+  }
+
+  &__list-value {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}
