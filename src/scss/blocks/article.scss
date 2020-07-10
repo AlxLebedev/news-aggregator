@@ -7,6 +7,10 @@
     @media ($tablet) {
       width: 224px;
     }
+
+    @media ($desktop) {
+      width: 400px;
+    }
   }
 
   &__wrapper {
@@ -14,6 +18,10 @@
     padding: 16px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    @media ($desktop) {
+      padding: 20px 24px 24px;
+    }
   }
 
   &__date {

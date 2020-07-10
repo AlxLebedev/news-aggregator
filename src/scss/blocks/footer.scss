@@ -11,11 +11,15 @@
       align-items: center;
       padding: 21px 40px;
     }
+
+    @media ($desktop) {
+      padding: 33px 104px;
+    }
   }
 
   &__copyright {
     @include reset-default-margin;
-    color: $color-gray-dark;
+    color: $color-gray-havy-dark;
     width: 100%;
     order: 2;
 

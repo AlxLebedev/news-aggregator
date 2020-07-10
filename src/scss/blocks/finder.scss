@@ -9,6 +9,10 @@
     background-image: url('../img/main-background-tablet@x1.png');
   }
 
+  @media ($desktop) {
+    background-image: url('../img/main-background-desktop@x1.png');
+  }
+
   &__heading {
     @include visually-hidden;
   }
@@ -19,6 +23,10 @@
     @media ($tablet) {
       padding: 104px 160px 48px;
     }
+
+    @media ($desktop) {
+      padding: 160px 416px 80px;
+    }
   }
 
   &__title {
@@ -26,13 +34,23 @@
     font-family: $font-roboto-slab;
     font-size: 36px;
     line-height: 40px;
+
+    @media ($desktop) {
+      font-size: 60px;
+      line-height: 64px;
+    }
   }
 
   &__description {
     margin-bottom: 64px;
 
     @media ($tablet) {
-      margin-bottom: 24px;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    @media ($desktop) {
+      margin-bottom: 64px;
     }
   }
 
@@ -45,6 +63,10 @@
     @media ($tablet) {
       font-size: 18px;
       line-height: 24px;
+    }
+
+    @media ($desktop) {
+      margin-top: 32px;
     }
   }
 
@@ -59,8 +81,10 @@
     background-color: $color-white;
 
     @media ($tablet) {
+      max-width: 700px;
       justify-content: space-between;
       padding-left: 25px;
+      margin: auto;
     }
   }
 

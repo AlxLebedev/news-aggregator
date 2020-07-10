@@ -7,19 +7,46 @@
     @media ($tablet) {
       display: flex;
       padding: 40px 40px 48px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    @media ($desktop) {
+      padding: 80px 104px;
+      max-width: 1980px;
     }
   }
 
   &__photo-container {
     display: flex;
+    justify-content: center;
+
+    @media ($tablet) {
+      margin-right: 32px;
+    }
+
+    @media ($desktop) {
+      margin-right: 56px;
+    }
   }
 
   &__photo {
     margin: auto;
     border-radius: 50%;
+    width: 272px;
 
     @media ($tablet) {
-      margin-right: 32px;
+      width: 232px;
+    }
+
+    @media ($desktop) {
+      width: 350px;
+    }
+  }
+
+  &__description {
+    @media ($desktop) {
+      padding-top: 51px;
+      padding-right: 216px;
     }
   }
 
@@ -33,7 +60,12 @@
 
     @media ($tablet) {
       margin-top: 0;
+    }
 
+    @media ($desktop) {
+      font-size: 40px;
+      line-height: 46px;
+      margin-bottom: 24px;
     }
   }
 

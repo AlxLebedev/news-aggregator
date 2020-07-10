@@ -14,6 +14,10 @@
     @media ($tablet) {
       padding: 22px 40px 18px;
     }
+
+    @media ($desktop) {
+      padding: 30px 104px 26px;
+    }
   }
 
   &__logo {

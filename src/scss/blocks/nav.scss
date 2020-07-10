@@ -30,5 +30,9 @@
       font-size: 18px;
       padding-bottom: 16px;
     }
+
+    @media ($tablet) {
+      padding-bottom: 24px;
+    }
   }
 }
