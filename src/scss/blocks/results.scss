@@ -4,6 +4,7 @@
   }
 
   &__content {
+    background-color: $color-gray-default;
     padding: 32px 16px 44px;
 
     @media ($tablet) {
@@ -67,25 +68,24 @@
   &__articles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 
     @media ($tablet) {
       max-width: 800px;
       margin: auto;
     }
 
-    @media ($tablet) {
+    @media ($desktop) {
       max-width: 1230px;
     }
   }
 
   &__article {
     width: 288px;
-    margin-bottom: 8px;
-    margin-right: 8px;
+    margin: 0 auto 8px;
 
     &:last-child {
-      margin: 0;
+      margin: 0 auto;
     }
 
     @media ($tablet) {
