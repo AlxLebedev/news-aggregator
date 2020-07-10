@@ -2,4 +2,30 @@
   &__heading {
     @include visually-hidden;
   }
+
+  &__site {
+    background-color: $color-white;
+    padding: 16px;
+  }
+
+  &__site-title {
+    font-family: $font-roboto-slab;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+
+  &__site-description {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__site-paragraph {
+    @include reset-default-margin;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
