@@ -5,7 +5,6 @@
   }
 
   &__item {
-    color: $color-gray-dark;
     margin-right: 11px;
 
     &:last-child {
@@ -19,9 +18,15 @@
 
   &__link {
     @include reset-styles-link;
+    color: $color-gray-havy-dark;
     padding-bottom: 14px;
 
     &--active {
+      color: $color-black;
+      border-bottom: 4px solid $color-black;
+    }
+
+    &--index-active {
       color: $color-white;
       border-bottom: 4px solid $color-white;
     }

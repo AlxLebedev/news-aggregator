@@ -3,7 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -12,6 +14,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      favicon: './src/static/favicon.ico',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/about.html',
+      filename: './about.html',
       favicon: './src/static/favicon.ico',
     }),
     new MiniCssExtractPlugin({

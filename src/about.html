@@ -1,94 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Сайт находит актуальные новости по введенному запросу">
-  <meta name="keywords" content="агрегатор новостей, анализатор новостей, свежие новости, поиск новостей">
-  <meta name="author" content="Алексей Лебедев">
-  <title>Агрегатор новостей</title>
+  <title>About</title>
 </head>
 <body>
-  <header class="header header--page-index">
+  <header class="header">
     <div class="header__wrapper">
-      <a class="header__logo header__logo--color-white" href="index.html">NewsAnalyzer</a>
+      <a class="header__logo" href="index.html">NewsAnalyzer</a>
       <nav class="nav header__nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link nav__link--index-active">Главная</a>
+            <a class="nav__link" href="./index.html">Главная</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="./about.html" >О проекте</a></li>
+            <a class="nav__link nav__link--active">О проекте</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <main>
-    <section class="finder">
-      <h1 class="finder__heading">Поиск новостей</h1>
-      <div class="finder__wrapper">
-        <div class="finder__description">
-          <h2 class="finder__title">Что в мире<br>творится?</h2>
-          <p class="finder__explanation">
-            Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
-          </p>
+    <section class="about">
+      <h1 class="about__heading">О проекте: про сайт и технологии</h1>
+      <article class="about__site">
+        <h2 class="about__site-title">Клиентам</h2>
+        <p class="about__site-description">
+          Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет. Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать. Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса. При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает. Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+        </p>
+      </article>
+      <article class="tech about__tech">
+        <div class="tech__wrapper">
+          <h2 class="tech__title">Используемые технологии</h2>
+          <ul class="tech__description">
+            <li class="tech__html">HTML</li>
+            <li class="tech__css">CSS</li>
+            <li class="tech__js">Java Script</li>
+            <li class="tech__webpack">Webpack</li>
+          </ul>
         </div>
-        <div class="finder__search">
-          <input class="finder__input" type="text" placeholder="Политика">
-          <button class="button finder__button" type="button">Искать</button>
-        </div>
-      </div>
-    </section>
-    <section class="results">
-      <h2 class="results__heading">Результаты поиска</h2>
-      <div class="results__content">
-        <div class="results__header">
-          <h2 class="results__title">Результаты поиска</h2>
-          <a class="results__link" href="#">Посмотреть аналитику ></a>
-        </div>
-        <div class="results__articles">
-          <article class="article results__article">
-            <img class="article__image" src="./img/card-image.png" alt="инфо о картинке">
-            <div class="article__wrapper">
-              <div class="article__date">
-                <span class="article__day article__date-item">2</span><span class="article__month article__date-item">августа,</span><span class="article__year article__date-item">2019</span>
-              </div>
-              <h3 class="article__title">Национальное достояние - парки</h3>
-              <p class="article__content">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...
-              </p>
-              <p class="article__owner">Лента.РУ</p>
-            </div>
-          </article>
-          <article class="article results__article">
-            <img class="article__image" src="./img/card-image.png" alt="инфо о картинке">
-            <div class="article__wrapper">
-              <div class="article__date">
-                <span class="article__day article__date-item">2</span><span class="article__month article__date-item">августа,</span><span class="article__year article__date-item">2019</span>
-              </div>
-              <h3 class="article__title">Национальное достояние - парки</h3>
-              <p class="article__content">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...
-              </p>
-              <p class="article__owner">Лента.РУ</p>
-            </div>
-          </article>
-          <article class="article results__article">
-            <img class="article__image" src="./img/card-image.png" alt="инфо о картинке">
-            <div class="article__wrapper">
-              <div class="article__date">
-                <span class="article__day article__date-item">2</span><span class="article__month article__date-item">августа,</span><span class="article__year article__date-item">2019</span>
-              </div>
-              <h3 class="article__title">Национальное достояние - парки</h3>
-              <p class="article__content">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...
-              </p>
-              <p class="article__owner">Лента.РУ</p>
-            </div>
-          </article>
-        </div>
-        <button class="button results__button" type="button">Показать еще</button>
-      </div>
+      </article>
     </section>
     <section class="author">
       <div class="author__wrapper">
