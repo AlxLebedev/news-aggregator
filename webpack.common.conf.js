@@ -21,6 +21,11 @@ module.exports = {
       filename: './about.html',
       favicon: './src/static/favicon.ico',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/stat.html',
+      filename: './stat.html',
+      favicon: './src/static/favicon.ico',
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
