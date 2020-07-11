@@ -16,4 +16,10 @@
       }
     }
   }
+
+  @media ($desktop) {
+    &__wrapper {
+      padding: 40px 104px;
+    }
+  }
 }

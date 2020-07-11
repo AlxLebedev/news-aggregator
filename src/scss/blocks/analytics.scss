@@ -7,6 +7,10 @@
     @media ($tablet) {
       padding: 40px;
     }
+
+    @media ($desktop) {
+      padding: 80px 104px;
+    }
   }
 
   &__title {
