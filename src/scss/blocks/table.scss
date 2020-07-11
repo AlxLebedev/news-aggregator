@@ -14,21 +14,70 @@
     padding-bottom: 8px;
   }
 
+  &__title-quantity {
+    border-bottom: 2px solid $color-gray-havy-dark;
+  }
+
   &__title-month {
     display: block;
   }
 
-  &__title-quantity {
-    border-bottom: 2px solid $color-gray-havy-dark;
+  &__percent {
+    display: none;
+
+    @media ($tablet) {
+      display: table-row;
+    }
+  }
+
+  &__percent-bar {
+    @media ($tablet) {
+      display: flex;
+    }
+  }
+
+  &__percent-value {
+    @media ($tablet) {
+      font-size: 12px;
+      line-height: 16px;
+      color: $color-gray-havy-dark;
+      width: 25%;
+
+      &:last-child {
+        width: auto;
+      }
+    }
   }
   
   &__day {
     font-size: 18px;
     padding-top: 18px;
+    width: 96px;
+
+    @media ($tablet) {
+      padding-top: 56px;
+      width: 102px;
+
+      &--first {
+        padding-top: 8px;
+      }
+    }
   }
 
   &__value-container {
     padding-top: 18px;
+
+    @media ($tablet) {
+      padding-top: 56px;
+
+      &--first {
+        padding-top: 8px;
+      }
+
+      &--last {
+        padding-bottom: 16px;
+      }
+    }
   }
 
   &__value {

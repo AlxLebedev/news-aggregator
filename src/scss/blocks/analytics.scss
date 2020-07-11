@@ -3,6 +3,10 @@
 
   &__wrapper {
     padding: 24px 16px 38px;
+
+    @media ($tablet) {
+      padding: 40px;
+    }
   }
 
   &__title {
@@ -12,5 +16,10 @@
     line-height: 30px;
     font-weight: normal;
     margin-bottom: 16px;
+
+    @media ($tablet) {
+      font-size: 26px;
+      margin-bottom: 49px;
+    }
   }
 }

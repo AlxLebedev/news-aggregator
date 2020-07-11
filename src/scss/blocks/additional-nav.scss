@@ -1,0 +1,19 @@
+.additional-nav {
+  display: none;
+
+  @media ($tablet) {
+    display: inline;
+
+    &__wrapper {
+      padding: 32px 40px;
+    }
+
+    &__link {
+      @include reset-styles-link;
+
+      &--active {
+        color: $color-gray-havy-dark;
+      }
+    }
+  }
+}

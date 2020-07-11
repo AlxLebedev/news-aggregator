@@ -5,6 +5,10 @@
 
   &__wrapper {
     padding: 16px 16px 24px;
+
+    @media ($tablet) {
+      padding: 32px 40px 40px;
+    }
   }
 
   &__title {
@@ -14,10 +18,19 @@
     line-height: 34px;
     font-weight: normal;
     margin-bottom: 16px;
+
+    @media ($tablet) {
+      margin-bottom: 24px;
+    }
   }
 
   &__request {
     display: block;
+
+    @media ($tablet) {
+      display: inline;
+      margin-left: 10px;
+    }
   }
 
   &__list {
