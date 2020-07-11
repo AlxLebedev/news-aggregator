@@ -1,4 +1,6 @@
 .git {
+  background-color: $color-gray-default;
+
   &__wrapper {
     padding: 30px 16px;
   }
@@ -11,7 +13,18 @@
   }
 
   &__button {
-    padding: 15px 70px;
+    @include reset-styles-link;
+    padding: 15px 67px;
     margin-top: 24px;
+    border: 1px solid $color-black;
+    background-color: $color-gray-default;
+
+    &:hover {
+      background-color: $color-gray-dark;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 }

@@ -56,6 +56,10 @@
 
   &__name {
     @include reset-default-margin;
-    margin-bottom: 10px;
+  }
+
+  &__image {
+    width: 120px;
+    height: 120px;
   }
 }
