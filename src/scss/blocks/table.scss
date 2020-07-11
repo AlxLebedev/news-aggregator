@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__title {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-gray-havy-dark;
+    vertical-align: top;
+  }
+
+  &__title-date {
+    border-bottom: 2px solid $color-gray-havy-dark;
+    padding-bottom: 8px;
+  }
+
+  &__title-month {
+    display: block;
+  }
+
+  &__title-quantity {
+    border-bottom: 2px solid $color-gray-havy-dark;
+  }
+  
+  &__day {
+    font-size: 18px;
+    padding-top: 18px;
+  }
+
+  &__value-container {
+    padding-top: 18px;
+  }
+
+  &__value {
+    font-size: 12px;
+    color: $color-white;
+    background-color: $color-blue;
+    padding-left: 8px;
+  }
+}
