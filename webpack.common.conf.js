@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WbebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
   entry: {
@@ -9,22 +10,23 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]bundle.js',
+    filename: '[name].bundle.js',
   },
   plugins: [
+    new WbebpackMd5Hash(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html',
+      filename: 'index.html',
       favicon: './src/static/favicon.ico',
     }),
     new HtmlWebpackPlugin({
       template: './src/about.html',
-      filename: './about.html',
+      filename: 'about.html',
       favicon: './src/static/favicon.ico',
     }),
     new HtmlWebpackPlugin({
       template: './src/stat.html',
-      filename: './stat.html',
+      filename: 'stat.html',
       favicon: './src/static/favicon.ico',
     }),
     new MiniCssExtractPlugin({
