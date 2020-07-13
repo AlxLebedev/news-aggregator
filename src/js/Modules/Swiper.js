@@ -8,6 +8,13 @@ const mySwiper = new Swiper('.swiper-container', {
   loop: true,
   spaceBetween: 10,
   centeredSlides: true,
+  breakpoints: {
+    768:{
+      spaceBetween: 15,
+      slidesPerView: 3,
+      slidesOffsetAfter: -200,
+    }
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
