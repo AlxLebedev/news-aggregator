@@ -1,1 +1,1 @@
-console.log('Say about this page');
+console.log('JS from ABOUT page');

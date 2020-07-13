@@ -7,24 +7,31 @@ module.exports = {
   entry: {
     index: './src/index.js',
     about: './src/about.js',
+    stat: './src/stat.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
   },
   plugins: [
     new WbebpackMd5Hash(),
     new HtmlWebpackPlugin({
+      chunks: ['index'],
+      hash: true,
       template: './src/index.html',
       filename: 'index.html',
       favicon: './src/static/favicon.ico',
     }),
     new HtmlWebpackPlugin({
+      chunks: ['about'],
+      hash: true,
       template: './src/about.html',
       filename: 'about.html',
       favicon: './src/static/favicon.ico',
     }),
     new HtmlWebpackPlugin({
+      chunks: ['stat'],
+      hash: true,
       template: './src/stat.html',
       filename: 'stat.html',
       favicon: './src/static/favicon.ico',
