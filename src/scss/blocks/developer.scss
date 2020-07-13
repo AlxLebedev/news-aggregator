@@ -1,0 +1,25 @@
+.developer {
+  &__image-box {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  &__image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  &__name {
+    @include reset-default-margin;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__mail {
+    @include reset-default-margin;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

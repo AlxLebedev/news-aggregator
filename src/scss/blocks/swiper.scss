@@ -1,11 +1,15 @@
 .swiper {
   &-container {
-    width: 300px;
-    height: 300px;
+    width: 288px;
+    height: 264px;
     margin-bottom: 50px;
   }
 
   &-slide {
-    background-color: grey;
+    background-color: $color-white;
   }
+}
+
+.swiper-container > .swiper-button-next, .swiper-container > .swiper-button-prev {
+  display: none;
 }

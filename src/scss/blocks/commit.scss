@@ -1,0 +1,24 @@
+.commit {
+  &__wrapper {
+    padding: 16px;
+  }
+
+  &__date {
+    @include reset-default-margin;
+    color: $color-gray-havy-dark;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__developer {
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__message {
+    @include reset-default-margin;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
