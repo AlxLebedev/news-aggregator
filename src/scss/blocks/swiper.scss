@@ -1,5 +1,11 @@
-.swiper-slide {
-  width: 220px;
-  height: 220px;
-  border: 1px solid $color-black;
+.swiper {
+  &-container {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+  }
+
+  &-slide {
+    background-color: grey;
+  }
 }

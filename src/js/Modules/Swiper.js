@@ -6,6 +6,8 @@ Swiper.use([Navigation, Pagination]);
 const mySwiper = new Swiper('.swiper-container', {
   direction: 'horizontal',
   loop: true,
+  spaceBetween: 10,
+  centeredSlides: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

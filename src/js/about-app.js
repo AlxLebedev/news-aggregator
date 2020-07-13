@@ -1,1 +1,1 @@
-import Swiper from './Modules/Swiper';
+import './Modules/Swiper';
