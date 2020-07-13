@@ -11,14 +11,12 @@ const mySwiper = new Swiper('.swiper-container', {
   breakpoints: {
     768:{
       spaceBetween: 15,
-      slidesPerView: 3,
-      slidesOffsetAfter: -200,
+      slidesPerView: 2,
     }
   },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-    dynamicBullets: true,
   },
   navigation: {
     nextEl: '.swiper-button-next',
