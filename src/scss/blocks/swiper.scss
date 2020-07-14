@@ -21,3 +21,18 @@
 .swiper-container > .swiper-button-next, .swiper-container > .swiper-button-prev {
   display: none;
 }
+
+@media ($desktop) {
+  .swiper-container > .swiper-button-next, .swiper-container > .swiper-button-prev {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-black;
+  }
+
+  .swiper-container > .swiper-button-next::after, .swiper-container > .swiper-button-prev::after {
+    font-size: 12px;
+    color: $color-white;
+  }
+}
