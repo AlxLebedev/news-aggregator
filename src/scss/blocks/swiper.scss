@@ -1,12 +1,21 @@
 .swiper {
   &-container {
     width: 90%;
+    max-width: 1980px;
     height: 264px;
+
+    @media ($desktop) {
+      width: 85%;
+    }
   }
 
   &-slide {
     background-color: $color-white;
   }
+}
+
+.swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: $color-black;
 }
 
 .swiper-container > .swiper-button-next, .swiper-container > .swiper-button-prev {

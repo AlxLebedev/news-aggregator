@@ -6,12 +6,24 @@ Swiper.use([Navigation, Pagination]);
 const mySwiper = new Swiper('.swiper-container', {
   direction: 'horizontal',
   loop: true,
-  spaceBetween: 10,
-  centeredSlides: true,
+  // centeredSlides: true,
   breakpoints: {
+    500: {
+      spaceBetween: 8,
+      slidesPerView: 1.2,
+    },
     768:{
-      spaceBetween: 15,
-      slidesPerView: 2,
+      spaceBetween: 8,
+      slidesPerView: 2.2,
+    },
+    1200: {
+      spaceBetween: 8,
+      slidesPerView: 2.5,
+    },
+    1440: {
+      centeredSlides: true,
+      spaceBetween: 8,
+      slidesPerView: 3.3,
     }
   },
   pagination: {

@@ -10,6 +10,9 @@
       justify-content: space-between;
       padding: 40px 0;
     }
+    @media ($desktop) {
+      padding: 72px 0 80px;
+    }
   }
 
   &__title {
@@ -24,6 +27,12 @@
       padding: 0 0 40px 32px;
       width: 50%;
     }
+
+    @media ($desktop) {
+      font-size: 40px;
+      line-height: 46px;
+      padding: 0 0 64px 104px;
+    }
   }
 
   &__button-box {
@@ -35,6 +44,10 @@
       width: auto;
       order: initial;
       padding: 0 40px 0;
+    }
+
+    @media ($desktop) {
+      padding: 0 104px;
     }
   }
 
