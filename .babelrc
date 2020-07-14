@@ -1,5 +1,15 @@
+// {
+//   "presets": [
+//     "@babel/preset-env"
+//   ]
+// }
 {
   "presets": [
-    "@babel/preset-env"
+    ["@babel/preset-env", {
+      "exclude": ["transform-async-to-generator", "transform-regenerator"]
+    }]
+  ],
+  "plugins": [
+    ["module:fast-async", { "spec": true }]
   ]
 }

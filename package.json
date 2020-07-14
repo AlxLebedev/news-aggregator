@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "fast-async": "^7.0.6",
     "swiper": "^6.0.2"
   }
 }
