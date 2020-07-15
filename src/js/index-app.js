@@ -1,4 +1,4 @@
-import add from './Modules/add';
+import GetNews from './Modules/GetNews';
 
-console.log(add(5, 5));
-console.log('JS from index page');
+const getNews = new GetNews();
+getNews.init();
