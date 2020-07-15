@@ -1,12 +1,11 @@
 import './Modules/Swiper';
+import GetCommits from './Modules/GetCommits';
 
-// let url = 'https://api.github.com/repos/AlxLebedev/news-aggregator/commits?per_page=5';
+const getCommits = new GetCommits();
 
-// async function getCommits(url) {
-//   let response = await fetch(url);
-//   let commits = await response.json();
-//   return commits;
-// }
+async function showCommits() {
+  const commits = await getCommits.fetchCommits();
+  return commits;
+}
 
-// const commits = getCommits(url);
-// console.log(commits);
+console.log(showCommits());
