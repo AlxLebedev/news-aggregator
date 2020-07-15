@@ -1,4 +1,5 @@
 import getDates from '../utils/getDates';
+import NewsApi from '../Modules/NewsApi';
 
 export default class GetNews {
   constructor(drawUI) {
@@ -8,16 +9,16 @@ export default class GetNews {
     this.fromDate = null;
     this.toDate = null;
     this.url = null;
+    this.newsApi = null;
+    this.news = null;
   }
 
-    get(userQuery) {
-      this.userQuery = userQuery;
-      [this.fromDate, this.toDate] = getDates();
-      this.url = `http://newsapi.org/v2/everything?q=${this.userQuery}&from=${this.fromDate}&to=${this.toDate}&pageSize=10&apiKey=${this.apiKey}`;
-      console.log(this.fromDate);
-      console.log(this.toDate);
-      console.log(`This is user query - ${this.userQuery}`);
-      console.log(this.url);
-    }
-
+  async get(userQuery) {
+    this.userQuery = userQuery;
+    [ this.fromDate, this.toDate ] = getDates();
+    this.url = `http://newsapi.org/v2/everything?q=${this.userQuery}&from=${this.fromDate}&to=${this.toDate}&pageSize=10&apiKey=${this.apiKey}`;
+    this.newsApi = new NewsApi(this.url);
+    this.news = await this.newsApi.fetchNews();
+    console.log(this.news);
+  }
 }
