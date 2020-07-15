@@ -1,8 +1,10 @@
 import Validator from './Validator';
+import DrawUI from '../components/DrawUI';
 
-export default class GetNews {
+export default class AddListeners {
   constructor() {
     this.validator = new Validator();
+    this.drawUI = new DrawUI();
     this.finderInput = document.querySelector('.finder__input');
     this.finderButton = document.querySelector('.finder__button');
     this.userQuery = null;
@@ -15,9 +17,15 @@ export default class GetNews {
       console.log(this.userQuery);
       this.userQueryValid = this.validator.check(this.userQuery);
       console.log(this.userQueryValid);
-    })
+      if (!this.userQueryValid) {
+        this.drawUI.showError();
+        return;
+      }
+      console.log('OK, all is valid')
+    });
 
-    console.log(this.finderInput);
-    console.log(this.finderButton);
+    this.finderInput.addEventListener('input', () => {
+      this.drawUI.hideError();
+    });
   }
 }

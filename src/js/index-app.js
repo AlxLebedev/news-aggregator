@@ -1,4 +1,4 @@
-import GetNews from './Modules/GetNews';
+import AddListeners from './Modules/AddListeners';
 
-const getNews = new GetNews();
-getNews.init();
+const addListeners = new AddListeners();
+addListeners.init();
