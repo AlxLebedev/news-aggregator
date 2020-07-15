@@ -1,7 +1,20 @@
 @font-face {
-  font-family: "Oswald";
-  src:  url("../fonts/oswaldregular.woff2") format("woff2"),
-    url("../fonts/oswaldregular.woff") format("woff");
+  font-family: "Roboto-regular";
+  src: url("../fonts/roboto-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-medium";
+  src: url("../fonts/roboto-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Robotoslab-regular";
+  src: url("../fonts/robotoslab-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
