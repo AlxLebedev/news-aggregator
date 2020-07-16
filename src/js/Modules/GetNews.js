@@ -17,7 +17,7 @@ export default class GetNews {
     this.userQuery = userQuery;
     [ this.fromDate, this.toDate ] = getDates();
     this.url = `http://newsapi.org/v2/everything?q=${this.userQuery}&from=${this.fromDate}&to=${this.toDate}&pageSize=10&apiKey=${this.apiKey}`;
-    this.newsApi = new NewsApi(this.url);
+    this.newsApi = new NewsApi(this.url, this.drawUI);
     this.news = await this.newsApi.fetchNews();
     console.log(this.news);
   }
