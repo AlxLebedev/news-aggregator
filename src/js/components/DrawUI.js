@@ -52,7 +52,7 @@ export default class DrawUI {
       commitData.message = commit.commit.message;
       
       const commitMarkup = this.markup.getCommitMarkup(commitData);
-      this.swiperWrapper.insertAdjacentHTML('afterbegin', commitMarkup);
+      this.swiperWrapper.insertAdjacentHTML('beforeend', commitMarkup);
     }
 
     this.slider = new Slider();
