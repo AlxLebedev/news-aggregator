@@ -2,6 +2,14 @@
   background-color: $color-gray-default;
   padding: 50px 16px 25px;
 
+  @media($tablet) {
+    padding: 50px 40px 25px;
+  }
+
+  @media($desktop) {
+    padding: 80px 104px 40px;
+  }
+
   &__container {
     position: relative;
   }
