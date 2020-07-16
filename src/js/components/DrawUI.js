@@ -1,10 +1,12 @@
 import Slider from './Slider';
 import Markup from './Markup';
+import Dates from '../utils/Dates';
 
 export default class DrawUI {
   constructor() {
     this.slider = null;
     this.markup = new Markup();
+    this.dates = new Dates();
     this.finderSearchField = document.querySelector('.finder__search');
     this.resultsBlock = document.querySelector('.results');
     this.preloaderMarkup = null;
@@ -45,7 +47,7 @@ export default class DrawUI {
       message: null
     };
     for (let commit of this.commitArray) {
-      commitData.date = commit.commit.author.date;
+      commitData.date = this.dates.formatCommitDate(commit.commit.author.date);
       commitData.avatar = commit.author.avatar_url;
       commitData.name = commit.commit.author.name;
       commitData.email = commit.commit.author.email;
