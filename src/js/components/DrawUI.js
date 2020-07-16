@@ -10,6 +10,8 @@ export default class DrawUI {
     this.finderSearchField = document.querySelector('.finder__search');
     this.resultsBlock = document.querySelector('.results');
     this.preloaderMarkup = null;
+    this.notFoundWarningMarkup = null;
+    this.serverErrorMarkup = null;
     this.preloaderElement = null;
     this.swiperWrapper = document.querySelector('.swiper-wrapper');
     this.commitArray = null;
@@ -35,6 +37,16 @@ export default class DrawUI {
   hidePreloader() {
     this.preloaderElement = document.querySelector('.preloader');
     this.preloaderElement.remove();
+  }
+
+  showNotFoundWarning() {
+    this.notFoundWarningMarkup = this.markup.getNotFoundMarkup();
+    this.resultsBlock.insertAdjacentHTML('afterbegin', this.notFoundWarningMarkup);
+  }
+
+  showServerError() {
+    this.serverErrorMarkup = this.markup.getServerErrorMarkup();
+    this.resultsBlock.insertAdjacentHTML('afterbegin', this.serverErrorMarkup);
   }
 
   renderCommits(commits) {

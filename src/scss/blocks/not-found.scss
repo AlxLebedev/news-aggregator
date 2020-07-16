@@ -1,0 +1,58 @@
+.not-found {
+  background-color: $color-gray-default;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 16px;
+
+    @media($tablet) {
+      padding: 50px 40px;
+    }
+
+    @media($desktop) {
+      padding: 80px 104px;
+    }
+  }
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+
+    @media($desktop) {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  &__warning {
+    @include reset-default-margin;
+    font-family: $font-robotoslab-regular;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    margin: 10px auto 10px;
+
+    @media($desktop) {
+      font-size: 26px;
+      line-height: 30px;
+      margin: 24px auto 16px;
+    }
+  }
+
+  &__message {
+    @include reset-default-margin;
+    box-sizing: border-box;
+    color: $color-gray-havy-dark;
+    text-align: center;
+    max-width: 356px;
+    padding: 0 30px;
+    margin: auto;
+
+    @media($desktop) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}

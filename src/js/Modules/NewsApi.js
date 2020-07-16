@@ -12,9 +12,12 @@ export default class NewsApi {
     if (response.ok) {
       this.news = await response.json();
       this.drawUI.hidePreloader();
+      if (this.news.totalResults === 0) {
+        this.drawUI.showNotFoundWarning();
+      }
     } else {
       this.drawUI.hidePreloader();
-      alert("Ошибка HTTP: " + response.status);
+      this.drawUI.showServerError();
     }
     return this.news;
   }
