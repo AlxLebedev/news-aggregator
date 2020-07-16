@@ -25,7 +25,6 @@ export default class Dates {
 
   formatCommitDate(date) {
     this.currentDate = new Date(date);
-    console.log(this.currentDate);
 
     const monthes = [
       'января,',
