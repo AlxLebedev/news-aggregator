@@ -1,8 +1,4 @@
 .results {
-  &__heading {
-    @include visually-hidden;
-  }
-
   &__content {
     background-color: $color-gray-default;
     padding: 32px 16px 44px;
