@@ -1,4 +1,8 @@
 .article {
+  &__link {
+    @include reset-styles-link;
+  }
+
   &__image {
     display: block;
     border-top-left-radius: 20px;
