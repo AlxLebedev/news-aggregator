@@ -10,6 +10,7 @@ export default class DrawUI {
     this.resultsBlock = document.querySelector('.results');
     this.errorMarkup = null;
     this.preloaderElement = null;
+    this.articles = null;
   }
 
   showHint() {
@@ -69,10 +70,15 @@ export default class DrawUI {
   }
 
   renderResultsContent(news) {
-    const articles = news.articles;
+    this.articles = news.articles;
     const resultsMarkup = this.markup.getResultsMarkup();
     this.resultsBlock.insertAdjacentHTML('afterbegin', resultsMarkup);
-    this.renderArticles(articles);
+    this.renderArticles();
+
+    const showMoreButton = document.querySelector('.results__button');
+    showMoreButton.addEventListener('click', () => {
+      this.renderArticles();
+    });
   }
 
   cleanResultsContent() {
@@ -83,8 +89,8 @@ export default class DrawUI {
     }
   }
 
-  renderArticles(articles) {
-    const articlesArray = articles;
+  renderArticles() {
+    const articlesArray = this.articles;
     console.log(articlesArray);
     const articleData = {
       image: null,
