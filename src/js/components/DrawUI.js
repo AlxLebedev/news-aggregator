@@ -4,20 +4,12 @@ import Dates from '../utils/Dates';
 
 export default class DrawUI {
   constructor() {
-    this.slider = null;
     this.markup = new Markup();
     this.dates = new Dates();
     this.finderSearchField = document.querySelector('.finder__search');
     this.resultsBlock = document.querySelector('.results');
-    this.resultsMarkup = null;
-    this.resulstContentElement = null;
-    this.articlesContainer = null;
-    this.preloaderMarkup = null;
     this.errorMarkup = null;
-    this.errorElement = null;
     this.preloaderElement = null;
-    this.swiperWrapper = document.querySelector('.swiper-wrapper');
-    this.commitArray = null;
   }
 
   showHint() {
@@ -33,8 +25,8 @@ export default class DrawUI {
   }
 
   showPreloader() {
-    this.preloaderMarkup = this.markup.getPreloaderMarkup();
-    this.resultsBlock.insertAdjacentHTML('afterbegin', this.preloaderMarkup);
+    const preloaderMarkup = this.markup.getPreloaderMarkup();
+    this.resultsBlock.insertAdjacentHTML('afterbegin', preloaderMarkup);
   }
 
   hidePreloader() {
@@ -52,7 +44,7 @@ export default class DrawUI {
   }
 
   renderCommits(commits) {
-    this.commitArray = commits;
+    const commitArray = commits;
     const commitData = {
       date: null,
       avatar: null,
@@ -60,7 +52,7 @@ export default class DrawUI {
       email: null,
       message: null
     };
-    for (let commit of this.commitArray) {
+    for (let commit of commitArray) {
       commitData.date = this.dates.formatDate(commit.commit.author.date);
       commitData.avatar = commit.author.avatar_url;
       commitData.name = commit.commit.author.name;
@@ -68,17 +60,18 @@ export default class DrawUI {
       commitData.message = commit.commit.message;
       
       const commitMarkup = this.markup.getCommitMarkup(commitData);
-      this.swiperWrapper.insertAdjacentHTML('beforeend', commitMarkup);
+      const swiperWrapper = document.querySelector('.swiper-wrapper');
+      swiperWrapper.insertAdjacentHTML('beforeend', commitMarkup);
     }
 
-    this.slider = new Slider();
-    this.slider.init();
+    const slider = new Slider();
+    slider.init();
   }
 
   renderResultsContent(news) {
     const articles = news.articles;
-    this.resultsMarkup = this.markup.getResultsMarkup();
-    this.resultsBlock.insertAdjacentHTML('afterbegin', this.resultsMarkup);
+    const resultsMarkup = this.markup.getResultsMarkup();
+    this.resultsBlock.insertAdjacentHTML('afterbegin', resultsMarkup);
     this.renderArticles(articles);
   }
 
@@ -110,8 +103,8 @@ export default class DrawUI {
       articleData.url = article.url;
 
       const articleMarkup = this.markup.getArticleMarkup(articleData);
-      this.articlesContainer = document.querySelector('.results__articles');
-      this.articlesContainer.insertAdjacentHTML('beforeend', articleMarkup);
+      const articlesContainer = document.querySelector('.results__articles');
+      articlesContainer.insertAdjacentHTML('beforeend', articleMarkup);
     }
   }
 }
