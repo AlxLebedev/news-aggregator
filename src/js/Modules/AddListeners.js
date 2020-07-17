@@ -16,6 +16,7 @@ export default class AddListeners {
   init() {
     this.finderButton.addEventListener('click', () => {
       this.userQuery = this.finderInput.value;
+      this.finderInput.value = '';
       this.userQueryValid = this.validator.check(this.userQuery);
       if (!this.userQueryValid) {
         this.drawUI.showHint();
