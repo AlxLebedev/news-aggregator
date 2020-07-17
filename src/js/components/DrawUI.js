@@ -124,7 +124,6 @@ export default class DrawUI {
     }
 
     this.articles.splice(firstArticle, lastArticle + 1);
-    console.log(this.articles);
     if (this.articles.length === 0) {
       this.showMoreButton.remove();
     }
