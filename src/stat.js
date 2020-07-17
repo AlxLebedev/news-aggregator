@@ -1,2 +1,2 @@
 import './scss/styles-stat.scss';
-import './js/sayStat';
+import './js/stat-app';
