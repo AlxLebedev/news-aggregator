@@ -11,6 +11,7 @@ export default class DrawUI {
     this.errorMarkup = null;
     this.preloaderElement = null;
     this.articles = null;
+    this.showMoreButton = null;
   }
 
   showHint() {
@@ -73,12 +74,13 @@ export default class DrawUI {
     this.articles = news.articles;
     const resultsMarkup = this.markup.getResultsMarkup();
     this.resultsBlock.insertAdjacentHTML('afterbegin', resultsMarkup);
-    this.renderArticles();
 
-    const showMoreButton = document.querySelector('.results__button');
-    showMoreButton.addEventListener('click', () => {
+    this.showMoreButton = document.querySelector('.results__button');
+    this.showMoreButton.addEventListener('click', () => {
       this.renderArticles();
     });
+
+    this.renderArticles();
   }
 
   cleanResultsContent() {
@@ -91,7 +93,6 @@ export default class DrawUI {
 
   renderArticles() {
     const articlesArray = this.articles;
-    console.log(articlesArray);
     const articleData = {
       image: null,
       date: null,
@@ -100,17 +101,32 @@ export default class DrawUI {
       owner: null,
       url: null,
     }
-    for (let article of articlesArray) {
-      articleData.image = article.urlToImage;
-      articleData.date = this.dates.formatDate(article.publishedAt);
-      articleData.title = article.title;
-      articleData.content = article.description;
-      articleData.owner = article.source.name;
-      articleData.url = article.url;
+    const articlesArrayLength = articlesArray.length;
+    let firstArticle = 0;
+    let lastArticle = null;
+    if (articlesArrayLength < 3) {
+      lastArticle = articlesArrayLength - 1;
+    } else {
+      lastArticle = 2;
+    }
+
+    for (let i = firstArticle; i <= lastArticle; i += 1) {
+      articleData.image = articlesArray[i].urlToImage;
+      articleData.date = this.dates.formatDate(articlesArray[i].publishedAt);
+      articleData.title = articlesArray[i].title;
+      articleData.content = articlesArray[i].description;
+      articleData.owner = articlesArray[i].source.name;
+      articleData.url = articlesArray[i].url;
 
       const articleMarkup = this.markup.getArticleMarkup(articleData);
       const articlesContainer = document.querySelector('.results__articles');
       articlesContainer.insertAdjacentHTML('beforeend', articleMarkup);
+    }
+
+    this.articles.splice(firstArticle, lastArticle + 1);
+    console.log(this.articles);
+    if (this.articles.length === 0) {
+      this.showMoreButton.remove();
     }
   }
 }
