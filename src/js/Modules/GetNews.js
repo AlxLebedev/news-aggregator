@@ -20,12 +20,6 @@ export default class GetNews {
     this.url = `http://newsapi.org/v2/everything?q=${this.userQuery}&from=${this.fromDate}&to=${this.toDate}&pageSize=10&apiKey=${this.apiKey}`;
     this.newsApi = new NewsApi(this.url, this.drawUI);
     this.news = await this.newsApi.fetchNews();
-    // if (this.news.totalResults !== 0) {
-    //   this.drawUI.hideResultsContent();
-    //   this.drawUI.renderResultsContent(this.news);
-    // } else {
-    //   this.drawUI.hideResultsContent();
-    // }
     if(this.news.totalResults !==0) {
       this.drawUI.renderResultsContent(this.news);
     }
