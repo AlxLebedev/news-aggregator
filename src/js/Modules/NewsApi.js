@@ -6,13 +6,13 @@ export default class NewsApi {
   }
 
   async fetchNews() {
+    this.drawUI.cleanResultsContent();
     this.drawUI.showPreloader();
     let response = await fetch(this.url);
 
     if (response.ok) {
       this.news = await response.json();
       this.drawUI.hidePreloader();
-      this.drawUI.hideErrorWarning();
       if (this.news.totalResults === 0) {
         this.drawUI.showErrorWarning('notFound');
       }

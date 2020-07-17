@@ -4,6 +4,8 @@ export default class Markup {
     this.commitMarkup = null;
     this.notFoundMarkup = null;
     this.serverErrorMarkup = null;
+    this.resultsMarkup = null;
+    this.articleMarkup = null;
   }
 
   getPreloaderMarkup() {
@@ -80,4 +82,42 @@ export default class Markup {
     `;
     return this.serverErrorMarkup;
   }
+
+  getResultsMarkup() {
+    this.resultsMarkup = `
+    <div class="results__content">
+        <div class="results__header">
+          <h2 class="results__title">Результаты поиска</h2>
+          <a class="results__link" href="./stat.html">Посмотреть аналитику ></a>
+        </div>
+        <div class="results__articles"></div>
+        <button class="button results__button" type="button">Показать еще</button>
+      </div>
+    `;
+    return this.resultsMarkup;
+  }
+
+  getArticleMarkup() {
+    this.articleMarkup = `
+    <article class="article results__article">
+      <a class="article__link" href="#">
+        <div class="article__image-box">
+          <img class="article__image" src="https://static.kvraudio.com/i/b/70s_session.jpg" alt="инфо о картинке">
+        </div>
+        <div class="article__wrapper">
+          <div class="article__date">
+            <span class="article__day article__date-item">2</span><span class="article__month article__date-item">августа,</span><span class="article__year article__date-item">2019</span>
+          </div>
+          <h3 class="article__title">Национальное достояние&nbsp;&mdash; парки</h3>
+          <p class="article__content">
+            В&nbsp;2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...
+          </p>
+          <p class="article__owner">Лента.РУ</p>
+        </div>
+      </a>
+      </article>
+    `;
+    return this.articleMarkup;
+  }
+
 }

@@ -9,6 +9,8 @@ export default class DrawUI {
     this.dates = new Dates();
     this.finderSearchField = document.querySelector('.finder__search');
     this.resultsBlock = document.querySelector('.results');
+    this.resultsMarkup = null;
+    this.resulstContentElement = null;
     this.preloaderMarkup = null;
     this.errorMarkup = null;
     this.errorElement = null;
@@ -48,13 +50,6 @@ export default class DrawUI {
     this.resultsBlock.insertAdjacentHTML('afterbegin', this.errorMarkup);
   }
 
-  hideErrorWarning() {
-    this.errorElement = document.querySelector('.error');
-    if (this.errorElement) {
-      this.errorElement.remove();
-    }
-  }
-
   renderCommits(commits) {
     this.commitArray = commits;
     const commitData = {
@@ -77,5 +72,19 @@ export default class DrawUI {
 
     this.slider = new Slider();
     this.slider.init();
+  }
+
+  renderResultsContent(cards) {
+    console.log(cards);
+    this.resultsMarkup = this.markup.getResultsMarkup();
+    this.resultsBlock.insertAdjacentHTML('afterbegin', this.resultsMarkup);
+  }
+
+  cleanResultsContent() {
+    let child =  this.resultsBlock.firstChild;
+    while(child) {
+      this.resultsBlock.removeChild(child);
+      child = this.resultsBlock.firstChild;
+    }
   }
 }
