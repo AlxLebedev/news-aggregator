@@ -17,13 +17,13 @@ export default class DrawUI {
     this.commitArray = null;
   }
 
-  showError() {
+  showHint() {
     if (!this.finderSearchField.classList.contains('finder__search--invalid')) {
       this.finderSearchField.classList.add('finder__search--invalid');
     }
   }
 
-  hideError() {
+  hideHint() {
     if (this.finderSearchField.classList.contains('finder__search--invalid')) {
       this.finderSearchField.classList.remove('finder__search--invalid');
     }

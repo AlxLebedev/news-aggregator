@@ -18,14 +18,14 @@ export default class AddListeners {
       this.userQuery = this.finderInput.value;
       this.userQueryValid = this.validator.check(this.userQuery);
       if (!this.userQueryValid) {
-        this.drawUI.showError();
+        this.drawUI.showHint();
         return;
       }
       this.getNews.get(this.userQuery);
     });
 
     this.finderInput.addEventListener('input', () => {
-      this.drawUI.hideError();
+      this.drawUI.hideHint();
     });
   }
 }
