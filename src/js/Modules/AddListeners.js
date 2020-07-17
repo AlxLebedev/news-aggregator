@@ -1,5 +1,4 @@
 import Validator from './Validator';
-// import DrawUI from '../components/DrawUI';
 import GetNews from './GetNews';
 
 export default class AddListeners {
@@ -22,7 +21,6 @@ export default class AddListeners {
         this.drawUI.showHint();
         return;
       }
-      // sessionStorage.userQuery = this.userQuery;
       sessionStorage.setItem('userQuery', this.userQuery);
       this.getNews.get(this.userQuery);
     });

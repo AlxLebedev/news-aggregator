@@ -22,7 +22,6 @@ export default class GetNews {
     this.news = await this.newsApi.fetchNews();
     if (this.news.totalResults !==0) {
       this.drawUI.renderResultsContent(this.news);
-      // sessionStorage.newsData = JSON.stringify(this.news);
       sessionStorage.setItem('newsData', JSON.stringify(this.news));
     }
     console.log(this.news);

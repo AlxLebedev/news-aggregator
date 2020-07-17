@@ -77,6 +77,7 @@ export default class DrawUI {
 
     this.showMoreButton = document.querySelector('.results__button');
     this.showMoreButton.addEventListener('click', () => {
+      this.articles.splice(0, 3);
       this.renderArticles();
     });
 
@@ -123,8 +124,7 @@ export default class DrawUI {
       articlesContainer.insertAdjacentHTML('beforeend', articleMarkup);
     }
 
-    this.articles.splice(firstArticle, lastArticle + 1);
-    if (this.articles.length === 0) {
+    if (this.articles.length === 1) {
       this.showMoreButton.remove();
     }
   }
