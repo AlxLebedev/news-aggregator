@@ -65,7 +65,7 @@ export default class DrawUI {
       message: null
     };
     for (let commit of this.commitArray) {
-      commitData.date = this.dates.formatCommitDate(commit.commit.author.date);
+      commitData.date = this.dates.formatDate(commit.commit.author.date);
       commitData.avatar = commit.author.avatar_url;
       commitData.name = commit.commit.author.name;
       commitData.email = commit.commit.author.email;

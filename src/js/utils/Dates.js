@@ -23,28 +23,28 @@ export default class Dates {
     return [fromDate, toDate];
   }
 
-  formatCommitDate(date) {
+  formatDate(date) {
     this.currentDate = new Date(date);
 
     const monthes = [
-      'января,',
-      'февраля,',
-      'марта,',
-      'апреля,',
-      'мая,',
-      'июня,',
-      'июля,',
-      'августа,',
-      'сентября,',
-      'октября,',
-      'ноября,',
-      'декабря,'
+      'января',
+      'февраля',
+      'марта',
+      'апреля',
+      'мая',
+      'июня',
+      'июля',
+      'августа',
+      'сентября',
+      'октября',
+      'ноября',
+      'декабря'
     ];
 
     const currentDay = this.currentDate.getDate() < 10 ? `0${this.currentDate.getDate()}` : `${this.currentDate.getDate()}`;
     const currentMonthIndex = this.currentDate.getMonth();
     const currentYear = `${this.currentDate.getFullYear()}`;
 
-    return `${currentDay} ${monthes[currentMonthIndex]} ${currentYear}`;
+    return `${currentDay} ${monthes[currentMonthIndex]}, ${currentYear}`;
   }
 }
