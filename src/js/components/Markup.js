@@ -97,25 +97,22 @@ export default class Markup {
     return this.resultsMarkup;
   }
 
-  getArticleMarkup() {
+  getArticleMarkup(data) {
+    const articleData = data;
     this.articleMarkup = `
     <article class="article results__article">
-      <a class="article__link" href="#">
+      <a class="article__link" href="${articleData.url == null ? `` : articleData.url}" target="_blank">
         <div class="article__image-box">
-          <img class="article__image" src="https://static.kvraudio.com/i/b/70s_session.jpg" alt="инфо о картинке">
+          <img class="article__image" src="${articleData.image == null ? `card-image.png` : articleData.image}" alt="инфо о картинке">
         </div>
         <div class="article__wrapper">
-          <div class="article__date">
-            <span class="article__day article__date-item">2</span><span class="article__month article__date-item">августа,</span><span class="article__year article__date-item">2019</span>
-          </div>
-          <h3 class="article__title">Национальное достояние&nbsp;&mdash; парки</h3>
-          <p class="article__content">
-            В&nbsp;2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...
-          </p>
-          <p class="article__owner">Лента.РУ</p>
+          <div class="article__date">${articleData.date == null ? `дата не указана...` : articleData.date}</div>
+          <h3 class="article__title">${articleData.title == null ? `` : articleData.title}</h3>
+          <p class="article__content">${articleData.content == null ? `` : articleData.content}</p>
+          <p class="article__owner">${articleData.owner == null ? `издатель не указан...` : articleData.owner}</p>
         </div>
       </a>
-      </article>
+    </article>
     `;
     return this.articleMarkup;
   }

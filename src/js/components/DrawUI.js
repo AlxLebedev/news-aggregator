@@ -11,6 +11,7 @@ export default class DrawUI {
     this.resultsBlock = document.querySelector('.results');
     this.resultsMarkup = null;
     this.resulstContentElement = null;
+    this.articlesContainer = null;
     this.preloaderMarkup = null;
     this.errorMarkup = null;
     this.errorElement = null;
@@ -74,10 +75,11 @@ export default class DrawUI {
     this.slider.init();
   }
 
-  renderResultsContent(cards) {
-    console.log(cards);
+  renderResultsContent(news) {
+    const articles = news.articles;
     this.resultsMarkup = this.markup.getResultsMarkup();
     this.resultsBlock.insertAdjacentHTML('afterbegin', this.resultsMarkup);
+    this.renderArticles(articles);
   }
 
   cleanResultsContent() {
@@ -85,6 +87,31 @@ export default class DrawUI {
     while(child) {
       this.resultsBlock.removeChild(child);
       child = this.resultsBlock.firstChild;
+    }
+  }
+
+  renderArticles(articles) {
+    const articlesArray = articles;
+    console.log(articlesArray);
+    const articleData = {
+      image: null,
+      date: null,
+      title: null,
+      content: null,
+      owner: null,
+      url: null,
+    }
+    for (let article of articlesArray) {
+      articleData.image = article.urlToImage;
+      articleData.date = this.dates.formatDate(article.publishedAt);
+      articleData.title = article.title;
+      articleData.content = article.description;
+      articleData.owner = article.source.name;
+      articleData.url = article.url;
+
+      const articleMarkup = this.markup.getArticleMarkup(articleData);
+      this.articlesContainer = document.querySelector('.results__articles');
+      this.articlesContainer.insertAdjacentHTML('beforeend', articleMarkup);
     }
   }
 }

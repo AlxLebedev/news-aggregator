@@ -18,6 +18,8 @@
   }
 
   &__wrapper {
+    display: flex;
+    flex-direction: column;
     background-color: $color-white;
     padding: 16px;
     border-bottom-left-radius: 20px;
@@ -74,5 +76,8 @@
     color: $color-gray-havy-dark;
     font-weight: bold;
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
