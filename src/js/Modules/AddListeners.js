@@ -1,11 +1,11 @@
 import Validator from './Validator';
-import DrawUI from '../components/DrawUI';
+// import DrawUI from '../components/DrawUI';
 import GetNews from './GetNews';
 
 export default class AddListeners {
-  constructor() {
+  constructor(drawUI) {
     this.validator = new Validator();
-    this.drawUI = new DrawUI();
+    this.drawUI = drawUI;
     this.getNews = new GetNews(this.drawUI);
     this.finderInput = document.querySelector('.finder__input');
     this.finderButton = document.querySelector('.finder__button');
