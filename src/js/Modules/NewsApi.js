@@ -8,7 +8,11 @@ export default class NewsApi {
   async fetchNews() {
     this.drawUI.cleanResultsContent();
     this.drawUI.showPreloader();
-    let response = await fetch(this.url);
+    let response = await fetch(this.url, {
+      headers: {
+        'X-Api-Key': '7c22611ba74c47b9bb7bab94a85a00f9'
+      }
+    });
 
     if (response.ok) {
       this.news = await response.json();
