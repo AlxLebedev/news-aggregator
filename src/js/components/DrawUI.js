@@ -80,7 +80,9 @@ export default class DrawUI {
       this.articles.splice(0, 3);
       this.renderArticles();
     });
-
+    if (this.articles.length <= 3) {
+      this.showMoreButton.remove();
+    }
     this.renderArticles();
   }
 
