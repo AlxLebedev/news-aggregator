@@ -130,4 +130,14 @@ export default class DrawUI {
       this.showMoreButton.remove();
     }
   }
+
+  showStatHeading(query, totalResults, referencesTitle) {
+    const userQueryElement = document.querySelector('.stat__request');
+    const newsPerWeekElement = document.getElementById('news-per-week');
+    const newsInTitleElement = document.getElementById('news-in-title');
+
+    userQueryElement.innerText = `«${query}»`;
+    newsPerWeekElement.innerText = totalResults.toLocaleString('ru');
+    newsInTitleElement.innerText = referencesTitle.toLocaleString('ru');
+  }
 }
