@@ -37,7 +37,7 @@ export default class Dates {
       days.push(`${dayNumber}, ${daysNames[dayIndex]}`);
     };
 
-    console.log(days);
+    return days;
   }
 
    getDateRange() {

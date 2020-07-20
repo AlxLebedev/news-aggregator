@@ -12,6 +12,7 @@ export default class DrawUI {
     this.preloaderElement = null;
     this.articles = null;
     this.showMoreButton = null;
+    this.daysElements = Array.from(document.querySelectorAll('.table__day'));
   }
 
   showHint() {
@@ -139,5 +140,14 @@ export default class DrawUI {
     userQueryElement.innerText = `«${query}»`;
     newsPerWeekElement.innerText = totalResults.toLocaleString('ru');
     newsInTitleElement.innerText = referencesTitle.toLocaleString('ru');
+  }
+
+  renderDaysForAnalytics(days) {
+    for (let i = 0; i < this.daysElements.length; i += 1) {
+      this.daysElements[i].innerText = days[i];
+    }
+
+    console.log(this.daysElements);
+    console.log(days);
   }
 }
