@@ -58,6 +58,13 @@ module.exports = {
         ],
       },
       {
+        test: /\.(woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',

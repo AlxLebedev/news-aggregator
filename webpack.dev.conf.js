@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.conf');
 
@@ -11,7 +12,12 @@ module.exports = merge(common, {
   plugins: [
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/img/static', to: 'img/',
+      }
+    ]),
   ],
   module: {
     rules: [
@@ -19,14 +25,7 @@ module.exports = merge(common, {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
-        }
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
+          name: 'img/[name].[ext]',
         }
       },
     ]
