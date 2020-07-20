@@ -1,8 +1,10 @@
 import DrawUI from '../components/DrawUI';
+import Dates from '../utils/Dates';
 
 export default class Analytics {
   constructor(data, userQuery) {
     this.drawUI = new DrawUI();
+    this.dates = new Dates();
     this.data = data;
     this.query = userQuery;
     this.referencesInHeadlines = null;
@@ -12,6 +14,8 @@ export default class Analytics {
     console.log(this.data);
     this.referencesInHeadlines = this.getReferencesInHeadlines();
     this.drawUI.showStatHeading(this.query, +this.data.totalResults, this.referencesInHeadlines);
+
+    this.dates.getDaysForAnalytics();
   }
 
   getReferencesInHeadlines() {

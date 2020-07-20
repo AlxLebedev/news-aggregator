@@ -1,6 +1,6 @@
 export default class Dates {
   constructor() {
-    this.daysAgo = 7;
+    this.daysAgo = 6;
     this.msPerDay = 86400000;
     this.currentDate = null;
     this.lastDate = null;
@@ -21,6 +21,39 @@ export default class Dates {
     const fromDate = `${lastYear}-${lastMonth}-${lastDay}`;
 
     return [fromDate, toDate];
+  }
+
+  getDaysForAnalytics() {
+    const datesArray = this.getDateRange();
+    const daysNames = [
+      'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб',
+    ]
+    const days = [];
+
+
+    for (let date of datesArray) {
+      const dayNumber = date.getDate();
+      const dayIndex = date.getDay();
+      days.push(`${dayNumber}, ${daysNames[dayIndex]}`);
+    };
+
+    console.log(days);
+  }
+
+   getDateRange() {
+    this.currentDate = new Date();
+    this.lastDate = new Date(this.currentDate - (this.daysAgo * this.msPerDay));
+
+    const startDate = this.lastDate;
+    const stopDate = this.currentDate;
+    const datesArray = [];
+
+    while (startDate <= stopDate) {
+      datesArray.push(new Date (startDate));
+      startDate.setDate(startDate.getDate() + 1);
+    }
+
+    return datesArray;
   }
 
   formatDate(date) {
