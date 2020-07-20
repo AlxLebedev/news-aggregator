@@ -110,4 +110,10 @@ export default class Dates {
 
     return `${currentDay} ${monthes[currentMonthIndex]}, ${currentYear}`;
   }
+
+  getMentionsByDays(articles) {
+    const datesArray = this.getDateRange();
+    console.log(articles);
+    console.log(datesArray);
+  }
 }

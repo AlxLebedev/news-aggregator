@@ -11,7 +11,6 @@ export default class Analytics {
   }
 
   init() {
-    console.log(this.data);
     this.referencesInHeadlines = this.getReferencesInHeadlines();
     this.drawUI.showStatHeading(this.query, +this.data.totalResults, this.referencesInHeadlines);
 
@@ -20,6 +19,8 @@ export default class Analytics {
 
     const monthes = this.dates.getMonthesForAnalytics();
     this.drawUI.renderMonthesForAnalytics(monthes);
+
+    this.dates.getMentionsByDays(this.data.articles);
   }
 
   getReferencesInHeadlines() {
