@@ -17,6 +17,9 @@ export default class Analytics {
 
     const days = this.dates.getDaysForAnalytics();
     this.drawUI.renderDaysForAnalytics(days);
+
+    const monthes = this.dates.getMonthesForAnalytics();
+    this.drawUI.renderMonthesForAnalytics(monthes);
   }
 
   getReferencesInHeadlines() {

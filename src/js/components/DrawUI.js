@@ -13,6 +13,7 @@ export default class DrawUI {
     this.articles = null;
     this.showMoreButton = null;
     this.daysElements = Array.from(document.querySelectorAll('.table__day'));
+    this.monthElement = document.querySelector('.table__title-month');
   }
 
   showHint() {
@@ -146,8 +147,9 @@ export default class DrawUI {
     for (let i = 0; i < this.daysElements.length; i += 1) {
       this.daysElements[i].innerText = days[i];
     }
+  }
 
-    console.log(this.daysElements);
-    console.log(days);
+  renderMonthesForAnalytics(monthes) {
+    this.monthElement.innerText = `(${monthes})`;
   }
 }

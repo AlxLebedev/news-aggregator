@@ -23,23 +23,6 @@ export default class Dates {
     return [fromDate, toDate];
   }
 
-  getDaysForAnalytics() {
-    const datesArray = this.getDateRange();
-    const daysNames = [
-      'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб',
-    ]
-    const days = [];
-
-
-    for (let date of datesArray) {
-      const dayNumber = date.getDate();
-      const dayIndex = date.getDay();
-      days.push(`${dayNumber}, ${daysNames[dayIndex]}`);
-    };
-
-    return days;
-  }
-
    getDateRange() {
     this.currentDate = new Date();
     this.lastDate = new Date(this.currentDate - (this.daysAgo * this.msPerDay));
@@ -54,6 +37,53 @@ export default class Dates {
     }
 
     return datesArray;
+  }
+
+  getDaysForAnalytics() {
+    const datesArray = this.getDateRange();
+    const daysNames = [
+      'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб',
+    ]
+    const days = [];
+
+    for (let date of datesArray) {
+      const dayNumber = date.getDate();
+      const dayIndex = date.getDay();
+      days.push(`${dayNumber}, ${daysNames[dayIndex]}`);
+    };
+
+    return days;
+  }
+
+  getMonthesForAnalytics() {
+    const datesArray = this.getDateRange();
+    const monthesArray = [];
+    const monthesNames = [
+      'Январь',
+      'Февраль',
+      'Март',
+      'Апрель',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Август',
+      'Сентябрь',
+      'Октябрь',
+      'Ноябрь',
+      'Декабрь'
+    ];
+
+    for (let date of datesArray) {
+      monthesArray.push(monthesNames[date.getMonth()]);
+    }
+
+    const result = Array.from(new Set(monthesArray));
+
+    if (result.length > 1) {
+      return result.join(' - ');
+    } else {
+      return String(result);
+    }
   }
 
   formatDate(date) {
