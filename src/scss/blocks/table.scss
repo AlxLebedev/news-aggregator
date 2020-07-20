@@ -33,6 +33,8 @@
   &__percent-bar {
     @media ($tablet) {
       display: flex;
+      margin-top: 16px;
+      margin-bottom: 8px;
     }
   }
 
@@ -59,7 +61,7 @@
       width: 102px;
 
       &--first {
-        padding-top: 8px;
+        padding-top: 0;
       }
     }
   }
@@ -71,11 +73,7 @@
       padding-top: 56px;
 
       &--first {
-        padding-top: 8px;
-      }
-
-      &--last {
-        padding-bottom: 16px;
+        padding-top: 0;
       }
     }
   }
