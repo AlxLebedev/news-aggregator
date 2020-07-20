@@ -5,5 +5,3 @@ const userQuery = sessionStorage.getItem('userQuery');
 const analytics = new Analytics(newsData, userQuery);
 
 analytics.init();
-
-console.log(newsData);
