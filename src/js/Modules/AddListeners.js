@@ -1,32 +1,25 @@
-import Validator from './Validator';
 import GetNews from './GetNews';
 
 export default class AddListeners {
   constructor(drawUI) {
-    this.validator = new Validator();
     this.drawUI = drawUI;
     this.getNews = new GetNews(this.drawUI);
     this.finderInput = document.querySelector('.finder__input');
     this.finderButton = document.querySelector('.finder__button');
     this.userQuery = null;
-    this.userQueryValid = null;
   }
 
   init() {
-    this.finderButton.addEventListener('click', () => {
-      this.userQuery = this.finderInput.value;
-      this.finderInput.value = '';
-      this.userQueryValid = this.validator.check(this.userQuery);
-      if (!this.userQueryValid) {
-        this.drawUI.showHint();
-        return;
-      }
-      sessionStorage.setItem('userQuery', this.userQuery);
-      this.getNews.get(this.userQuery);
-    });
+    this.finderButton.addEventListener( 'click', () => this.sendQuery() );
 
-    this.finderInput.addEventListener('input', () => {
-      this.drawUI.hideHint();
-    });
+    this.finderInput.addEventListener( 'input', () => this.drawUI.hideHint() );
+
+    this.finderInput.addEventListener('keypress', (event) => { if (event.key === "Enter") this.sendQuery() } );
+  }
+
+  sendQuery() {
+    this.userQuery = this.finderInput.value;
+    this.getNews.get(this.userQuery);
+    this.finderInput.value = '';
   }
 }
