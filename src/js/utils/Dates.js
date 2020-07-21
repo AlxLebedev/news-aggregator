@@ -110,22 +110,4 @@ export default class Dates {
 
     return `${currentDay} ${monthes[currentMonthIndex]}, ${currentYear}`;
   }
-
-  getReferencesByDays(articles) {
-    const datesArray = this.getDateRange();
-    const referencesByDays = [];
-
-    let counter = null;
-    for (let date of datesArray) {
-      for (let article of articles) {
-        if (date.setHours(0,0,0,0) === new Date(article.publishedAt).setHours(0,0,0,0)) {
-          counter += 1;
-        }
-      }
-      referencesByDays.push(counter);
-      counter = null;
-    }
-    
-    return referencesByDays;
-  }
 }

@@ -23,7 +23,7 @@ export default class Analytics {
     const monthes = this.dates.getMonthesForAnalytics();
     this.drawUI.renderMonthesForAnalytics(monthes);
 
-    const referencesByDay = this.dates.getReferencesByDays(this.news.articles);
+    const referencesByDay = this.getReferencesByDays(this.news.articles);
     this.drawUI.renderReferencesValues(referencesByDay, this.news.articles.length);
   }
 
@@ -39,5 +39,23 @@ export default class Analytics {
     } else {
       return 0;
     }
+  }
+
+  getReferencesByDays(articles) {
+    const datesArray = this.dates.getDateRange();
+    const referencesByDays = [];
+
+    let counter = null;
+    for (let date of datesArray) {
+      for (let article of articles) {
+        if (date.setHours(0,0,0,0) === new Date(article.publishedAt).setHours(0,0,0,0)) {
+          counter += 1;
+        }
+      }
+      referencesByDays.push(counter);
+      counter = null;
+    }
+    
+    return referencesByDays;
   }
 }
