@@ -114,21 +114,18 @@ export default class Dates {
   getMentionsByDays(articles) {
     const datesArray = this.getDateRange();
     const mentionsByDays = [];
-    console.log(articles);
 
     let counter = null;
     for (let date of datesArray) {
-      console.log(date);
       for (let article of articles) {
-        console.log(new Date(article.publishedAt));
-        if (date == article.publishedAt) {
+        if (date.setHours(0,0,0,0) === new Date(article.publishedAt).setHours(0,0,0,0)) {
           counter += 1;
-          console.log(counter);
         }
       }
       mentionsByDays.push(counter);
       counter = null;
     }
-    console.log(mentionsByDays);
+    
+    return mentionsByDays;
   }
 }
