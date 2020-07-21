@@ -26,7 +26,7 @@ export default class Analytics {
     this.drawUI.renderMonthesForAnalytics(monthes);
 
     const mentionsByDay = this.dates.getMentionsByDays(this.news.articles);
-    console.log(mentionsByDay);
+    this.drawUI.renderMentionsValues(mentionsByDay, this.news.articles.length);
   }
 
   getReferencesInHeadlines() {
