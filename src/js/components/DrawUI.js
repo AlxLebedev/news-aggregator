@@ -48,8 +48,12 @@ export default class DrawUI {
     this.resultsBlock.insertAdjacentHTML('afterbegin', this.errorMarkup);
   }
 
-  renderCommits(commits) {
-    const commitArray = commits;
+  renderCommits(response) {
+    if (typeof(response) === 'String') {
+      swiperWrapper.insertAdjacentHTML('beforeend', `<div>${response}</div>`);
+      return;
+    }
+    const commitArray = response;
     const commitData = {
       date: null,
       avatar: null,

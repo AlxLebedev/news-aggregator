@@ -1,7 +1,7 @@
 export default class GitApi {
   constructor(url) {
     this.url = url;
-    this.commits = 'not yet:)))';
+    this.commits = null;
   }
 
   async fetchCommits() {
@@ -9,9 +9,9 @@ export default class GitApi {
 
     if (response.ok) {
       this.commits = await response.json();
+      return this.commits;
     } else {
-      alert("Ошибка HTTP: " + response.status);
+      return `Не удалось загрузить коммиты, ошибка сервера: ${response.status}`;
     }
-    return this.commits;
   }
 }

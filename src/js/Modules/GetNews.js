@@ -23,6 +23,5 @@ export default class GetNews {
       this.drawUI.renderResultsContent(this.news);
       sessionStorage.setItem('newsData', JSON.stringify(this.news));
     }
-    console.log(this.news);
   }
 }

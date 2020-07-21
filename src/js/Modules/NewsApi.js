@@ -2,7 +2,7 @@ export default class NewsApi {
   constructor(url, drawUI) {
     this.url = url;
     this.drawUI = drawUI;
-    this.news = 'not yet:)))';
+    this.news = null;
   }
 
   async fetchNews() {
