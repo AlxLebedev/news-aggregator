@@ -1,11 +1,13 @@
-export default class NewsApi {
-  constructor(url, drawUI) {
-    this.url = url;
+export default class ExternalApi {
+  constructor(drawUI) {
     this.drawUI = drawUI;
+    this.url = null;
     this.news = null;
+    this.commits = null;
   }
 
-  async fetchNews() {
+  async fetchNews(url) {
+    this.url = url;
     this.drawUI.cleanResultsContent();
     this.drawUI.showPreloader();
     let response = await fetch(this.url, {
@@ -25,5 +27,17 @@ export default class NewsApi {
       this.drawUI.showErrorWarning('server');
     }
     return this.news;
+  }
+
+  async fetchCommits(url) {
+    this.url = url;
+    let response = await fetch(this.url);
+
+    if (response.ok) {
+      this.commits = await response.json();
+      return this.commits;
+    } else {
+      return `Не удалось загрузить коммиты, ошибка сервера: ${response.status}`;
+    }
   }
 }
