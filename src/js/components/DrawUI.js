@@ -158,7 +158,7 @@ export default class DrawUI {
     this.monthElement.innerText = `(${monthes})`;
   }
 
-  renderMentionsValues(values, newsQuantity) {
+  renderReferencesValues(values, newsQuantity) {
     for (let i = 0; i < this.mentionsValuesElements.length; i += 1) {
       this.mentionsValuesElements[i].dataset.value = values[i];
       this.mentionsValuesElements[i].innerText = `${values[i] === null ? `0` : Math.round((values[i] / newsQuantity) * 100)}`;

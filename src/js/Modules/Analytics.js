@@ -7,12 +7,11 @@ export default class Analytics {
     this.dates = new Dates();
     this.news = newsData;
     this.query = userQuery;
-    this.referencesInHeadlines = null;
   }
 
   init() {
-    this.referencesInHeadlines = this.getReferencesInHeadlines();
-    this.drawUI.showStatHeading(this.query, this.news.articles.length, this.referencesInHeadlines);
+    const referencesInHeadlines = this.getReferencesInHeadlines();
+    this.drawUI.showStatHeading(this.query, this.news.articles.length, referencesInHeadlines);
     /*
     Для метода выше специально ограничено общее количество новостей (2-ой аргумент) длиной массива с новостями. Иначе
     искажается статистика: totalResults = 21875, а ограничение бесплатного доступа к API - 100.
@@ -24,8 +23,8 @@ export default class Analytics {
     const monthes = this.dates.getMonthesForAnalytics();
     this.drawUI.renderMonthesForAnalytics(monthes);
 
-    const mentionsByDay = this.dates.getMentionsByDays(this.news.articles);
-    this.drawUI.renderMentionsValues(mentionsByDay, this.news.articles.length);
+    const referencesByDay = this.dates.getReferencesByDays(this.news.articles);
+    this.drawUI.renderReferencesValues(referencesByDay, this.news.articles.length);
   }
 
   getReferencesInHeadlines() {

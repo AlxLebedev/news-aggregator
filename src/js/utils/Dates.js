@@ -111,9 +111,9 @@ export default class Dates {
     return `${currentDay} ${monthes[currentMonthIndex]}, ${currentYear}`;
   }
 
-  getMentionsByDays(articles) {
+  getReferencesByDays(articles) {
     const datesArray = this.getDateRange();
-    const mentionsByDays = [];
+    const referencesByDays = [];
 
     let counter = null;
     for (let date of datesArray) {
@@ -122,10 +122,10 @@ export default class Dates {
           counter += 1;
         }
       }
-      mentionsByDays.push(counter);
+      referencesByDays.push(counter);
       counter = null;
     }
     
-    return mentionsByDays;
+    return referencesByDays;
   }
 }
