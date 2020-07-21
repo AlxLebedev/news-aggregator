@@ -9,7 +9,7 @@ export default class GetCommits {
     this.commits = null;
   }
 
-  async get() {
+  async init() {
     this.commits = await this.externalApi.fetchCommits(this.url);
     this.drawUI.renderCommits(this.commits);
   }
