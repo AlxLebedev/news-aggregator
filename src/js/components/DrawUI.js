@@ -155,14 +155,10 @@ export default class DrawUI {
   }
 
   renderMentionsValues(values, newsQuantity) {
-    console.log(values);
-
     for (let i = 0; i < this.mentionsValuesElements.length; i += 1) {
       this.mentionsValuesElements[i].dataset.value = values[i];
       this.mentionsValuesElements[i].innerText = `${values[i] === null ? `0` : values[i]}`;
       this.mentionsValuesElements[i].style.width = `${values[i] === null || values[i] < 3 ? '7px' : `${(values[i] / newsQuantity) * 100}%`}`;
     }
-
-    console.log(this.mentionsValuesElements);
   }
 }

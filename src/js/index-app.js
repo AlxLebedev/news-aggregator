@@ -8,6 +8,5 @@ addListeners.init();
 
 if (sessionStorage.newsData) {
   const newsData = JSON.parse(sessionStorage.getItem('newsData'));
-  console.log(newsData);
   drawUI.renderResultsContent(newsData);
 }

@@ -11,7 +11,6 @@ export default class Analytics {
   }
 
   init() {
-    console.log(this.news);
     this.referencesInHeadlines = this.getReferencesInHeadlines();
     this.drawUI.showStatHeading(this.query, this.news.articles.length, this.referencesInHeadlines);
     /*
