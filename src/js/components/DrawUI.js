@@ -14,7 +14,7 @@ export default class DrawUI {
     this.showMoreButton = null;
     this.daysElements = Array.from(document.querySelectorAll('.table__day'));
     this.monthElement = document.querySelector('.table__title-month');
-    this.mentionsValuesElements = Array.from(document.querySelectorAll('.table__value'));
+    this.referencesValuesElements = Array.from(document.querySelectorAll('.table__value'));
   }
 
   showHint() {
@@ -138,6 +138,11 @@ export default class DrawUI {
     }
   }
 
+  /** 
+   * Знаю, что ESLint ругается, если в методе класса не использован this. Поэтому везде я доавлял его, а тут не стал и решил спросить:
+   * как быть если в this нет необходимости? Значит не правильно код выстроил?
+   * 
+  */
   showStatHeading(query, totalResults, referencesTitle) {
     const userQueryElement = document.querySelector('.stat__request');
     const newsPerWeekElement = document.getElementById('news-per-week');
@@ -159,10 +164,10 @@ export default class DrawUI {
   }
 
   renderReferencesValues(values, newsQuantity) {
-    for (let i = 0; i < this.mentionsValuesElements.length; i += 1) {
-      this.mentionsValuesElements[i].dataset.value = values[i];
-      this.mentionsValuesElements[i].innerText = `${values[i] === null ? `0` : Math.round((values[i] / newsQuantity) * 100)}`;
-      this.mentionsValuesElements[i].style.width = `${values[i] === null ? '7px' : `${(values[i] / newsQuantity) * 100}%`}`;
+    for (let i = 0; i < this.referencesValuesElements.length; i += 1) {
+      this.referencesValuesElements[i].dataset.value = values[i];
+      this.referencesValuesElements[i].innerText = `${values[i] === null ? `0` : Math.round((values[i] / newsQuantity) * 100)}`;
+      this.referencesValuesElements[i].style.width = `${values[i] === null ? '7px' : `${(values[i] / newsQuantity) * 100}%`}`;
     }
   }
 }
