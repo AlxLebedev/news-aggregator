@@ -37,7 +37,7 @@ module.exports = {
       favicon: './src/static/favicon.ico',
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "styles/[name].css",
     }),
   ],
   module: {
@@ -68,7 +68,12 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            }
+          },
           {
             loader: 'css-loader',
             options: { sourceMap: true }
