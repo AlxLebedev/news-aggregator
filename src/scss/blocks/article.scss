@@ -51,7 +51,7 @@
 
   &__title {
     @include reset-default-margin;
-    font-family: $font-robotoslab-regular;
+    font-family: $font-robotoslab;
     font-size: 22px;
     line-height: 26px;
     margin-bottom: 10px;
@@ -72,7 +72,7 @@
 
   &__owner {
     @include reset-default-margin;
-    font-family: $font-robotoslab-regular;
+    font-family: $font-robotoslab;
     line-height: 20px;
     color: $color-gray-havy-dark;
     font-weight: bold;

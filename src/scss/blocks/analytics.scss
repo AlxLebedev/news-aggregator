@@ -15,10 +15,10 @@
 
   &__title {
     @include reset-default-margin;
-    font-family: $font-robotoslab-regular;
+    font-family: $font-robotoslab;
     font-size: 22px;
     line-height: 30px;
-    font-weight: normal;
+    font-weight: 400;
     margin-bottom: 16px;
 
     @media ($tablet) {

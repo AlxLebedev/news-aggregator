@@ -22,7 +22,7 @@
 
   &__logo {
     @include reset-styles-link;
-    font-family: $font-robotoslab-regular;
+    font-family: $font-robotoslab;
     font-weight: bold;
 
     &--color-white {
