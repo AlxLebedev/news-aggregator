@@ -88,7 +88,7 @@ export default class Markup {
     <div class="results__content">
         <div class="results__header">
           <h2 class="results__title">Результаты поиска</h2>
-          <a class="results__link" href="./stat.html">Посмотреть аналитику ></a>
+          <a class="results__link" href="./statistic.html">Посмотреть аналитику ></a>
         </div>
         <div class="results__articles"></div>
         <button class="button results__button" type="button">Показать еще</button>

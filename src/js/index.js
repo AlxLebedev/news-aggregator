@@ -1,3 +1,5 @@
+import '../scss/styles-index.scss';
+
 import DrawUI from './components/DrawUI';
 import AddListeners from './Modules/AddListeners';
 

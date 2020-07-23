@@ -1,3 +1,5 @@
+import '../scss/styles-stat.scss';
+
 import Analytics from './Modules/Analytics';
 
 if (sessionStorage.newsData && sessionStorage.userQuery) {

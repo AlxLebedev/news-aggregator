@@ -5,9 +5,9 @@ const WbebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    about: './src/about.js',
-    stat: './src/stat.js'
+    index: './src/js/index.js',
+    about: './src/js/about.js',
+    stat: './src/js/statistic.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -32,8 +32,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ['stat'],
       hash: true,
-      template: './src/stat.html',
-      filename: 'stat.html',
+      template: './src/statistic.html',
+      filename: 'statistic.html',
       favicon: './src/static/favicon.ico',
     }),
     new MiniCssExtractPlugin({
@@ -65,21 +65,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: { sourceMap: true }
-          }, {
-            loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: './postcss.config.js' } }
-          }
-        ]
-      },
-      {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           'style-loader',
           MiniCssExtractPlugin.loader,
