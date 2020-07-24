@@ -8,9 +8,17 @@
     "build": "webpack --config webpack.prod.conf.js"
   },
   "browserslist": [
-    "last 2 versions",
+    "Chrome >= 49",
+    "ChromeAndroid >= 49",
+    "Firefox >= 68",
+    "FirefoxAndroid >= 68",
+    "Safari >= 9",
+    "iOS >= 9",
+    "Opera >= 36",
+    "OperaMobile >= 36",
+    "Samsung >= 5",
     "IE 11",
-    "Firefox ESR"
+    "Edge >= 12"
   ],
   "repository": {
     "type": "git",
