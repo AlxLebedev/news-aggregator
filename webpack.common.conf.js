@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WbebpackMd5Hash = require('webpack-md5-hash');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -39,6 +40,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "styles/[name].css",
     }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/img/static', to: 'img/',
+      }
+    ]),
   ],
   module: {
     rules: [
