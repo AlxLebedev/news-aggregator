@@ -1,16 +1,16 @@
 .finder {
   color: $color-white;
-  background-image: url('../img/main-background-mobile@x1.png');
+  background-image: url('../img/backgrounds/main-background-mobile@x1.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   @media ($tablet) {
-    background-image: url('../img/main-background-tablet@x1.png');
+    background-image: url('../img/backgrounds/main-background-tablet@x1.png');
   }
 
   @media ($desktop) {
-    background-image: url('../img/main-background-desktop@x1.png');
+    background-image: url('../img/backgrounds/main-background-desktop@x1.png');
   }
 
   &__heading {
