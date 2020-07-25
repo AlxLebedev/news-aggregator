@@ -80,10 +80,6 @@
     width: 288px;
     margin: 0 auto 8px;
 
-    &:last-child {
-      margin: 0 auto;
-    }
-
     @media ($tablet) {
       width: 224px;
     }

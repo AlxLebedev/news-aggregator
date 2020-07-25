@@ -1,6 +1,9 @@
 .article {
   &__link {
     @include reset-styles-link;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   &__image {
@@ -25,6 +28,7 @@
     padding: 16px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    height: 100%;
 
     @media ($desktop) {
       padding: 20px 24px 24px;
@@ -80,5 +84,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: auto;
   }
 }
