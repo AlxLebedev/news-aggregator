@@ -22,7 +22,7 @@
     display: block;
   }
 
-  &__percent {
+  &__bar {
     display: none;
 
     @media ($tablet) {
@@ -30,7 +30,7 @@
     }
   }
 
-  &__percent-bar {
+  &__bar-values {
     @media ($tablet) {
       display: flex;
       margin-top: 16px;
@@ -38,7 +38,7 @@
     }
   }
 
-  &__percent-value {
+  &__bar-value {
     @media ($tablet) {
       font-size: 12px;
       line-height: 16px;

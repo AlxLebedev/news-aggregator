@@ -164,10 +164,23 @@ export default class DrawUI {
   }
 
   renderReferencesValues(values, newsQuantity) {
+    const topBarValues = document.querySelectorAll('.table__bar-value-top');
+    const bottomBarValues = document.querySelectorAll('.table__bar-value-bottom');
+    const quarterOfNewsQuantity = newsQuantity / 4;
+
+    let counter = null;
+    for (let value of topBarValues) {
+      value.innerText = counter + quarterOfNewsQuantity;
+      counter += quarterOfNewsQuantity;
+    }
+
+    for (let i = 0; i < bottomBarValues.length; i += 1) {
+      bottomBarValues[i].innerText = topBarValues[i].innerText;
+    }
+
     for (let i = 0; i < this.referencesValuesElements.length; i += 1) {
-      this.referencesValuesElements[i].dataset.value = values[i];
-      this.referencesValuesElements[i].innerText = `${values[i] === null ? `0` : Math.round((values[i] / newsQuantity) * 100)}`;
-      this.referencesValuesElements[i].style.width = `${values[i] === null ? '7px' : `${(values[i] / newsQuantity) * 100}%`}`;
+      this.referencesValuesElements[i].innerText = `${values[i] === null ? `0` : values[i]}`;
+      this.referencesValuesElements[i].style.width = `${values[i] === null ? '16px' : `${(values[i] / newsQuantity) * 100}%`}`;
     }
   }
 }
