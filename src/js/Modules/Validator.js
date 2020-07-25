@@ -4,11 +4,6 @@ export default class Validator {
   }
 
   check(value) {
-    if (value !== '') {
-      this.validUserQuery = true;
-    } else {
-      this.validUserQuery = false;
-    }
-    return this.validUserQuery;
+    return this.validUserQuery = value !== '';
   }
 }
