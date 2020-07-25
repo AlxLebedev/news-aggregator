@@ -1,16 +1,17 @@
 .slider {
   overflow: hidden;
+  width: 90%;
+  margin: auto;
 
   .slider__swiper-container {
-    width: 90%;
     max-width: 1980px;
     height: 264px;
-  
-    @media ($desktop) {
-      width: 85%;
-    }
   }
-  
+
+  .slider__swiper-button-prev, .slider__swiper-button-next {
+    display: none;
+  }
+
   .swiper-slide {
     background-color: $color-white;
     height: 85%;
@@ -18,10 +19,6 @@
 
   .swiper-pagination-bullet-active {
     background-color: $color-black;
-  }
-
-  .slider__swiper-button-prev, .slider__swiper-button-next {
-    display: none;
   }
   
   @media ($desktop) {
