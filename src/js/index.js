@@ -9,6 +9,7 @@ const addListeners = new AddListeners(drawUI);
 addListeners.init();
 
 if (sessionStorage.newsData) {
+  document.querySelector('.finder__input').value = sessionStorage.getItem('userQuery');
   const newsData = JSON.parse(sessionStorage.getItem('newsData'));
   drawUI.renderResultsContent(newsData);
 }

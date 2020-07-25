@@ -20,6 +20,6 @@ export default class AddListeners {
   sendQuery() {
     this.userQuery = this.finderInput.value;
     this.getNews.get(this.userQuery);
-    this.finderInput.value = '';
+    // this.finderInput.value = '';
   }
 }
