@@ -83,7 +83,8 @@
     color: $color-white;
     background-color: $color-blue;
     padding-left: 3px;
-    transition: 1s;
+    width: 0;
+    transition: width 1s;
 
     @media($tablet) {
       padding-left: 8px;
