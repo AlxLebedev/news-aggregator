@@ -29,6 +29,14 @@
     }
   }
 
+  &__social {
+    margin-top: -10px;
+
+    @media($tablet) {
+      margin-top: 0;
+    }
+  }
+
   &__nav-list {
     flex-direction: column;
 
