@@ -73,13 +73,10 @@
   &__search {
     position: relative;
     box-sizing: border-box;
-    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    background-color: $color-white;
+    background-color: transparent;
 
     &::before {
       position: absolute;
@@ -104,7 +101,6 @@
     @media ($tablet) {
       max-width: 700px;
       justify-content: space-between;
-      padding-left: 25px;
       margin: auto;
 
       &::before {
@@ -127,27 +123,29 @@
 
   &__input {
     font-size: 16px;
-    width: 80%;
+    width: 100%;
+    box-sizing: border-box;
     border: none;
     outline: none;
+    margin: auto;
+    height: 56px;
+    border-radius: 30px;
+    padding: 0 20px;
 
     &::placeholder {
       font-size: 16px;
     }
 
     @media ($tablet) {
-      padding-right: 20px;
-      width: 280px;
-      flex-grow: 1;
+      padding-right: 180px;
     }
   }
 
   &__button {
-    position: absolute;
-    top: 72px;
     width: 100%;
     color: $color-white;
     background-color: $color-blue;
+    margin-top: 10px;
 
     &:hover {
       background-color: $color-blue-light;
@@ -158,7 +156,9 @@
     }
 
     @media ($tablet) {
-      position: static;
+      position: absolute;
+      top: 0;
+      left: calc(100% - 159px);
       width: 160px;
       margin: 0;
     }
