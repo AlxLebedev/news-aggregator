@@ -10,15 +10,7 @@
     display: block;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    width: 288px;
-
-    @media ($tablet) {
-      width: 224px;
-    }
-
-    @media ($desktop) {
-      width: 400px;
-    }
+    width: 100%;
   }
 
   &__wrapper {

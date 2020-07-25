@@ -64,28 +64,29 @@
   &__articles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 
-    @media ($tablet) {
-      max-width: 800px;
-      margin: auto;
-    }
+    // @media ($tablet) {
+    //   max-width: 800px;
+      
+    // }
 
     @media ($desktop) {
       max-width: 1230px;
+      margin: auto;
     }
   }
 
   &__article {
-    width: 288px;
-    margin: 0 auto 8px;
+    margin: 0 5px 8px;
 
     @media ($tablet) {
-      width: 224px;
+      min-width: 224px;
+      width: calc((100% / 3) - 10px);
     }
 
     @media ($desktop) {
-      width: 400px;
+      min-width: 400px;
     }
   }
 
