@@ -20,6 +20,13 @@
     @include reset-styles-link;
     color: $color-gray-havy-dark;
     padding-bottom: 14px;
+    transition: opacity 0.2s;
+
+    &[href] {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
 
     &--active {
       color: $color-black;

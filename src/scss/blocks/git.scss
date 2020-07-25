@@ -74,7 +74,8 @@
       height: auto;
 
       &:hover {
-        background-color: initial;
+        opacity: 0.6;
+        background-color: transparent;
       }
     }
   }

@@ -26,9 +26,14 @@
     @include reset-styles-link;
     font-family: $font-robotoslab;
     font-weight: bold;
+    transition: opacity 0.2s;
 
     &--color-white {
       color: $color-white;
+    }
+
+    &:hover {
+      opacity: 0.6;
     }
 
     @media ($tablet) {
