@@ -86,10 +86,10 @@ export default class DrawUI {
     this.showMoreButton.addEventListener('click', () => {
       this.articles.splice(0, 3);
       this.renderArticles();
+      if (this.articles.length <= 3) {
+        this.showMoreButton.remove();
+      }
     });
-    if (this.articles.length <= 3) {
-      this.showMoreButton.remove();
-    }
     this.renderArticles();
   }
 
@@ -113,12 +113,7 @@ export default class DrawUI {
     }
     const articlesArrayLength = articlesArray.length;
     let firstArticle = 0;
-    let lastArticle = null;
-    if (articlesArrayLength < 3) {
-      lastArticle = articlesArrayLength - 1;
-    } else {
-      lastArticle = 2;
-    }
+    let lastArticle = articlesArrayLength < 3 ? articlesArrayLength - 1 : 2;
 
     for (let i = firstArticle; i <= lastArticle; i += 1) {
       articleData.image = articlesArray[i].urlToImage;
