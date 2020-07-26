@@ -20,17 +20,15 @@
     font-family: $font-robotoslab;
     font-weight: 400;
     font-size: 30px;
-    line-height: 40px;
     margin: 0 0 16px;
 
     @media ($tablet) {
-      line-height: 34px;
+      line-height: 1;
     }
   }
 
   &__site-description {
     font-size: 18px;
-    line-height: 24px;
   }
 
   &__site-paragraph {

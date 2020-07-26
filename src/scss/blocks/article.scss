@@ -48,11 +48,10 @@
   &__title {
     font-family: $font-robotoslab;
     font-size: 22px;
-    line-height: 26px;
     margin: 0 0 10px;
 
     @media ($tablet) {
-      line-height: 24px;
+      line-height: 1;
     }
   }
 
@@ -60,14 +59,12 @@
     margin-bottom: 5px;
 
     @media ($tablet) {
-      line-height: 22px;
       margin-bottom: 12px;
     }
   }
 
   &__owner {
     font-family: $font-robotoslab;
-    line-height: 20px;
     color: $color-gray-havy-dark;
     font-weight: bold;
     text-transform: uppercase;

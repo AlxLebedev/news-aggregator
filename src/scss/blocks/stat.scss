@@ -18,7 +18,7 @@
   &__title {
     font-family: $font-robotoslab;
     font-size: 30px;
-    line-height: 34px;
+    line-height: 1;
     font-weight: normal;
     margin: 0 0 16px;
 
@@ -28,7 +28,6 @@
 
     @media ($desktop) {
       font-size: 40px;
-      line-height: 46px;
     }
   }
 

@@ -4,7 +4,7 @@
 
   &__title {
     font-size: 12px;
-    line-height: 18px;
+    line-height: 1.5;
     color: $color-gray-havy-dark;
     vertical-align: top;
   }
@@ -41,7 +41,6 @@
   &__bar-value {
     @media ($tablet) {
       font-size: 12px;
-      line-height: 16px;
       color: $color-gray-havy-dark;
       width: 25%;
 

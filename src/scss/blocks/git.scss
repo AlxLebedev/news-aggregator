@@ -19,7 +19,6 @@
     margin: 0;
     font-family: $font-robotoslab;
     font-size: 30px;
-    line-height: 40px;
     width: 60%;
     padding: 0 16px 16px;
 
@@ -30,7 +29,7 @@
 
     @media ($desktop) {
       font-size: 40px;
-      line-height: 46px;
+      line-height: 1;
       padding: 0 0 64px 104px;
     }
   }

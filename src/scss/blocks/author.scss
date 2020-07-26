@@ -55,7 +55,6 @@
     margin-bottom: 16px;
     font-family: $font-robotoslab;
     font-size: 30px;
-    line-height: 40px;
 
     @media ($tablet) {
       margin-top: 0;
@@ -63,7 +62,7 @@
 
     @media ($desktop) {
       font-size: 40px;
-      line-height: 46px;
+      line-height: 1;
       margin-bottom: 24px;
     }
   }
@@ -71,6 +70,5 @@
   &__bio {
     margin: 0;
     font-size: 18px;
-    line-height: 24px;
   }
 }
