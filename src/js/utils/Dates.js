@@ -10,20 +10,21 @@ export default class Dates {
     this.currentDate = new Date();
     this.lastDate = new Date(this.currentDate - (this.daysAgo * this.msPerDay));
 
-    const currentYear = `${this.currentDate.getFullYear()}`;
-    const currentMonth = this.currentDate.getMonth() + 1 < 10 ? `0${this.currentDate.getMonth() + 1}` : `${this.currentDate.getMonth() + 1}`;
-    const currentDay = this.currentDate.getDate() < 10 ? `0${this.currentDate.getDate()}` : `${this.currentDate.getDate()}`;
-    const toDate = `${currentYear}-${currentMonth}-${currentDay}`;
-  
-    const lastYear = `${this.lastDate.getFullYear()}`;
-    const lastMonth = this.lastDate.getMonth() + 1 < 10 ? `0${this.lastDate.getMonth() + 1}` : `${this.lastDate.getMonth() + 1}`;
-    const lastDay = this.lastDate.getDate() < 10 ? `0${this.lastDate.getDate()}` : `${this.lastDate.getDate()}`;
-    const fromDate = `${lastYear}-${lastMonth}-${lastDay}`;
+    const fromDate = this.getFormatedDate(this.lastDate);
+    const toDate = this.getFormatedDate(this.currentDate);
 
     return [fromDate, toDate];
   }
 
-   getDateRange() {
+  getFormatedDate(date) {
+    const currentYear = `${date.getFullYear()}`;
+    const currentMonth = String((date.getMonth() + 1)).padStart(2, '0');
+    const currentDay = String(date.getDate()).padStart(2, '0');
+    
+    return `${currentYear}-${currentMonth}-${currentDay}`;
+  }
+
+  getDateRange() {
     this.currentDate = new Date();
     this.lastDate = new Date(this.currentDate - (this.daysAgo * this.msPerDay));
 
