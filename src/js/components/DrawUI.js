@@ -170,7 +170,7 @@ export default class DrawUI {
 
     let counter = null;
     for (let value of topBarValues) {
-      value.innerText = newsQuantity === 3 ? counter + quarterOfNewsQuantity : Math.round(counter + quarterOfNewsQuantity);
+      value.innerText = newsQuantity <= 10 ? (counter + quarterOfNewsQuantity).toFixed(1) : Math.round(counter + quarterOfNewsQuantity);
       counter += quarterOfNewsQuantity;
     }
 
