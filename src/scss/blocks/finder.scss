@@ -30,7 +30,7 @@
   }
 
   &__title {
-    @include reset-default-margin;
+    margin: 0;
     font-family: $font-robotoslab;
     font-size: 36px;
     line-height: 40px;
@@ -55,8 +55,7 @@
   }
 
   &__explanation {
-    @include reset-default-margin;
-    margin-top: 16px;
+    margin: 16px 0 0;
     font-size: 20px;
     line-height: 26px;
 
@@ -66,13 +65,12 @@
     }
 
     @media ($desktop) {
-      margin-top: 32px;
+      margin: 32px 0 0;
     }
   }
 
   &__search {
     position: relative;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -81,12 +79,13 @@
     &::before {
       position: absolute;
       content: 'Нужно ввести ключевое слово';
+      display: flex;
+      align-items: center;
       width: 220px;
       height: 30px;
       top: -50px;
       left: 0;
       font-size: 14px;
-      line-height: 30px;
       text-align: center;
       padding: 5px;
       border-radius: 30px;
@@ -125,7 +124,6 @@
   &__input {
     font-size: 16px;
     width: 100%;
-    box-sizing: border-box;
     border: none;
     outline: none;
     margin: auto;

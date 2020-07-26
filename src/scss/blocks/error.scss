@@ -27,7 +27,6 @@
   }
 
   &__warning {
-    @include reset-default-margin;
     font-family: $font-robotoslab;
     font-size: 16px;
     line-height: 16px;
@@ -42,8 +41,6 @@
   }
 
   &__message {
-    @include reset-default-margin;
-    box-sizing: border-box;
     color: $color-gray-havy-dark;
     text-align: center;
     max-width: 356px;

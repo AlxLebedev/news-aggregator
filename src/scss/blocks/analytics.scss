@@ -14,16 +14,15 @@
   }
 
   &__title {
-    @include reset-default-margin;
     font-family: $font-robotoslab;
     font-size: 22px;
     line-height: 30px;
     font-weight: 400;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
 
     @media ($tablet) {
       font-size: 26px;
-      margin-bottom: 49px;
+      margin: 0 0 49px;
     }
   }
 }

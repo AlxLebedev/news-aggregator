@@ -15,11 +15,10 @@
   }
 
   &__title {
-    @include reset-default-margin;
     font-family: $font-robotoslab;
     font-size: 30px;
     line-height: 40px;
-    margin-bottom: 40px;
+    margin: 0 0 40px;
 
     @media ($desktop) {
       margin: 0 178px 0 0;
@@ -55,7 +54,7 @@
   }
 
   &__name {
-    @include reset-default-margin;
+    margin: 0;
   }
 
   &__image {

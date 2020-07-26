@@ -46,11 +46,10 @@
   }
 
   &__title {
-    @include reset-default-margin;
     font-family: $font-robotoslab;
     font-size: 22px;
     line-height: 26px;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 
     @media ($tablet) {
       line-height: 24px;
@@ -67,7 +66,6 @@
   }
 
   &__owner {
-    @include reset-default-margin;
     font-family: $font-robotoslab;
     line-height: 20px;
     color: $color-gray-havy-dark;
@@ -76,6 +74,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: auto;
+    margin: auto 0 0;
   }
 }

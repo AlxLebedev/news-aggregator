@@ -34,10 +34,9 @@
   }
 
   &__message {
-    @include reset-default-margin;
     color: $color-gray-havy-dark;
     text-align: center;
-    margin-top: 50px;
+    margin: 50px 0 0;
   }
 }
 

@@ -18,7 +18,7 @@
   }
 
   &__copyright {
-    @include reset-default-margin;
+    margin: 0;
     color: $color-gray-havy-dark;
     width: 100%;
     order: 2;

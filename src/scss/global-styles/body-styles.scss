@@ -8,3 +8,7 @@ body {
   margin: 0;
   min-width: $width-mobile;
 }
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}

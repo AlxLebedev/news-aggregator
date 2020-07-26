@@ -30,14 +30,13 @@
   }
 
   &__title {
-    @include reset-default-margin;
     font-family: $font-robotoslab;
     font-size: 30px;
     line-height: 34px;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
 
     @media ($tablet) {
-      margin-bottom: 0;
+      margin: 0;
     }
 
     @media ($desktop) {
@@ -65,11 +64,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    // @media ($tablet) {
-    //   max-width: 800px;
-      
-    // }
 
     @media ($desktop) {
       max-width: 1230px;
