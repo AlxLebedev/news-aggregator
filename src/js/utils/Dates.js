@@ -73,17 +73,10 @@ export default class Dates {
       'Декабрь'
     ];
 
-    for (let date of datesArray) {
-      monthesArray.push(monthesNames[date.getMonth()]);
-    }
+    datesArray.map( item => monthesArray.push(monthesNames[item.getMonth()]) );
 
     const result = Array.from(new Set(monthesArray));
-
-    if (result.length > 1) {
-      return result.join(' - ');
-    } else {
-      return String(result);
-    }
+    return result.length > 1 ? result.join(' - ') : String(result);
   }
 
   formatDate(date) {
