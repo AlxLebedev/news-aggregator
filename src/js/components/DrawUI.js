@@ -122,7 +122,7 @@ export default class DrawUI {
       articlesContainer.insertAdjacentHTML('beforeend', articleMarkup);
     }
 
-    if (this.articles.length === 1) {
+    if (this.articles.length <= 3) {
       this.showMoreButton.remove();
     }
   }
