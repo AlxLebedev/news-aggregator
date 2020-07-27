@@ -8,6 +8,7 @@ export default class DrawUI {
     this.dates = new Dates();
     this.finderSearchField = document.querySelector('.finder__search');
     this.resultsBlock = document.querySelector('.results');
+    this.resultsTemplate = document.getElementById('results-template');
     this.preloaderElement = null;
     this.preloaderTemplate = document.getElementById('preloader-template');
     this.notFoundTemplate = document.getElementById('not-found-template');
@@ -79,8 +80,8 @@ export default class DrawUI {
 
   renderResultsContent(news) {
     this.articles = news.articles;
-    const resultsMarkup = this.markup.getResultsMarkup();
-    this.resultsBlock.insertAdjacentHTML('afterbegin', resultsMarkup);
+    const resultsContainer = this.resultsTemplate.content.cloneNode(true);
+    this.resultsBlock.appendChild(resultsContainer);
 
     this.showMoreButton = document.querySelector('.results__button');
     this.showMoreButton.addEventListener('click', () => {
