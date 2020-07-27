@@ -57,6 +57,8 @@
 
   &__content {
     margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @media ($tablet) {
       margin-bottom: 12px;
