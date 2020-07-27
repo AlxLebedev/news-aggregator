@@ -43,8 +43,6 @@ export default class DrawUI {
   }
 
   showErrorWarning(errorType) {
-    console.log(errorType);
-    console.log(this.notFoundTemplate.content);
     const error = errorType === 'notFound' ? this.notFoundTemplate.content.cloneNode(true) : this.serverErrorTemplate.content.cloneNode(true);
     this.resultsBlock.appendChild(error);
   }
