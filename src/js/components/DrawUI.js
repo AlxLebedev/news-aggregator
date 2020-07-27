@@ -13,6 +13,7 @@ export default class DrawUI {
     this.preloaderTemplate = document.getElementById('preloader-template');
     this.notFoundTemplate = document.getElementById('not-found-template');
     this.serverErrorTemplate = document.getElementById('server-error-template');
+    this.slideTemplate = document.getElementById('swiper-slide-template');
     this.articles = null;
     this.showMoreButton = null;
     this.daysElements = Array.from(document.querySelectorAll('.table__day'));
@@ -52,26 +53,20 @@ export default class DrawUI {
       swiperWrapper.insertAdjacentHTML('beforeend', `<div>${response}</div>`);
       return;
     }
-    const commitArray = response;
-    const commitData = {
-      date: null,
-      avatar: null,
-      name: null,
-      email: null,
-      message: null
-    };
-    for (let commit of commitArray) {
-      commitData.date = this.dates.formatDate(commit.commit.author.date);
-      commitData.avatar = commit.author.avatar_url;
-      commitData.name = commit.commit.author.name;
-      commitData.email = commit.commit.author.email;
-      commitData.message = commit.commit.message;
-      
-      const commitMarkup = this.markup.getCommitMarkup(commitData);
-      const swiperWrapper = document.querySelector('.swiper-wrapper');
-      swiperWrapper.insertAdjacentHTML('beforeend', commitMarkup);
-    }
 
+    const commitArray = response;
+
+    for ( let commit of commitArray) {
+      const slideTemplate = this.slideTemplate.content.cloneNode(true);
+      slideTemplate.querySelector('.commit__date').innerText = this.dates.formatDate(commit.commit.author.date);
+      slideTemplate.querySelector('.developer__image').src = commit.author.avatar_url;
+      slideTemplate.querySelector('.developer__name').innerText = commit.commit.author.name;
+      slideTemplate.querySelector('.developer__mail').innerText = commit.commit.author.email;
+      slideTemplate.querySelector('.commit__message').innerText = commit.commit.message;
+      
+      const swiperWrapper = document.querySelector('.swiper-wrapper');
+      swiperWrapper.append(slideTemplate);
+    }
     const slider = new Slider();
     slider.init();
   }
