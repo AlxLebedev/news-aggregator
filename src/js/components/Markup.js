@@ -4,7 +4,7 @@ export default class Markup {
     this.commitMarkup = null;
     // this.notFoundMarkup = null;
     // this.serverErrorMarkup = null;
-    this.resultsMarkup = null;
+    // this.resultsMarkup = null;
     this.articleMarkup = null;
   }
 

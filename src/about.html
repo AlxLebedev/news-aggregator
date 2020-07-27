@@ -117,6 +117,27 @@
             <div class="slider__swiper-button-next swiper-button-next"></div>
           </div>
         </div>
+        <template id="swiper-slide">
+          <div class="swiper-slide">
+            <div class="commit">
+              <div class="commit__wrapper">
+                <p class="commit__date">${commitData.date}</p>
+                <div class="developer commit__developer">
+                  <div class="developer__image-box">
+                    <img class="developer__image" src="${commitData.avatar}">
+                  </div>
+                  <div class="developer__info">
+                    <p class="developer__name">${commitData.name}</p>
+                    <p class="developer__mail">${commitData.email}</p>
+                  </div>
+                </div>
+                <p class="commit__message">
+                  ${commitData.message}
+                </p>
+              </div>
+            </div>
+          </div>
+        </template>
       </div>
     </section>
   </main>
