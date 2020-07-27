@@ -1,3 +1,6 @@
+import '../img/svg/common/fb.svg';
+import '../img/svg/common/github.svg';
+
 import '../scss/styles-stat.scss';
 
 import Analytics from './Modules/Analytics';

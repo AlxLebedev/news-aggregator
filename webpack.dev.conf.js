@@ -11,7 +11,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
           name: 'img/[name].[ext]',

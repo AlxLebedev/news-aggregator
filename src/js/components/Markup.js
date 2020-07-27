@@ -88,7 +88,14 @@ export default class Markup {
     <div class="results__content">
         <div class="results__header">
           <h2 class="results__title">Результаты поиска</h2>
-          <a class="results__link" href="./statistic.html">Посмотреть аналитику ></a>
+          <a class="results__link" href="./statistic.html">
+            Посмотреть аналитику
+            <span class="results__arrow">
+            <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#arrow"></use>
+            </svg>
+          </span>
+          </a>
         </div>
         <div class="results__articles"></div>
         <button class="button results__button" type="button">Показать еще</button>

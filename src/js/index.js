@@ -1,3 +1,9 @@
+import '../img/svg/common/arrow.svg';
+import '../img/svg/common/fb.svg';
+import '../img/svg/common/github.svg';
+import '../img/svg/index/not-found.svg';
+import '../img/svg/index/server-error.svg';
+
 import '../scss/styles-index.scss';
 
 import DrawUI from './components/DrawUI';
