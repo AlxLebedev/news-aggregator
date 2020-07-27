@@ -10,6 +10,7 @@ export default class DrawUI {
     this.resultsBlock = document.querySelector('.results');
     this.errorMarkup = null;
     this.preloaderElement = null;
+    this.preloaderTemplate = document.getElementById('preloader-template');
     this.articles = null;
     this.showMoreButton = null;
     this.daysElements = Array.from(document.querySelectorAll('.table__day'));
@@ -30,8 +31,9 @@ export default class DrawUI {
   }
 
   showPreloader() {
-    const preloaderMarkup = this.markup.getPreloaderMarkup();
-    this.resultsBlock.insertAdjacentHTML('afterbegin', preloaderMarkup);
+    let preloaderMarkup = this.preloaderTemplate.content.cloneNode(true);
+    console.log(preloaderMarkup);
+    this.resultsBlock.appendChild(preloaderMarkup);
   }
 
   hidePreloader() {
