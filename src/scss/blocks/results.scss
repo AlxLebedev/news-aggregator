@@ -56,6 +56,10 @@
       color: $color-gray-havy-dark;
     }
 
+    &:hover > .results__arrow {
+      fill: $color-gray-havy-dark;
+    }
+
     &:active {
       opacity: 0.6;
     }
@@ -63,6 +67,7 @@
 
   &__arrow {
     display: flex;
+    transition: fill 0.3s;
   }
 
   &__articles {

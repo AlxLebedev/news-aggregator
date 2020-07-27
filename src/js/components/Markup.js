@@ -91,7 +91,7 @@ export default class Markup {
           <a class="results__link" href="./statistic.html">
             Посмотреть аналитику
             <span class="results__arrow">
-            <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="26" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="#arrow"></use>
             </svg>
           </span>
