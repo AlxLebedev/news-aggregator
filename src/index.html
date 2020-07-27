@@ -50,6 +50,28 @@
           </p>
         </div>
       </template>
+      <template id="not-found-template">
+        <div class="error">
+          <div class="error__wrapper">
+            <svg class="error__image" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#not-found"></use>
+            </svg>
+            <p class="error__warning">Ничего не найдено</p>
+            <p class="error__message">К сожалению по вашему запросу ничего не найдено.</p>
+          </div>
+        </div>
+      </template>
+      <template id="server-error-template">
+        <div class="error">
+          <div class="error__wrapper">
+            <svg class="error__image" width="64" height="64" viewBox="0 0 64 64" enable-background="new 0 0 64 64" fill="#b6bcbf">
+              <use xlink:href="#server-error"></use>
+            </svg>
+            <p class="error__warning">Упс, проблемка...</p>
+            <p class="error__message">Не получается получить ответ от сервера.</p>
+          </div>
+        </div>
+      </template>
     </section>
     <section class="author">
       <div class="author__wrapper">

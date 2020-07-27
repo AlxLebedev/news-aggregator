@@ -8,9 +8,10 @@ export default class DrawUI {
     this.dates = new Dates();
     this.finderSearchField = document.querySelector('.finder__search');
     this.resultsBlock = document.querySelector('.results');
-    this.errorMarkup = null;
     this.preloaderElement = null;
     this.preloaderTemplate = document.getElementById('preloader-template');
+    this.notFoundTemplate = document.getElementById('not-found-template');
+    this.serverErrorTemplate = document.getElementById('server-error-template');
     this.articles = null;
     this.showMoreButton = null;
     this.daysElements = Array.from(document.querySelectorAll('.table__day'));
@@ -31,9 +32,8 @@ export default class DrawUI {
   }
 
   showPreloader() {
-    let preloaderMarkup = this.preloaderTemplate.content.cloneNode(true);
-    console.log(preloaderMarkup);
-    this.resultsBlock.appendChild(preloaderMarkup);
+    const preloader = this.preloaderTemplate.content.cloneNode(true);
+    this.resultsBlock.appendChild(preloader);
   }
 
   hidePreloader() {
@@ -41,13 +41,11 @@ export default class DrawUI {
     this.preloaderElement.remove();
   }
 
-  showErrorWarning(error) {
-    if (error == 'notFound') {
-      this.errorMarkup = this.markup.getNotFoundMarkup();
-    } else if (error == 'server') {
-      this.errorMarkup = this.markup.getServerErrorMarkup();
-    }
-    this.resultsBlock.insertAdjacentHTML('afterbegin', this.errorMarkup);
+  showErrorWarning(errorType) {
+    console.log(errorType);
+    console.log(this.notFoundTemplate.content);
+    const error = errorType === 'notFound' ? this.notFoundTemplate.content.cloneNode(true) : this.serverErrorTemplate.content.cloneNode(true);
+    this.resultsBlock.appendChild(error);
   }
 
   renderCommits(response) {
