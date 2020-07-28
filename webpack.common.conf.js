@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WbebpackMd5Hash = require('webpack-md5-hash');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-// const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -18,14 +17,6 @@ module.exports = {
   plugins: [
     new WbebpackMd5Hash(),
     new SpriteLoaderPlugin(),
-    // new SVGSpritemapPlugin('./src/img/svg/**/*.svg', {
-    //   output: {
-    //     filename: 'assets/spritemap.svg'
-    //   },
-    //   sprite: {
-    //     prefix: false,
-    //   }
-    // }),
     new HtmlWebpackPlugin({
       chunks: ['index'],
       hash: true,
