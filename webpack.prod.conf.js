@@ -1,11 +1,7 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.conf');
 const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = merge(common, {
-  mode: 'production',
+module.exports = {
   module: {
     rules: [
       {
@@ -42,26 +38,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.(scss|css)$/,
-        use: [
-          'style-loader',
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-            }
-          },
-          {
-            loader: 'css-loader',
-          }, {
-            loader: 'postcss-loader',
-            options: { config: { path: './postcss.config.js' } }
-          }, {
-            loader: 'sass-loader',
-          }
-        ]
-      },
     ]
   },
   optimization: {
@@ -70,4 +46,4 @@ module.exports = merge(common, {
       new OptimizeCSSAssetsPlugin({}),
     ],
   },
-});
+};
