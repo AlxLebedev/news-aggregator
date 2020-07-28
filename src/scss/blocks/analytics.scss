@@ -1,0 +1,27 @@
+.analytics {
+  background-color: $color-gray-default;
+
+  &__wrapper {
+    padding: 24px 16px 38px;
+
+    @media ($tablet) {
+      padding: 40px;
+    }
+
+    @media ($desktop) {
+      padding: 80px 104px;
+    }
+  }
+
+  &__title {
+    font-family: $font-robotoslab;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 16px;
+
+    @media ($tablet) {
+      font-size: 26px;
+      margin: 0 0 49px;
+    }
+  }
+}

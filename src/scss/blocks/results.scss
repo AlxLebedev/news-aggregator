@@ -1,0 +1,119 @@
+.results {
+  &__content {
+    background-color: $color-gray-default;
+    padding: 32px 16px 44px;
+
+    @media ($tablet) {
+      padding: 40px;
+    }
+
+    @media ($desktop) {
+      padding: 80px 104px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 35px;
+
+    @media ($tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto 35px;
+    }
+
+    @media ($desktop) {
+      margin: 0 auto 64px;
+      max-width: 1980px;
+    }
+  }
+
+  &__title {
+    font-family: $font-robotoslab;
+    font-size: 30px;
+    line-height: 1;
+    margin: 0 0 16px;
+
+    @media ($tablet) {
+      margin: 0;
+    }
+
+    @media ($desktop) {
+      font-size: 40px;
+    }
+  }
+
+  &__link {
+    @include reset-styles-link;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s, opacity 0.3s;
+
+    &:hover {
+      color: $color-gray-havy-dark;
+    }
+
+    &:hover > .results__arrow {
+      fill: $color-gray-havy-dark;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    transition: fill 0.3s;
+  }
+
+  &__articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media ($desktop) {
+      max-width: 1230px;
+      margin: auto;
+    }
+  }
+
+  &__article {
+    margin: 0 5px 8px;
+
+    @media ($tablet) {
+      min-width: 224px;
+      width: calc((100% / 3) - 10px);
+    }
+
+    @media ($desktop) {
+      min-width: 400px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    background-color: $color-white;
+    margin-top: 13px;
+
+    &:hover {
+      background-color: $color-gray-dark;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    @media ($tablet) {
+      width: 240px;
+    }
+
+    @media ($desktop) {
+      width: 288px;
+      margin: 64px auto 80px
+    }
+  }
+}

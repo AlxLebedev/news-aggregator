@@ -1,0 +1,43 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid $color-gray-dark;
+
+  &--page-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px;
+
+    @media ($tablet) {
+      padding: 22px 40px 18px;
+    }
+
+    @media ($desktop) {
+      padding: 30px 104px 26px;
+    }
+  }
+
+  &__logo {
+    @include reset-styles-link;
+    font-family: $font-robotoslab;
+    font-weight: bold;
+    transition: opacity 0.2s;
+
+    &--color-white {
+      color: $color-white;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @media ($tablet) {
+      font-size: 20px;
+    }
+  }
+}

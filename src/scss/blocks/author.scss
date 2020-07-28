@@ -1,0 +1,74 @@
+.author {
+  background-color: $color-white;
+
+  &__wrapper {
+    padding: 32px 16px;
+
+    @media ($tablet) {
+      display: flex;
+      padding: 40px 40px 48px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    @media ($desktop) {
+      padding: 80px 104px;
+      max-width: 1980px;
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+    justify-content: center;
+
+    @media ($tablet) {
+      margin-right: 32px;
+    }
+
+    @media ($desktop) {
+      margin-right: 56px;
+    }
+  }
+
+  &__photo {
+    margin: auto;
+    border-radius: 50%;
+    width: 272px;
+
+    @media ($tablet) {
+      width: 232px;
+    }
+
+    @media ($desktop) {
+      width: 350px;
+    }
+  }
+
+  &__description {
+    @media ($desktop) {
+      padding-top: 51px;
+      padding-right: 216px;
+    }
+  }
+
+  &__title {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-family: $font-robotoslab;
+    font-size: 30px;
+
+    @media ($tablet) {
+      margin-top: 0;
+    }
+
+    @media ($desktop) {
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__bio {
+    margin: 0;
+    font-size: 18px;
+  }
+}

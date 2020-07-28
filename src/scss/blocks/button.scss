@@ -1,0 +1,13 @@
+.button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 56px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin: auto;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}

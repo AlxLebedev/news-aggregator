@@ -1,0 +1,53 @@
+.error {
+  background-color: $color-gray-default;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 16px;
+
+    @media($tablet) {
+      padding: 50px 40px;
+    }
+
+    @media($desktop) {
+      padding: 80px 104px;
+    }
+  }
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+
+    @media($desktop) {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  &__warning {
+    font-family: $font-robotoslab;
+    line-height: 1;
+    text-align: center;
+    margin: 10px auto 10px;
+
+    @media($desktop) {
+      font-size: 26px;
+      line-height: 1;
+      margin: 24px auto 16px;
+    }
+  }
+
+  &__message {
+    color: $color-gray-havy-dark;
+    text-align: center;
+    max-width: 356px;
+    padding: 0 30px;
+    margin: auto;
+
+    @media($desktop) {
+      font-size: 18px;
+    }
+  }
+}

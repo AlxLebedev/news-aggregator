@@ -1,0 +1,38 @@
+.slider {
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+
+  .slider__swiper-container {
+    max-width: 1980px;
+    height: 264px;
+  }
+
+  .slider__swiper-button-prev, .slider__swiper-button-next {
+    display: none;
+  }
+
+  .swiper-slide {
+    background-color: $color-white;
+    height: 85%;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-black;
+  }
+  
+  @media ($desktop) {
+    .slider__swiper-button-prev, .slider__swiper-button-next {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $color-black;
+    }
+  
+    .slider__swiper-button-next::after, .slider__swiper-button-prev::after {
+      font-size: 12px;
+      color: $color-white;
+    }
+  }
+}

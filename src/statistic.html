@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Страница выводит статистику по введенному запросу">
+  <meta name="keywords" content="статистика новостей, агрегатор новостей, анализатор новостей, свежие новости, поиск новостей">
+  <meta name="author" content="Алексей Лебедев">
+  <title>Статистика</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__wrapper">
+      <a class="header__logo" href="index.html">NewsAnalyzer</a>
+      <nav class="nav header__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="./index.html">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="./about.html">О&nbsp;проекте</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="additional-nav">
+      <div class="additional-nav__wrapper">
+        <a class="additional-nav__link" href="./index.html">Главная</a><span> / </span><a class="additional-nav__link additional-nav__link--active">Аналитика</a>
+      </div>
+    </section>
+    <section class="stat">
+      <div class="stat__wrapper">
+        <h1 class="stat__heading">Статистика по&nbsp;введенному запросу новостей</h1>
+        <h2 class="stat__title">Вы&nbsp;спросили:<span class="stat__request">«Путешествия»</span></h2>
+        <dl class="stat__list">
+          <div class="stat__list-group">
+            <dt class="stat__list-title">Новостей за&nbsp;неделю:</dt>
+            <dd class="stat__list-value" id="news-per-week">33&nbsp;324</dd>
+          </div>
+          <div class="stat__list-group">
+            <dt class="stat__list-title">Упоминаний в&nbsp;заголовках:</dt>
+            <dd class="stat__list-value" id="news-in-title">235</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section class="analytics">
+      <div class="analytics__wrapper">
+        <h2 class="analytics__title">Аналитика по&nbsp;дням</h2>
+        <table class=" table analytics__table">
+          <tbody>
+            <tr class="table__title">
+              <td class="table__title-date">Дата<span class="table__title-month">(Август)</span></td>
+              <td class="table__title-quantity">Количество упоминаний</td>
+            </tr>
+            <tr class="table__bar">
+              <td></td>
+              <td class="table__bar-values">
+                <div class="table__bar-value">0</div>
+                <div class="table__bar-value table__bar-value-top">0</div>
+                <div class="table__bar-value table__bar-value-top">0</div>
+                <div class="table__bar-value table__bar-value-top">0</div>
+                <div class="table__bar-value table__bar-value-top">0</div>
+              </td>
+            </tr>
+            <tr class="table__row"><td class="table__day table__day--first">19, пн</td><td class="table__value-container table__value-container--first"><div class="table__value">0</div></td></tr>
+            <tr class="table__row"><td class="table__day">20, вт</td><td class="table__value-container"><div class="table__value">0</div></td></tr>
+            <tr class="table__row"><td class="table__day">21, ср</td><td class="table__value-container"><div class="table__value">0</div></td></tr>
+            <tr class="table__row"><td class="table__day">22, чт</td><td class="table__value-container"><div class="table__value">0</div></td></tr>
+            <tr class="table__row"><td class="table__day">23, пт</td><td class="table__value-container"><div class="table__value">0</div></td></tr>
+            <tr class="table__row"><td class="table__day">24, сб</td><td class="table__value-container"><div class="table__value">0</div></td></tr>
+            <tr class="table__row"><td class="table__day">25, вс</td><td class="table__value-container"><div class="table__value">0</div></td></tr>
+            <tr class="table__bar">
+              <td></td>
+              <td class="table__bar-values">
+                <div class="table__bar-value">0</div>
+                <div class="table__bar-value table__bar-value-bottom">0</div>
+                <div class="table__bar-value table__bar-value-bottom">0</div>
+                <div class="table__bar-value table__bar-value-bottom">0</div>
+                <div class="table__bar-value table__bar-value-bottom">0</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <p class="footer__copyright">&copy;&nbsp;2019 Cote-code</p>
+      <nav class="nav footer__nav">
+        <ul class="nav__list footer__nav-list">
+          <li class="nav__item footer__nav-item">
+            <a class="nav__link footer__nav-link" href="./index.html">Главная</a>
+          </li>
+          <li class="nav__item footer__nav-item">
+            <a class="nav__link footer__nav-link" href="./about.html">О&nbsp;проекте</a>
+          </li>
+          <li class="nav__item footer__nav-item">
+            <a class="nav__link footer__nav-link" href="https://praktikum.yandex.ru/" target="_blank">Яндекс.Практикум</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="social footer__social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link" href="https://github.com/AlxLebedev" aria-label="Гитхаб" target="_blank">
+              <svg class="social__image social__image--github" width="24" height="24" fill="#666666">
+                <use xlink:href="#github"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="https://www.facebook.com/AlxLebedev" aria-label="Фейсбук" target="_blank">
+              <svg class="social__image social__image--fb" width="24" height="24" fill="#666666">
+                <use xlink:href="#fb"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

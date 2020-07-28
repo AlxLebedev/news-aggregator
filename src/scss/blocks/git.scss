@@ -1,0 +1,89 @@
+.git {
+  background-color: $color-gray-default;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0;
+
+    @media ($tablet) {
+      justify-content: space-between;
+      padding: 40px 0;
+    }
+    @media ($desktop) {
+      padding: 72px 0 80px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font-robotoslab;
+    font-size: 30px;
+    width: 60%;
+    padding: 0 16px 16px;
+
+    @media ($tablet) {
+      padding: 0 0 40px 32px;
+      width: 50%;
+    }
+
+    @media ($desktop) {
+      font-size: 40px;
+      line-height: 1;
+      padding: 0 0 64px 104px;
+    }
+  }
+
+  &__button-box {
+    width: 100%;
+    padding: 0 16px;
+    order: 2;
+
+    @media ($tablet) {
+      width: auto;
+      order: initial;
+      padding: 0 40px 0;
+    }
+
+    @media ($desktop) {
+      padding: 0 104px;
+    }
+  }
+
+  &__button {
+    @include reset-styles-link;
+    padding: 15px 67px;
+    margin-top: 24px;
+    border: 1px solid $color-black;
+    background-color: $color-gray-default;
+
+    &:hover {
+      background-color: $color-gray-dark;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    @media ($tablet) {
+      margin-top: 0;
+      border: none;
+      padding: 0;
+      align-items: flex-start;
+      height: auto;
+
+      &:hover {
+        opacity: 0.6;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__button-arrow {
+    display: none;
+
+    @media ($tablet) {
+      display: flex;
+    }
+  }
+}

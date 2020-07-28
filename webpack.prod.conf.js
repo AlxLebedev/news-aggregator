@@ -1,13 +1,11 @@
-const { merge } = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const common = require('./webpack.common.conf');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = merge(common, {
-  mode: 'production',
+module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -40,20 +38,12 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.(woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[name].[ext]'
-        }
-      },
     ]
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        exclude: /node_modules/,
-      })
+      new TerserPlugin({}),
+      new OptimizeCSSAssetsPlugin({}),
     ],
   },
-});
+};

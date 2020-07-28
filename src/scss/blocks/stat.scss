@@ -1,0 +1,60 @@
+.stat {
+  &__heading {
+    @include visually-hidden;
+  }
+
+  &__wrapper {
+    padding: 16px 16px 24px;
+
+    @media ($tablet) {
+      padding: 32px 40px 40px;
+    }
+
+    @media ($desktop) {
+      padding: 40px 104px 80px;
+    }
+  }
+
+  &__title {
+    font-family: $font-robotoslab;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: normal;
+    margin: 0 0 16px;
+
+    @media ($tablet) {
+      margin: 0 0 24px;
+    }
+
+    @media ($desktop) {
+      font-size: 40px;
+    }
+  }
+
+  &__request {
+    display: block;
+
+    @media ($tablet) {
+      display: inline;
+      margin-left: 10px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__list-group {
+    display: flex;
+  }
+
+  &__list-title {
+    font-size: 18px;
+  }
+
+  &__list-value {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}

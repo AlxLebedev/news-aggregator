@@ -1,0 +1,93 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__title {
+    font-size: 12px;
+    line-height: 1.5;
+    color: $color-gray-havy-dark;
+    vertical-align: top;
+  }
+
+  &__title-date {
+    border-bottom: 2px solid $color-gray-havy-dark;
+    padding-bottom: 8px;
+  }
+
+  &__title-quantity {
+    border-bottom: 2px solid $color-gray-havy-dark;
+  }
+
+  &__title-month {
+    display: block;
+  }
+
+  &__bar {
+    display: none;
+
+    @media ($tablet) {
+      display: table-row;
+    }
+  }
+
+  &__bar-values {
+    @media ($tablet) {
+      display: flex;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__bar-value {
+    @media ($tablet) {
+      font-size: 12px;
+      color: $color-gray-havy-dark;
+      width: 25%;
+
+      &:last-child {
+        width: auto;
+      }
+    }
+  }
+  
+  &__day {
+    font-size: 18px;
+    padding-top: 18px;
+    width: 96px;
+
+    @media ($tablet) {
+      padding-top: 56px;
+      width: 102px;
+
+      &--first {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__value-container {
+    padding-top: 18px;
+
+    @media ($tablet) {
+      padding-top: 56px;
+
+      &--first {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__value {
+    font-size: 12px;
+    color: $color-white;
+    background-color: $color-blue;
+    padding: 3px 3px;
+    width: 0;
+    transition: width 1s;
+
+    @media($tablet) {
+      padding: 4px 4px;
+    
+    }
+  }
+}

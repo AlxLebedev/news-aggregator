@@ -1,0 +1,41 @@
+.about {
+  &__heading {
+    @include visually-hidden;
+  }
+
+  &__site {
+    background-color: $color-white;
+    padding: 16px;
+
+    @media($tablet) {
+      padding: 30px 40px;
+    }
+
+    @media ($desktop) {
+      padding: 80px 104px 94px;
+    }
+  }
+
+  &__site-title {
+    font-family: $font-robotoslab;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0 0 16px;
+
+    @media ($tablet) {
+      line-height: 1;
+    }
+  }
+
+  &__site-description {
+    font-size: 18px;
+  }
+
+  &__site-paragraph {
+    margin: 0 0 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
