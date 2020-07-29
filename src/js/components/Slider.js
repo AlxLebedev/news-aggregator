@@ -1,5 +1,4 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/swiper-bundle.css';
 
 export default class Slider {
   constructor() {
@@ -11,8 +10,6 @@ export default class Slider {
     this.mySwiper = new Swiper('.swiper-container', {
       direction: 'horizontal',
       loop: true,
-      // wrapperClass: 'swiper-container__wrapper', //даже после замены названия класса и изменения в разметке, выдает ошибку swiper-wrapper is null
-      // slideClass: 'swiper-container__slide',
       breakpoints: {
         500: {
           spaceBetween: 8,
