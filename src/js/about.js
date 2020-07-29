@@ -9,7 +9,7 @@ import '../img/svg/about/webpack.svg';
 import 'swiper/swiper-bundle.css';
 import '../scss/styles-about.scss';
 
-import GetCommits from './Modules/GetCommits';
+// import GetCommits from './Modules/GetCommits';
 
-const getCommits = new GetCommits();
-getCommits.init();
+// const getCommits = new GetCommits();
+// getCommits.init();
