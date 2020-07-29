@@ -22,8 +22,12 @@ export default class Finder {
     }
     console.log('loading....');
     const news = await this.sendRequest(request);
-    console.log('DONE');
-    console.log(news);
+    if (!news.totalResults) {
+      console.log('NOT FOUND')
+    } else {
+      console.log('DONE');
+      console.log(news);
+    }
   }
 
   async sendRequest(request) {
