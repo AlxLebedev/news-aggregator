@@ -6,16 +6,18 @@ import '../img/svg/index/server-error.svg';
 
 import '../scss/styles-index.scss';
 
-import DrawUI from './components/DrawUI';
-import AddListeners from './Modules/AddListeners';
+import validateRequest from './utils/validate-request';
+import getDatesForNewsApi from './utils/get-dates-for-news-api';
+import NewsApi from './Modules/NewsApi';
+import Finder from './components/Finder';
 
-const drawUI = new DrawUI();
+const newsApi = new NewsApi();
 
-const addListeners = new AddListeners(drawUI);
-addListeners.init();
+const finder = new Finder(validateRequest, getDatesForNewsApi, newsApi);
+finder.init();
 
 if (sessionStorage.newsData) {
   document.querySelector('.finder__input').value = sessionStorage.getItem('userQuery');
   const newsData = JSON.parse(sessionStorage.getItem('newsData'));
-  drawUI.renderResultsContent(newsData);
+  console.log(newsData);
 }
