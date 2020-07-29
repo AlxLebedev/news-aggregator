@@ -24,6 +24,7 @@ module.exports = merge({
     new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       chunks: ['index'],
+      inject: false,
       hash: true,
       template: './src/index.html',
       filename: 'index.html',
@@ -31,6 +32,7 @@ module.exports = merge({
     }),
     new HtmlWebpackPlugin({
       chunks: ['about'],
+      inject: false,
       hash: true,
       template: './src/about.html',
       filename: 'about.html',
@@ -38,6 +40,7 @@ module.exports = merge({
     }),
     new HtmlWebpackPlugin({
       chunks: ['stat'],
+      inject: false,
       hash: true,
       template: './src/statistic.html',
       filename: 'statistic.html',
@@ -62,14 +65,6 @@ module.exports = merge({
         use: {
           loader: 'babel-loader',
         },
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
       },
       {
         test: /\.(scss|css)$/,
