@@ -1,6 +1,5 @@
 import Slider from './Slider';
 import Dates from '../utils/Dates';
-import imageNotFoundPicture from '../../img/static/image-not-found.jpg';
 
 export default class DrawUI {
   constructor() {
@@ -105,12 +104,16 @@ export default class DrawUI {
     for (let i = firstArticle; i <= lastArticle; i += 1) {
       const articleTemplate = this.articleTemplate.content.cloneNode(true);
       let currentDate = this.dates.formatDate(articlesArray[i].publishedAt);
-      articleTemplate.querySelector('.article__image').src = articlesArray[i].urlToImage === null ? `${imageNotFoundPicture}` : articlesArray[i].urlToImage;
+      articleTemplate.querySelector('.article__image').src = articlesArray[i].urlToImage;
       articleTemplate.querySelector('.article__date').innerText = currentDate;
       articleTemplate.querySelector('.article__title').innerText = articlesArray[i].title;
       articleTemplate.querySelector('.article__content').innerText = articlesArray[i].description;
       articleTemplate.querySelector('.article__owner').innerText = articlesArray[i].source.name;
       articleTemplate.querySelector('.article__link').href = articlesArray[i].url;
+
+      articleTemplate.querySelector('.article__image').onerror = function() {
+        this.remove();
+      }
 
       const articlesContainer = document.querySelector('.results__articles');
       articlesContainer.append(articleTemplate);
