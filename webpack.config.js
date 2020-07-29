@@ -67,14 +67,6 @@ module.exports = merge({
         },
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
-      },
-      {
         test: /\.(scss|css)$/,
         use: [
           'style-loader',

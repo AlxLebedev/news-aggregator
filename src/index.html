@@ -110,10 +110,10 @@
       <div class="author__wrapper">
         <div class="author__photo-container">
           <picture>
-            <source media="(min-width: 1440px)" srcset="./img/avatar/avatar-desktop@1x.jpg 1x, ./img/avatar/avatar-desktop@2x.jpg 2x">
-            <source media="(min-width: 768px)" srcset="./img/avatar/avatar-tablet@1x.jpg 1x, ./img/avatar/avatar-tablet@2x.jpg 2x">
-            <source media="(min-width: 320px)" srcset="./img/avatar/avatar-mobile@1x.jpg 1x, ./img/avatar/avatar-mobile@2x.jpg 2x">
-            <img class="author__photo" src="./img/avatar/avatar-mobile@1x.jpg" alt="фото автора">
+            <source media="(min-width: 1440px)" srcset="<%= require('./img/avatar/avatar-desktop@1x.jpg').default %> 1x, <%= require('./img/avatar/avatar-desktop@2x.jpg').default %> 2x">
+            <source media="(min-width: 768px)" srcset="<%= require('./img/avatar/avatar-tablet@1x.jpg').default %> 1x, <%= require('./img/avatar/avatar-tablet@2x.jpg').default %> 2x">
+            <source media="(min-width: 320px)" srcset="<%= require('./img/avatar/avatar-mobile@1x.jpg').default %> 1x, <%= require('./img/avatar/avatar-mobile@2x.jpg').default %> 2x">
+            <img class="author__photo" src="<%= require('./img/avatar/avatar-mobile@1x.jpg').default %>" alt="фото автора">
           </picture>
         </div>
         <div class="author__description">
