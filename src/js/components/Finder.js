@@ -1,7 +1,6 @@
 export default class Finder {
-  constructor(validateRequest, getDatesForNewsApi, newsApi, preloader, error, resultsContainer) {
+  constructor(validateRequest, newsApi, preloader, error, resultsContainer) {
     this.validateRequest = validateRequest;
-    this.getDatesForNewsApi = getDatesForNewsApi;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
@@ -26,7 +25,7 @@ export default class Finder {
     this.error.hide();
     this.resultsContainer.hide();
     this.preloader.show();
-    const news = await this.sendRequest(request);
+    const news = await this.newsApi.fetchNews(request);
     this.preloader.hide();
 
     if (!news.status) {
@@ -40,12 +39,6 @@ export default class Finder {
     }
     this.resultsContainer.show();
     console.log(news);
-  }
-
-  async sendRequest(request) {
-    const [fromDate, toDate] = this.getDatesForNewsApi();
-    const url = `http://newsapi.org/v2/everything?q=${request}&from=${fromDate}&to=${toDate}&sortBy=publishedAt&language=ru&pageSize=100`;
-    return await this.newsApi.fetchNews(url);
   }
 
   showHint() {

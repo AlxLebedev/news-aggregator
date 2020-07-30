@@ -16,12 +16,12 @@ import Error from './components/Error';
 import ResultsContainer from './components/ResultsContainer';
 import Finder from './components/Finder';
 
-const newsApi = new NewsApi();
+const newsApi = new NewsApi(getDatesForNewsApi);
 const preloader = new Preloader();
 const error = new Error(notFoundPic, serverError);
 const resultsContainer = new ResultsContainer();
 
-const finder = new Finder(validateRequest, getDatesForNewsApi, newsApi, preloader, error, resultsContainer);
+const finder = new Finder(validateRequest, newsApi, preloader, error, resultsContainer);
 finder.init();
 
 if (sessionStorage.newsData) {
