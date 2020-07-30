@@ -16,18 +16,22 @@ import Error from './components/Error';
 import ResultsContainer from './components/ResultsContainer';
 import FinderInput from './components/FinderInput';
 import FinderSearch from './components/FinderSearch';
+import DataStorage from './Modules/DataStorage';
 
 const newsApi = new NewsApi(getDatesForNewsApi);
 const preloader = new Preloader();
 const error = new Error(notFoundPic, serverError);
 const resultsContainer = new ResultsContainer();
+const dataStorage = new DataStorage();
 const finderInput = new FinderInput();
 
-const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput);
+const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage);
 finderSearch.init();
 
 if (sessionStorage.newsData) {
-  document.querySelector('.finder__input').value = sessionStorage.getItem('userQuery');
-  const newsData = JSON.parse(sessionStorage.getItem('newsData'));
-  console.log(newsData);
+  const request = dataStorage.getData('request');
+  const newsData = dataStorage.getData('newsData');
+  document.querySelector('.finder__input').value = request;
+  // console.log(request);
+  // console.log(newsData);
 }

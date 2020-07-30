@@ -1,11 +1,12 @@
 export default class FinderSearch {
-  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput) {
+  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage) {
     this.validateRequest = validateRequest;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
     this.resultsContainer = resultsContainer;
     this.finderInput = finderInput;
+    this.dataStorage = dataStorage;
   }
 
   init() {
@@ -37,6 +38,10 @@ export default class FinderSearch {
       this.error.show('not-found');
       return;
     }
+
+    this.dataStorage.setData('newsData', news);
+    this.dataStorage.setData('request', request);
+
     this.resultsContainer.bindToDom();
     console.log(news);
   }
