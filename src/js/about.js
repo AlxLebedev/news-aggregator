@@ -10,12 +10,12 @@ import 'swiper/swiper-bundle.css';
 import '../scss/styles-about.scss';
 
 import Gitapi from './Modules/GitApi';
+import Slider from './components/Slider';
+import formatDate from './utils/format-date';
+import Commits from './components/Commits';
 
+const slider = new Slider();
 const gitApi = new Gitapi();
 
-async function showCommits() {
-  const commits = await gitApi.fetchCommits();
-  console.log(commits);
-}
-
-showCommits();
+const commits = new Commits(gitApi, slider, formatDate);
+commits.init();
