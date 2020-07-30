@@ -5,12 +5,12 @@ export default class Preloader {
     this.preloaderTemplate = document.getElementById('preloader-template');
   }
 
-  showPreloader() {
+  show() {
     const preloader = this.preloaderTemplate.content.cloneNode(true);
-    this.resultsBlock.appendChild(preloader);
+    this.resultsBlock.append(preloader);
   }
 
-  hidePreloader() {
+  hide() {
     this.preloaderElement = document.querySelector('.preloader');
     this.preloaderElement.remove();
   }

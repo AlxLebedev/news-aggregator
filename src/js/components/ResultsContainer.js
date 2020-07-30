@@ -6,7 +6,7 @@ export default class ResultsContainer {
 
   show() {
     const resultsContainer = this.resultsTemplate.content.cloneNode(true);
-    this.resultsBlock.appendChild(resultsContainer);
+    this.resultsBlock.append(resultsContainer);
   }
 
   hide() {

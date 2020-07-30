@@ -23,19 +23,19 @@ export default class Finder {
       this.showHint();
       return;
     }
-    this.error.hideError();
+    this.error.hide();
     this.resultsContainer.hide();
-    this.preloader.showPreloader();
+    this.preloader.show();
     const news = await this.sendRequest(request);
-    this.preloader.hidePreloader();
+    this.preloader.hide();
 
     if (!news.status) {
-      this.error.showNotFoundError('server-error');
+      this.error.show('server-error');
       return;
     }
 
     if (news.totalResults === 0) {
-      this.error.showNotFoundError('not-found');
+      this.error.show('not-found');
       return;
     }
     this.resultsContainer.show();

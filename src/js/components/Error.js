@@ -7,16 +7,16 @@ export default class Error {
     this.errorElement = null;
   }
 
-  showNotFoundError(type) {
+  show(type) {
     const error = this.errorTemplate.content.cloneNode(true);
     error.querySelector('.error__image').src = type === 'not-found' ? this.notFoundPic : this.serverErrorPic;
     error.querySelector('.error__warning').innerText = type === 'not-found' ? 'Ничего не найдено' : 'Упс, проблемка...';
     error.querySelector('.error__message').innerText = type === 'not-found' ? 'К сожалению по вашему запросу ничего не найдено.' : 'Не получается получить ответ от сервера.';
 
-    this.resultsBlock.appendChild(error);
+    this.resultsBlock.append(error);
   }
 
-  hideError() {
+  hide() {
     this.errorElement = document.querySelector('.error');
     if (this.errorElement) {
       this.errorElement.remove();
