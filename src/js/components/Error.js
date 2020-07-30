@@ -17,6 +17,9 @@ export default class Error {
   }
 
   hideError() {
-
+    this.errorElement = document.querySelector('.error');
+    if (this.errorElement) {
+      this.errorElement.remove();
+    }
   }
 }

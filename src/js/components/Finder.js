@@ -22,17 +22,17 @@ export default class Finder {
       this.showHint();
       return;
     }
+    this.error.hideError();
     this.preloader.showPreloader();
     const news = await this.sendRequest(request);
     this.preloader.hidePreloader();
 
     if (!news.status) {
-      console.log('Show pic with server error');
+      this.error.showNotFoundError('server-error');
       return;
     }
 
     if (news.totalResults === 0) {
-      console.log('NOT FOUND');
       this.error.showNotFoundError('not-found');
       return;
     }
