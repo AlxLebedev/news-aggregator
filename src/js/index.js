@@ -17,6 +17,8 @@ import ResultsContainer from './components/ResultsContainer';
 import FinderInput from './components/FinderInput';
 import FinderSearch from './components/FinderSearch';
 import DataStorage from './Modules/DataStorage';
+import Articles from './components/Articles';
+import formatDate from './utils/format-date';
 
 const newsApi = new NewsApi(getDatesForNewsApi);
 const preloader = new Preloader();
@@ -24,8 +26,10 @@ const error = new Error(notFoundPic, serverError);
 const resultsContainer = new ResultsContainer();
 const dataStorage = new DataStorage();
 const finderInput = new FinderInput();
+const articles = new Articles(formatDate);
 
-const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage);
+
+const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles);
 finderSearch.init();
 
 if (sessionStorage.newsData) {

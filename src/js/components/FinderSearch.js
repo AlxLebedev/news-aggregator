@@ -1,5 +1,5 @@
 export default class FinderSearch {
-  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage) {
+  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles) {
     this.validateRequest = validateRequest;
     this.newsApi = newsApi;
     this.preloader = preloader;
@@ -7,6 +7,8 @@ export default class FinderSearch {
     this.resultsContainer = resultsContainer;
     this.finderInput = finderInput;
     this.dataStorage = dataStorage;
+    this.articles = articles;
+
   }
 
   init() {
@@ -43,6 +45,6 @@ export default class FinderSearch {
     this.dataStorage.setData('request', request);
 
     this.resultsContainer.bindToDom();
-    console.log(news);
+    this.articles.render(news.articles);
   }
 }
