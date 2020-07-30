@@ -4,12 +4,12 @@ export default class ResultsContainer {
     this.resultsTemplate = document.getElementById('results-template');
   }
 
-  show() {
+  addToDom() {
     const resultsContainer = this.resultsTemplate.content.cloneNode(true);
     this.resultsBlock.append(resultsContainer);
   }
 
-  hide() {
+  removeFromDom() {
     const resultsContainer = document.querySelector('.results__contentainer');
     if (resultsContainer) {
       resultsContainer.remove();

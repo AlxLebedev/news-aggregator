@@ -23,7 +23,7 @@ export default class FinderSearch {
       return;
     }
     this.error.hide();
-    this.resultsContainer.hide();
+    this.resultsContainer.removeFromDom();
     this.preloader.show();
     const news = await this.newsApi.fetchNews(request);
     this.preloader.hide();
@@ -37,7 +37,7 @@ export default class FinderSearch {
       this.error.show('not-found');
       return;
     }
-    this.resultsContainer.show();
+    this.resultsContainer.addToDom();
     console.log(news);
   }
 }
