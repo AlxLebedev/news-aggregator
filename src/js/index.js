@@ -14,14 +14,16 @@ import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
 import Error from './components/Error';
 import ResultsContainer from './components/ResultsContainer';
+import FinderInputField from './components/FinderInputField';
 import Finder from './components/Finder';
 
 const newsApi = new NewsApi(getDatesForNewsApi);
 const preloader = new Preloader();
 const error = new Error(notFoundPic, serverError);
 const resultsContainer = new ResultsContainer();
+const finderInputField = new FinderInputField();
 
-const finder = new Finder(validateRequest, newsApi, preloader, error, resultsContainer);
+const finder = new Finder(validateRequest, newsApi, preloader, error, resultsContainer, finderInputField);
 finder.init();
 
 if (sessionStorage.newsData) {

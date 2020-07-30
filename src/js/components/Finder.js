@@ -1,11 +1,11 @@
 export default class Finder {
-  constructor(validateRequest, newsApi, preloader, error, resultsContainer) {
+  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInputField) {
     this.validateRequest = validateRequest;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
     this.resultsContainer = resultsContainer;
-    this.finderSearchField = document.querySelector('.finder__search');
+    this.finderInputField = finderInputField;
   }
 
   init() {
@@ -13,13 +13,13 @@ export default class Finder {
     const finderButton = document.querySelector('.finder__button');
 
     finderInput.addEventListener( 'keypress', ( event ) => { if (event.key === 'Enter') this.getNews(finderInput.value) } );
-    finderInput.addEventListener( 'input', () => this.hideHint());
+    finderInput.addEventListener( 'input', () => this.finderInputField.hideHint() );
     finderButton.addEventListener( 'click', () => this.getNews(finderInput.value) );
   }
 
   async getNews(request) {
     if (!this.validateRequest(request)) {
-      this.showHint();
+      this.finderInputField.showHint();
       return;
     }
     this.error.hide();
@@ -39,17 +39,5 @@ export default class Finder {
     }
     this.resultsContainer.show();
     console.log(news);
-  }
-
-  showHint() {
-    if (!this.finderSearchField.classList.contains('finder__search--invalid')) {
-      this.finderSearchField.classList.add('finder__search--invalid');
-    }
-  }
-
-  hideHint() {
-    if (this.finderSearchField.classList.contains('finder__search--invalid')) {
-      this.finderSearchField.classList.remove('finder__search--invalid');
-    }
   }
 }
