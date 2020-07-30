@@ -9,7 +9,13 @@ import '../img/svg/about/webpack.svg';
 import 'swiper/swiper-bundle.css';
 import '../scss/styles-about.scss';
 
-// import GetCommits from './Modules/GetCommits';
+import Gitapi from './Modules/GitApi';
+import Slider from './components/Slider';
+import formatDate from './utils/format-date';
+import Commits from './components/Commits';
 
-// const getCommits = new GetCommits();
-// getCommits.init();
+const slider = new Slider();
+const gitApi = new Gitapi();
+
+const commits = new Commits(gitApi, slider, formatDate);
+commits.init();
