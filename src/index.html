@@ -60,15 +60,24 @@
       </template>
       <template id="preloader-template">
         <div class="preloader results__preloader">
-          <div class="preloader__container">
-            <span class="preloader__element"></span>
-          </div>
+          <span class="preloader__element"></span>
           <p class="preloader__message">
             Идет поиск новостей...
           </p>
         </div>
       </template>
-      <template id="not-found-template">
+      <template id="error-template">
+        <div class="error">
+          <div class="error__wrapper">
+            <div class="error__image-box">
+              <img class="error__image" src="#" width="96" height="96" alt="картинка ошибки">
+            </div>
+            <p class="error__warning"></p>
+            <p class="error__message"></p>
+          </div>
+        </div>
+      </template>
+      <!-- <template id="not-found-template">
         <div class="error">
           <div class="error__wrapper">
             <svg class="error__image" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +98,7 @@
             <p class="error__message">Не получается получить ответ от сервера.</p>
           </div>
         </div>
-      </template>
+      </template> -->
       <template id="article-template">
         <article class="article results__article">
           <a class="article__link" href="#" target="_blank">

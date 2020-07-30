@@ -15,6 +15,10 @@
     }
   }
 
+  &__image-box {
+    display: flex;
+  }
+
   &__image {
     width: 70px;
     height: 70px;

@@ -1,8 +1,10 @@
 export default class Finder {
-  constructor(validateRequest, getDatesForNewsApi, newsApi) {
+  constructor(validateRequest, getDatesForNewsApi, newsApi, preloader, error) {
     this.validateRequest = validateRequest;
     this.getDatesForNewsApi = getDatesForNewsApi;
     this.newsApi = newsApi;
+    this.preloader = preloader;
+    this.error = error;
     this.finderSearchField = document.querySelector('.finder__search');
   }
 
@@ -20,9 +22,9 @@ export default class Finder {
       this.showHint();
       return;
     }
-    console.log('loading....');
+    this.preloader.showPreloader();
     const news = await this.sendRequest(request);
-    console.log(news);
+    this.preloader.hidePreloader();
 
     if (!news.status) {
       console.log('Show pic with server error');
@@ -31,6 +33,7 @@ export default class Finder {
 
     if (news.totalResults === 0) {
       console.log('NOT FOUND');
+      this.error.showNotFoundError('not-found');
       return;
     }
     console.log('DONE');
