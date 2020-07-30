@@ -1,10 +1,11 @@
 export default class Finder {
-  constructor(validateRequest, getDatesForNewsApi, newsApi, preloader, error) {
+  constructor(validateRequest, getDatesForNewsApi, newsApi, preloader, error, resultsContainer) {
     this.validateRequest = validateRequest;
     this.getDatesForNewsApi = getDatesForNewsApi;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
+    this.resultsContainer = resultsContainer;
     this.finderSearchField = document.querySelector('.finder__search');
   }
 
@@ -23,6 +24,7 @@ export default class Finder {
       return;
     }
     this.error.hideError();
+    this.resultsContainer.hide();
     this.preloader.showPreloader();
     const news = await this.sendRequest(request);
     this.preloader.hidePreloader();
@@ -36,7 +38,7 @@ export default class Finder {
       this.error.showNotFoundError('not-found');
       return;
     }
-    console.log('DONE');
+    this.resultsContainer.show();
     console.log(news);
   }
 

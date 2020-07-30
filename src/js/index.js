@@ -13,13 +13,15 @@ import getDatesForNewsApi from './utils/get-dates-for-news-api';
 import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
 import Error from './components/Error';
+import ResultsContainer from './components/ResultsContainer';
 import Finder from './components/Finder';
 
 const newsApi = new NewsApi();
 const preloader = new Preloader();
 const error = new Error(notFoundPic, serverError);
+const resultsContainer = new ResultsContainer();
 
-const finder = new Finder(validateRequest, getDatesForNewsApi, newsApi, preloader, error);
+const finder = new Finder(validateRequest, getDatesForNewsApi, newsApi, preloader, error, resultsContainer);
 finder.init();
 
 if (sessionStorage.newsData) {
