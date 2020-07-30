@@ -1,4 +1,4 @@
-export default class ResultsArticles {
+export default class Articles {
   constructor(formatDate) {
     this.formatDate = formatDate;
     this.articleTemplate = document.getElementById('article-template');
@@ -29,6 +29,13 @@ export default class ResultsArticles {
 
       const articlesContainer = document.querySelector('.results__articles');
       articlesContainer.append(article);
+    }
+
+    if (articlesArrayLength <= 3) {
+      const showMoreButton = document.querySelector('.results__button');
+      if (showMoreButton) {
+        showMoreButton.remove();
+      }
     }
   }
 }

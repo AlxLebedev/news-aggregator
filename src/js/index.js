@@ -19,6 +19,7 @@ import FinderSearch from './components/FinderSearch';
 import DataStorage from './Modules/DataStorage';
 import Articles from './components/Articles';
 import formatDate from './utils/format-date';
+import ShowMoreButton from './components/ShowMoreButton';
 
 const newsApi = new NewsApi(getDatesForNewsApi);
 const preloader = new Preloader();
@@ -27,15 +28,19 @@ const resultsContainer = new ResultsContainer();
 const dataStorage = new DataStorage();
 const finderInput = new FinderInput();
 const articles = new Articles(formatDate);
+const showMoreButton = new ShowMoreButton(articles);
 
 
-const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles);
+const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
 finderSearch.init();
 
 if (sessionStorage.newsData) {
   const request = dataStorage.getData('request');
   const newsData = dataStorage.getData('newsData');
   document.querySelector('.finder__input').value = request;
-  // console.log(request);
-  // console.log(newsData);
+  resultsContainer.bindToDom();
+  articles.render(newsData.articles);
+  if (document.querySelector('.results__button')) {
+    showMoreButton.init(newsData.articles);
+  }
 }
