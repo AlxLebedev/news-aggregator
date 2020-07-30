@@ -9,7 +9,13 @@ import '../img/svg/about/webpack.svg';
 import 'swiper/swiper-bundle.css';
 import '../scss/styles-about.scss';
 
-// import GetCommits from './Modules/GetCommits';
+import Gitapi from './Modules/GitApi';
 
-// const getCommits = new GetCommits();
-// getCommits.init();
+const gitApi = new Gitapi();
+
+async function showCommits() {
+  const commits = await gitApi.fetchCommits();
+  console.log(commits);
+}
+
+showCommits();

@@ -22,12 +22,19 @@ export default class Finder {
     }
     console.log('loading....');
     const news = await this.sendRequest(request);
-    if (!news.totalResults) {
-      console.log('NOT FOUND')
-    } else {
-      console.log('DONE');
-      console.log(news);
+    console.log(news);
+
+    if (!news.status) {
+      console.log('Show pic with server error');
+      return;
     }
+
+    if (news.totalResults === 0) {
+      console.log('NOT FOUND');
+      return;
+    }
+    console.log('DONE');
+    console.log(news);
   }
 
   async sendRequest(request) {
