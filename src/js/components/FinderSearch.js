@@ -1,11 +1,11 @@
-export default class Finder {
-  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInputField) {
+export default class FinderSearch {
+  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput) {
     this.validateRequest = validateRequest;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
     this.resultsContainer = resultsContainer;
-    this.finderInputField = finderInputField;
+    this.finderInput = finderInput;
   }
 
   init() {
@@ -13,13 +13,13 @@ export default class Finder {
     const finderButton = document.querySelector('.finder__button');
 
     finderInput.addEventListener( 'keypress', ( event ) => { if (event.key === 'Enter') this.getNews(finderInput.value) } );
-    finderInput.addEventListener( 'input', () => this.finderInputField.hideHint() );
+    finderInput.addEventListener( 'input', () => this.finderInput.hideHint() );
     finderButton.addEventListener( 'click', () => this.getNews(finderInput.value) );
   }
 
   async getNews(request) {
     if (!this.validateRequest(request)) {
-      this.finderInputField.showHint();
+      this.finderInput.showHint();
       return;
     }
     this.error.hide();

@@ -14,17 +14,17 @@ import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
 import Error from './components/Error';
 import ResultsContainer from './components/ResultsContainer';
-import FinderInputField from './components/FinderInputField';
-import Finder from './components/Finder';
+import FinderInput from './components/FinderInput';
+import FinderSearch from './components/FinderSearch';
 
 const newsApi = new NewsApi(getDatesForNewsApi);
 const preloader = new Preloader();
 const error = new Error(notFoundPic, serverError);
 const resultsContainer = new ResultsContainer();
-const finderInputField = new FinderInputField();
+const finderInput = new FinderInput();
 
-const finder = new Finder(validateRequest, newsApi, preloader, error, resultsContainer, finderInputField);
-finder.init();
+const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput);
+finderSearch.init();
 
 if (sessionStorage.newsData) {
   document.querySelector('.finder__input').value = sessionStorage.getItem('userQuery');
