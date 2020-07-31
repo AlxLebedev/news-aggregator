@@ -2,7 +2,7 @@ import '../img/svg/common/arrow.svg';
 import '../img/svg/common/fb.svg';
 import '../img/svg/common/github.svg';
 
-import '../scss/styles-index.scss';
+import '../scss/styles-page-index.scss';
 
 import notFoundErrorPic from '../img/static/not-found-error.png';
 import serverErrorPic from '../img/static/server-error.png';

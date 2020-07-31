@@ -47,6 +47,8 @@ export default class FinderSearch {
 
     this.resultsContainer.bindToDom();
     this.articles.render(news.articles);
-    this.showMoreButton.init(news.articles);
+    if (document.querySelector('.results__button')) {
+      this.showMoreButton.init(news.articles);
+    }
   }
 }

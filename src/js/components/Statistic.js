@@ -1,4 +1,4 @@
-export default class Analytics {
+export default class Statistic {
   constructor() {
 
   }
@@ -10,13 +10,13 @@ export default class Analytics {
   }
 
   renderAnalyticsHeading(request) {
-    const heading = document.querySelector('.stat__request');
+    const heading = document.querySelector('.statistic__request');
     heading.innerText = `«${request}»`;
   }
 
   renderNewsQuantityPerWeek(newsQuantity) {
     const newsQuantityPerWeek = newsQuantity;
-    const newsQuantytyPerWeekElement = document.getElementById('news-per-week');
+    const newsQuantytyPerWeekElement = document.getElementById('statistic-news-per-week');
     newsQuantytyPerWeekElement.innerText = newsQuantityPerWeek;
   }
 }

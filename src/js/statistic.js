@@ -1,16 +1,16 @@
 import '../img/svg/common/fb.svg';
 import '../img/svg/common/github.svg';
 
-import '../scss/styles-stat.scss';
+import '../scss/styles-page-statistic.scss';
 
 import DataStorage from './Modules/DataStorage';
-import Analytics from './components/Analytics';
+import Statistic from './components/Statistic';
 
 const dataStorage = new DataStorage();
-const analytics = new Analytics();
+const statistic = new Statistic();
 
 if (sessionStorage.newsData) {
   const request = dataStorage.getData('request');
   const newsData = dataStorage.getData('newsData');
-  analytics.init(request, newsData)
+  statistic.init(request, newsData)
 }
