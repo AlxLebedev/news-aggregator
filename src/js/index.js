@@ -8,7 +8,7 @@ import notFoundErrorPic from '../img/static/not-found-error.png';
 import serverErrorPic from '../img/static/server-error.png';
 
 import validateRequest from './utils/validate-request';
-import getDatesForNewsApi from './utils/get-dates-for-news-api';
+import getRequestDates from './utils/get-request-dates';
 import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
 import Error from './components/Error';
@@ -20,7 +20,7 @@ import formatDate from './utils/format-date';
 import ShowMoreButton from './components/ShowMoreButton';
 import FinderSearch from './components/FinderSearch';
 
-const newsApi = new NewsApi(getDatesForNewsApi);
+const newsApi = new NewsApi(getRequestDates);
 const preloader = new Preloader();
 const error = new Error(notFoundErrorPic, serverErrorPic);
 const resultsContainer = new ResultsContainer();
