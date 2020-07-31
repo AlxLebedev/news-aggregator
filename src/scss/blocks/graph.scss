@@ -82,12 +82,12 @@
     color: $color-white;
     background-color: $color-blue;
     padding: 3px 3px;
-    width: 0;
-    transition: width 1s;
+    width: 16px;
+    height: 24px;
+    transition: width 0.5s;
 
     @media($tablet) {
       padding: 4px 4px;
-    
     }
   }
 }
