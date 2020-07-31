@@ -1,11 +1,13 @@
 export default class Graph {
-  constructor(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays) {
+  constructor(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays) {
     this.request = request;
     this.news = newsData;
     this.getRequestDates = getRequestDates;
     this.getDatesRange = getDatesRange;
     this.getRequestMonth = getRequestMonth;
     this.getRequestDays = getRequestDays;
+    this.sortArticlesByDays = sortArticlesByDays;
+    this.getReferencesByDays = getReferencesByDays;
     this.requestDates = null;
     this.datesRange = null;
   }
@@ -16,6 +18,7 @@ export default class Graph {
 
     this.renderMonth();
     this.renderDays();
+    this.renderReferencesByDays();
   }
 
   renderMonth() {
@@ -32,5 +35,11 @@ export default class Graph {
     for (let i = 0; i < requestDaysElements.length; i += 1) {
       requestDaysElements[i].innerText = requestDays[i];
     }
+  }
+
+  renderReferencesByDays() {
+    const sortedArticles = this.sortArticlesByDays(this.news.articles, this.datesRange);
+    const referencesByDays = this.getReferencesByDays(sortedArticles, this.request);
+    console.log(referencesByDays);
   }
 }

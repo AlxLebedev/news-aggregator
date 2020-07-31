@@ -12,6 +12,8 @@ import getRequestDates from './utils/get-request-dates';
 import getDatesRange from './utils/get-dates-range';
 import getRequestMonth from './utils/get-request-month';
 import getRequestDays from './utils/get-request-days';
+import sortArticlesByDays from './utils/sort-articles-by-days';
+import getReferencesByDays from './utils/get-references-by-days';
 
 const dataStorage = new DataStorage();
 
@@ -19,7 +21,7 @@ if (sessionStorage.newsData) {
   const request = dataStorage.getData('request');
   const newsData = dataStorage.getData('newsData');
   const statistic = new Statistic(request, newsData, getMentionsInTitles);
-  const graph = new Graph(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays);
+  const graph = new Graph(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
   statistic.init();
   graph.init();
 }
