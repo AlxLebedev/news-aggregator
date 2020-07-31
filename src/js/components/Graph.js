@@ -6,9 +6,14 @@ export default class Graph {
     this.getDatesRange = getDatesRange;
     this.getRequestMonth = getRequestMonth;
     this.getRequestDays = getRequestDays;
+    this.requestDates = null;
+    this.datesRange = null;
   }
 
   init() {
+    this.requestDates = this.getRequestDates();
+    this.datesRange = this.getDatesRange(this.requestDates);
+
     this.renderMonth();
     this.renderDays();
   }
@@ -16,24 +21,16 @@ export default class Graph {
   renderMonth() {
     const graphMontElement = document.querySelector('.graph__title-month');
 
-    const requestDates = this.getRequestDates();
-    const datesRange = this.getDatesRange(requestDates);
-
-    const month = this.getRequestMonth(datesRange);
+    const month = this.getRequestMonth(this.datesRange);
     graphMontElement.innerText = `(${month})`;
   }
 
   renderDays() {
     const requestDaysElements = Array.from(document.querySelectorAll('.graph__day'));
 
-    const requestDates = this.getRequestDates();
-    const datesRange = this.getDatesRange(requestDates);
-
-    const requestDays = this.getRequestDays(datesRange);
-
+    const requestDays = this.getRequestDays(this.datesRange);
     for (let i = 0; i < requestDaysElements.length; i += 1) {
       requestDaysElements[i].innerText = requestDays[i];
     }
-    console.log(requestDays);
   }
 }
