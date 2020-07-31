@@ -4,31 +4,30 @@ export default function referencesByDays(sorteredArticles, request) {
   const referencesByDays = [];
 
   for (let articlesArray of sorteredArticles) {
-    if (articlesArray.length !== 0) {
-      let result = [];
-      for (let article of articlesArray) {
-        const title = article.title;
-        const description = article.description;
-        result.push(title, description);
-      }
-      extractedArticles.push(result);
-    } else {
+    if (articlesArray.length === 0) {
       extractedArticles.push([]);
+      continue;
     }
+
+    let result = [];
+    for (let article of articlesArray) {
+      const title = article.title;
+      const description = article.description;
+      result.push(title, description);
+    }
+    extractedArticles.push(result);
   }
 
   for (let item of extractedArticles) {
     let references = String(item).toLowerCase().match(regExp);
-    if (references) {
-      referencesByDays.push(references.length);
-    } else {
+    
+    if (!references) {
       referencesByDays.push(0);
+      continue;
     }
-  }
 
-  console.log(request);
-  console.log(sorteredArticles);
-  console.log(extractedArticles);
+    referencesByDays.push(references.length);
+  }
 
   return referencesByDays;
 }

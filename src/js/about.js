@@ -14,8 +14,8 @@ import Slider from './components/Slider';
 import formatDate from './utils/format-date';
 import Commits from './components/Commits';
 
-const slider = new Slider();
 const gitApi = new Gitapi();
+const slider = new Slider();
 
 const commits = new Commits(gitApi, slider, formatDate);
 commits.init();

@@ -1,7 +1,5 @@
 export default class Api {
-  constructor() {
-
-  }
+  constructor() {}
 
   async fetchData(url, param) {
     let response = param === undefined ? await fetch(url) : await fetch(url, param);

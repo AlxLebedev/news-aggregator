@@ -9,7 +9,6 @@ export default class Statistic {
     this.renderRequest(this.request);
     this.renderNewsPerWeek(this.news.articles.length);
     this.renderMentionsInTitles(this.request, this.news.articles);
-    console.log(this.news);
   }
 
   renderRequest(request) {

@@ -1,12 +1,12 @@
 export default class ResultsContainer {
   constructor() {
-    this.resultsBlock = document.querySelector('.results');
     this.resultsTemplate = document.getElementById('results-template');
   }
 
   bindToDom() {
     const resultsContainer = this.resultsTemplate.content.cloneNode(true);
-    this.resultsBlock.append(resultsContainer);
+    const resultsBlock = document.querySelector('.results');
+    resultsBlock.append(resultsContainer);
   }
 
   unbind() {

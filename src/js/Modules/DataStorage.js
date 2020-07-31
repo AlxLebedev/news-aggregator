@@ -1,7 +1,5 @@
 export default class DataStorage {
-  constructor() {
-
-  }
+  constructor() {}
 
   setData(name, data) {
     typeof data === 'String' ? sessionStorage.setItem(name, data) : sessionStorage.setItem( name, JSON.stringify(data) );
