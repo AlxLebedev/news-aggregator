@@ -26,6 +26,5 @@ export default class Statistic {
     const mentionsInTitles = this.getMentionsInTitles(request, articles);
     const mentionsInTitlesElement = document.getElementById('statistic-mentions-in-titles');
     mentionsInTitlesElement.innerText = mentionsInTitles;
-    
   }
 }

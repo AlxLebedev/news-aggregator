@@ -11,7 +11,9 @@ export default class Preloader {
   }
 
   hide() {
-    this.preloaderElement = document.querySelector('.preloader');
-    this.preloaderElement.remove();
+    const preloaderElement = document.querySelector('.preloader');
+    if (preloaderElement) {
+      preloaderElement.remove();
+    }
   }
 }

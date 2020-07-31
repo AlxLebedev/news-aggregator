@@ -8,13 +8,12 @@ export default class Articles {
     const articlesArray = articles;
     const articlesArrayLength = articlesArray.length;
   
-    let firstArticle = 0;
-    let lastArticle = articlesArrayLength < 3 ? articlesArrayLength - 1 : 2;
+    const firstArticle = 0;
+    const lastArticle = articlesArrayLength < 3 ? articlesArrayLength - 1 : 2;
 
     for (let i = firstArticle; i <= lastArticle; i += 1) {
       const article = this.articleTemplate.content.cloneNode(true);
-
-      let articleDate = this.formatDate(articlesArray[i].publishedAt);
+      const articleDate = this.formatDate(articlesArray[i].publishedAt);
 
       article.querySelector('.article__image').src = articlesArray[i].urlToImage;
       article.querySelector('.article__date').innerText = articleDate;

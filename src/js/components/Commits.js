@@ -14,8 +14,9 @@ export default class Commits {
   render(commits) {
     const commitArray = commits;
 
-    for ( let commit of commitArray) {
+    for (let commit of commitArray) {
       const slide = this.slideTemplate.content.cloneNode(true);
+      
       slide.querySelector('.commit__date').innerText = this.formatDate(commit.commit.author.date);
       slide.querySelector('.developer__image').src = commit.author.avatar_url;
       slide.querySelector('.developer__name').innerText = commit.commit.author.name;

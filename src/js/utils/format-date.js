@@ -16,7 +16,7 @@ export default function formatDate(date) {
     'декабря'
   ];
 
-  const currentDay = currentDate.getDate() < 10 ? `0${currentDate.getDate()}` : `${currentDate.getDate()}`;
+  const currentDay = String(currentDate.getDate()).padStart(2, '0');
   const currentMonthIndex = currentDate.getMonth();
   const currentYear = `${currentDate.getFullYear()}`;
 

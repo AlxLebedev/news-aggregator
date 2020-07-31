@@ -5,9 +5,5 @@ export default function getMentionsInTitles(request, articles) {
     articlesTitles.push(artickle.title);
   }
   const result = String(articlesTitles).toLowerCase().match(regExp);
-  if (result) {
-    return result.length;
-  } else {
-    return 0;
-  }
+  return result ? result.length : 0;
 }
