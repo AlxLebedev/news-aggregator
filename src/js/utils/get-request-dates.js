@@ -1,8 +1,8 @@
-export default function getDatesForNewsApi() {
-  const requestPeriodPerDays = 6;
+export default function getRequestDates() {
+  const requestPeriodInDays = 6;
   const millisecondsPerDay = 24 * 60 * 60 * 1000;
   const currentDate = new Date();
-  const lastDate = new Date(currentDate - (requestPeriodPerDays * millisecondsPerDay));
+  const lastDate = new Date(currentDate - (requestPeriodInDays * millisecondsPerDay));
 
   const fromDate = formatDate(lastDate);
   const toDate = formatDate(currentDate);

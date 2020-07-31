@@ -1,7 +1,10 @@
 export default class Graph {
-  constructor(request, newsData) {
+  constructor(request, newsData, getRequestDates, getDatesRange, getRequestMonth) {
     this.request = request;
     this.news = newsData;
+    this.getRequestDates = getRequestDates;
+    this.getDatesRange = getDatesRange;
+    this.getRequestMonth = getRequestMonth;
   }
 
   init() {
@@ -9,7 +12,11 @@ export default class Graph {
   }
 
   renderMonth() {
+    const requestDates = this.getRequestDates();
+    const datesRange = this.getDatesRange(requestDates);
+    const month = this.getRequestMonth(datesRange);
+    
     const graphMontElement = document.querySelector('.graph__title-month');
-    console.log(graphMontElement)
+    graphMontElement.innerText = `(${month})`;
   }
 }
