@@ -61,8 +61,5 @@ export default class Graph {
       referencesValuesElements[i].innerText = `${referencesByDays[i] === null ? `0` : referencesByDays[i]}`;
       referencesValuesElements[i].style.width = `${referencesByDays[i] === 0 ? '16px' : `${(referencesByDays[i] / totalReferences) * 100}%`}`;
     }
-    
-    console.log(referencesByDays);
-    console.log(totalReferences);
   }
 }

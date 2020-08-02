@@ -9,7 +9,6 @@ export default class FinderSearch {
     this.dataStorage = dataStorage;
     this.articles = articles;
     this.showMoreButton = showMoreButton;
-
   }
 
   init() {
