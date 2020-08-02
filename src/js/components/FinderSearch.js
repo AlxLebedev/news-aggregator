@@ -31,31 +31,26 @@ export default class FinderSearch {
     this.preloader.show();
     const news = await this.newsApi.fetchNews(request);
     this.preloader.hide();
-    console.log(news);
 
-    if (news.totalResults === 0) {
-      this.error.show('not-found');
-      return;
+    switch(news) {
+      case 'not-found':
+        this.error.show('not-found');
+        return;
+      case 'server-error':
+        this.error.show('server-error');
+        return;
+      case 'bad-request':
+        this.error.show('bad-request');
+        return;
+      case 'bad-response':
+        this.error.show('bad-response');
+        return;
+      default:
+        this.utiliseNews(news, request);
     }
+  }
 
-    if (news === 'server-error') {
-      this.error.show('server-error');
-      console.log('Ooooops, server - error');
-      return;
-    }
-
-    if (news === 400) {
-      this.error.show('bad-request');
-      console.log('BAD request');
-      return;
-    }
-
-    if (news === 'bad-response') {
-      this.error.show('bad-response');
-      console.log('bad-response');
-      return;
-    }
-
+  utiliseNews(news, request) {
     this.dataStorage.setData('newsData', news);
     this.dataStorage.setData('request', request);
 

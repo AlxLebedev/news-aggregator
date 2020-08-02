@@ -14,6 +14,13 @@ export default class NewsApi extends Api {
   async fetchNews(request) {
     const [fromDate, toDate] = this.getRequestDates();
     const url = `http://newsapi.org/v2/everything?q=${request}&from=${fromDate}&to=${toDate}&sortBy=publishedAt&language=ru&pageSize=100`;
-    return super.fetchData(url, this.param);
+    const result = await super.fetchData(url, this.param);
+    if (result === 400) {
+      return 'bad-request';
+    }
+    if (result.totalResults === 0) {
+      return 'not-found';
+    }
+    return result;
   }
 }

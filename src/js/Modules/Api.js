@@ -11,7 +11,6 @@ export default class Api {
           return 'bad-response';
         }
       } else {
-        console.log(response.status);
         return response.status;
       }
     } catch(e) {
