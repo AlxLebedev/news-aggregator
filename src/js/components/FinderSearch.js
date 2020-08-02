@@ -31,9 +31,17 @@ export default class FinderSearch {
     this.preloader.show();
     const news = await this.newsApi.fetchNews(request);
     this.preloader.hide();
+    console.log(news);
 
-    if (!news.status) {
+    if (news === 'server-error') {
+      console.log('Ooooops, server - error');
       this.error.show('server-error');
+      return;
+    }
+
+    if (news === 400) {
+      this.error.show('server-error');
+      console.log('BAD request');
       return;
     }
 
