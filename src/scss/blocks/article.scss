@@ -48,7 +48,10 @@
   &__title {
     font-family: $font-robotoslab;
     font-size: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0 0 10px;
+    padding-bottom: 5px;
 
     @media ($tablet) {
       line-height: 1;
