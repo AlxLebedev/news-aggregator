@@ -8,9 +8,10 @@ export default class Api {
         try {
           return await response.json();
         } catch(e) {
-          return 'bad-json';
+          return 'bad-response';
         }
       } else {
+        console.log(response.status);
         return response.status;
       }
     } catch(e) {

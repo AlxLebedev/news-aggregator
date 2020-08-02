@@ -6,6 +6,8 @@ import '../scss/styles-page-index.scss';
 
 import notFoundErrorPic from '../img/static/not-found-error.png';
 import serverErrorPic from '../img/static/server-error.png';
+import badRequestPic from '../img/static/bad-request.png';
+import badResponsePic from '../img/static/bad-response.png';
 
 import validateRequest from './utils/validate-request';
 import getRequestDates from './utils/get-request-dates';
@@ -22,7 +24,7 @@ import FinderSearch from './components/FinderSearch';
 
 const newsApi = new NewsApi(getRequestDates);
 const preloader = new Preloader();
-const error = new Error(notFoundErrorPic, serverErrorPic);
+const error = new Error(notFoundErrorPic, serverErrorPic, badRequestPic, badResponsePic);
 const resultsContainer = new ResultsContainer();
 const finderInput = new FinderInput();
 const dataStorage = new DataStorage();

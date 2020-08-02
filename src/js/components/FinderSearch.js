@@ -33,20 +33,26 @@ export default class FinderSearch {
     this.preloader.hide();
     console.log(news);
 
+    if (news.totalResults === 0) {
+      this.error.show('not-found');
+      return;
+    }
+
     if (news === 'server-error') {
-      console.log('Ooooops, server - error');
       this.error.show('server-error');
+      console.log('Ooooops, server - error');
       return;
     }
 
     if (news === 400) {
-      this.error.show('server-error');
+      this.error.show('bad-request');
       console.log('BAD request');
       return;
     }
 
-    if (news.totalResults === 0) {
-      this.error.show('not-found');
+    if (news === 'bad-response') {
+      this.error.show('bad-response');
+      console.log('bad-response');
       return;
     }
 
