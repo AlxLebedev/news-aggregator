@@ -1,23 +1,9 @@
 export default function referencesByDays(sorteredArticles, request) {
   const regExp = new RegExp(request.toLowerCase(), 'g');
-  const extractedArticles = [];
+  const extractedArticles = extractArticles(sorteredArticles);
+  console.log(extractedArticles);
+  
   const referencesByDays = [];
-
-  for (let articlesArray of sorteredArticles) {
-    if (articlesArray.length === 0) {
-      extractedArticles.push([]);
-      continue;
-    }
-
-    let result = [];
-    for (let article of articlesArray) {
-      const title = article.title;
-      const description = article.description;
-      result.push(title, description);
-    }
-    extractedArticles.push(result);
-  }
-
   for (let item of extractedArticles) {
     let references = String(item).toLowerCase().match(regExp);
     
@@ -30,4 +16,22 @@ export default function referencesByDays(sorteredArticles, request) {
   }
 
   return referencesByDays;
+}
+
+function extractArticles(articles) {
+  const extractedArticles = [];
+
+  for (let articlesArray of articles) {
+    if (articlesArray.length === 0) {
+      extractedArticles.push([]);
+      continue;
+    }
+
+    let result = [];
+    articlesArray.map( article => result.push(article.title, article.description) );
+
+    extractedArticles.push(result);
+  }
+
+  return extractedArticles;
 }
