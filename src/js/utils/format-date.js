@@ -1,24 +1,15 @@
 export default function formatDate(date) {
   const currentDate = new Date(date);
+  
+  const formatterOptions = {
+    day: "2-digit",
+    month: "long"
+  };
+  const formatter = new Intl.DateTimeFormat('ru-RU', formatterOptions);
 
-  const monthes = [
-    'января',
-    'февраля',
-    'марта',
-    'апреля',
-    'мая',
-    'июня',
-    'июля',
-    'августа',
-    'сентября',
-    'октября',
-    'ноября',
-    'декабря'
-  ];
 
-  const currentDay = String(currentDate.getDate()).padStart(2, '0');
-  const currentMonthIndex = currentDate.getMonth();
+  const formatedDate = formatter.format(currentDate);
   const currentYear = `${currentDate.getFullYear()}`;
-
-  return `${currentDay} ${monthes[currentMonthIndex]}, ${currentYear}`;
+  
+  return `${formatedDate}, ${currentYear}`;
 }
