@@ -1,14 +1,27 @@
 import '../img/svg/common/fb.svg';
 import '../img/svg/common/github.svg';
 
-import '../scss/styles-stat.scss';
+import '../scss/styles-page-statistic.scss';
 
-import Analytics from './Modules/Analytics';
+import DataStorage from './Modules/DataStorage';
+import Statistic from './components/Statistic';
+import Graph from './components/Graph';
 
-if (sessionStorage.newsData && sessionStorage.userQuery) {
-  const newsData = JSON.parse(sessionStorage.getItem('newsData'));
-  const userQuery = sessionStorage.getItem('userQuery');
-  const analytics = new Analytics(newsData, userQuery);
+import getMentionsInTitles from './utils/get-mentions-in-titles';
+import getRequestDates from './utils/get-request-dates';
+import getDatesRange from './utils/get-dates-range';
+import getRequestMonth from './utils/get-request-month';
+import getRequestDays from './utils/get-request-days';
+import sortArticlesByDays from './utils/sort-articles-by-days';
+import getReferencesByDays from './utils/get-references-by-days';
 
-  analytics.init();
+const dataStorage = new DataStorage();
+
+if (sessionStorage.newsData) {
+  const request = dataStorage.getData('request');
+  const newsData = dataStorage.getData('newsData');
+  const statistic = new Statistic(request, newsData, getMentionsInTitles);
+  const graph = new Graph(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
+  statistic.init();
+  graph.init();
 }

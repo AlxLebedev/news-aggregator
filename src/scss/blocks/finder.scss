@@ -76,6 +76,16 @@
     width: 100%;
     background-color: transparent;
 
+    @media ($tablet) {
+      max-width: 700px;
+      justify-content: space-between;
+      margin: auto;
+    }
+  }
+
+  &__input-container {
+    position: relative;
+
     &::before {
       position: absolute;
       content: 'Нужно ввести ключевое слово';
@@ -98,11 +108,7 @@
       opacity: 0.7;
     }
 
-    @media ($tablet) {
-      max-width: 700px;
-      justify-content: space-between;
-      margin: auto;
-
+    @media($tablet) {
       &::before {
         height: 20px;
         top: 65px;

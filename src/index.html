@@ -35,14 +35,16 @@
           </p>
         </div>
         <div class="finder__search">
-          <input class="finder__input" type="text" placeholder="Политика">
+          <div class="finder__input-container">
+            <input class="finder__input" type="text" placeholder="Политика">
+          </div>
           <button class="button finder__button" type="button">Искать</button>
         </div>
       </div>
     </section>
     <section class="results">
       <template id="results-template">
-        <div class="results__content">
+        <div class="results__contentainer">
           <div class="results__header">
             <h2 class="results__title">Результаты поиска</h2>
             <a class="results__link" href="./statistic.html">
@@ -60,33 +62,20 @@
       </template>
       <template id="preloader-template">
         <div class="preloader results__preloader">
-          <div class="preloader__container">
-            <span class="preloader__element"></span>
-          </div>
+          <span class="preloader__element"></span>
           <p class="preloader__message">
             Идет поиск новостей...
           </p>
         </div>
       </template>
-      <template id="not-found-template">
+      <template id="error-template">
         <div class="error">
           <div class="error__wrapper">
-            <svg class="error__image" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#not-found"></use>
-            </svg>
-            <p class="error__warning">Ничего не найдено</p>
-            <p class="error__message">К сожалению по вашему запросу ничего не найдено.</p>
-          </div>
-        </div>
-      </template>
-      <template id="server-error-template">
-        <div class="error">
-          <div class="error__wrapper">
-            <svg class="error__image" width="64" height="64" viewBox="0 0 64 64" enable-background="new 0 0 64 64" fill="#b6bcbf">
-              <use xlink:href="#server-error"></use>
-            </svg>
-            <p class="error__warning">Упс, проблемка...</p>
-            <p class="error__message">Не получается получить ответ от сервера.</p>
+            <div class="error__image-box">
+              <img class="error__image" src="#" width="96" height="96" alt="картинка ошибки">
+            </div>
+            <p class="error__warning"></p>
+            <p class="error__message"></p>
           </div>
         </div>
       </template>
