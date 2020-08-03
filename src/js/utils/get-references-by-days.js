@@ -1,7 +1,6 @@
 export default function referencesByDays(sorteredArticles, request) {
   const regExp = new RegExp(request.toLowerCase(), 'g');
   const extractedArticles = extractArticles(sorteredArticles);
-  console.log(extractedArticles);
   
   const referencesByDays = [];
   for (let item of extractedArticles) {
