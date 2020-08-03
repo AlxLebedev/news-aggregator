@@ -1,15 +1,14 @@
 export default function getRequestDays(dates) {
   const datesArray = dates;
-  const daysNames = [
-    'вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб',
-  ]
+
+  const dayFormatterOptions = { day: "2-digit" };
+  const dayFormatter = new Intl.DateTimeFormat('ru-RU', dayFormatterOptions);
+
+  const weekdayFormatterOptions = { weekday: "short" };
+  const weekdayFormatter = new Intl.DateTimeFormat('ru-RU', weekdayFormatterOptions);
   
   const days = [];
-  for (let date of datesArray) {
-    const dayNumber = date.getDate();
-    const dayIndex = date.getDay();
-    days.push(`${dayNumber}, ${daysNames[dayIndex]}`);
-  };
+  datesArray.map( date => days.push(`${dayFormatter.format(date)}, ${weekdayFormatter.format(date)}`) );
 
   return days;
 }
