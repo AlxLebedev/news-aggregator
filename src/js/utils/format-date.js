@@ -7,9 +7,8 @@ export default function formatDate(date) {
   };
   const formatter = new Intl.DateTimeFormat('ru-RU', formatterOptions);
 
-
   const formatedDate = formatter.format(currentDate);
   const currentYear = `${currentDate.getFullYear()}`;
-  
+
   return `${formatedDate}, ${currentYear}`;
 }
