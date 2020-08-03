@@ -6,7 +6,7 @@ export default class Preloader {
   show() {
     const preloader = this.preloaderTemplate.content.cloneNode(true);
     const resultsBlock = document.querySelector('.results');
-    resultsBlock.append(preloader);
+    resultsBlock.prepend(preloader);
   }
 
   hide() {

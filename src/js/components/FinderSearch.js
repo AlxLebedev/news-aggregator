@@ -15,16 +15,28 @@ export default class FinderSearch {
     const finderInput = document.querySelector('.finder__input');
     const finderButton = document.querySelector('.finder__button');
 
-    finderInput.addEventListener( 'keypress', ( event ) => { if (event.key === 'Enter') this.getNews(finderInput.value) } );
+    finderInput.addEventListener( 'keypress', ( event ) => { if (event.key === 'Enter') this.checkRequest(finderInput.value) } );
     finderInput.addEventListener( 'input', () => this.finderInput.hideHint() );
-    finderButton.addEventListener( 'click', () => this.getNews(finderInput.value) );
+    finderButton.addEventListener( 'click', () => this.checkRequest(finderInput.value) );
   }
 
-  async getNews(request) {
+  checkRequest(request) {
     if (!this.validateRequest(request)) {
       this.finderInput.showHint();
       return;
     }
+
+    const localData = this.dataStorage.getLocalStorageData(request);
+    if (localData) {
+      console.log('showing old news')
+      this.renderLocalData(localData);
+    } else {
+      this.getNews(request);
+    }
+  }
+
+  async getNews(request) {
+    console.log('start fetching news')
     this.error.hide();
     this.resultsContainer.unbind();
     this.preloader.show();
@@ -50,6 +62,8 @@ export default class FinderSearch {
   }
 
   utiliseNews(news, request) {
+    this.dataStorage.addToLocalStorage(request, news);
+
     this.dataStorage.setData('newsData', news);
     this.dataStorage.setData('request', request);
 
@@ -57,6 +71,20 @@ export default class FinderSearch {
     this.articles.render(news.articles);
     if (document.querySelector('.results__button')) {
       this.showMoreButton.init(news.articles);
+    }
+  }
+
+  renderLocalData(localData) {
+    if (document.querySelector('.error')) {
+      this.error.hide();
+    }
+    if (!document.querySelector('.results__contentainer')) {
+      this.resultsContainer.bindToDom();
+    }
+    this.articles.render(localData.articles);
+
+    if (document.querySelector('.results__button')) {
+      this.showMoreButton.init(localData.articles);
     }
   }
 }
