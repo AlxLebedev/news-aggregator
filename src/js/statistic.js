@@ -14,6 +14,7 @@ import getRequestMonth from './utils/get-request-month';
 import getRequestDays from './utils/get-request-days';
 import sortArticlesByDays from './utils/sort-articles-by-days';
 import getReferencesByDays from './utils/get-references-by-days';
+import addParamsToLinks from './utils/add-params-to-links';
 
 const dataStorage = new DataStorage();
 
@@ -24,15 +25,10 @@ const localData = dataStorage.getLocalStorageData(request);
 console.log(request);
 console.log(localData);
 
-// if (request) {
-//   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
-//   internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
-// }
-
 
 if (localData) {
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
-  internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+  addParamsToLinks(internalsLinks, request);
 
   const statistic = new Statistic(request, localData, getMentionsInTitles);
   const graph = new Graph(request, localData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);

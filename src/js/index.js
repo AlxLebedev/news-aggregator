@@ -11,6 +11,7 @@ import badRequestPic from '../img/static/bad-request.png';
 import badResponsePic from '../img/static/bad-response.png';
 
 import validateRequest from './utils/validate-request';
+import addParamsToLinks from './utils/add-params-to-links';
 import getRequestDates from './utils/get-request-dates';
 import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
@@ -33,7 +34,7 @@ const articles = new Articles(formatDate);
 const showMoreButton = new ShowMoreButton(articles);
 
 
-const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
+const finderSearch = new FinderSearch(validateRequest, addParamsToLinks, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
 finderSearch.init();
 
 const urlParameters = new URL(location.href).searchParams;
@@ -48,12 +49,7 @@ if (localData) {
   resultsContainer.bindToDom();
 
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
-  internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
-
-  // if (request) {
-  //   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
-  //   internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
-  // }
+  addParamsToLinks(internalsLinks, request);
 
   articles.render(localData.articles);
   if (document.querySelector('.results__button')) {

@@ -1,6 +1,7 @@
 export default class FinderSearch {
-  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton) {
+  constructor(validateRequest, addParamsToLinks, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton) {
     this.validateRequest = validateRequest;
+    this.addParamsToLinks = addParamsToLinks;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
@@ -73,12 +74,10 @@ export default class FinderSearch {
 
   utiliseNews(news, request) {
     this.dataStorage.addToLocalStorage(request, news);
-
-    this.dataStorage.setData('newsData', news);
-    this.dataStorage.setData('request', request);
-
     this.resultsContainer.bindToDom();
-    this.resultsContainer.addLinkParameters(request);
+
+    const internalsLinks = document.querySelectorAll('.internals-links');
+    this.addParamsToLinks(internalsLinks, request);
     
     this.articles.render(news.articles);
     if (document.querySelector('.results__button')) {
