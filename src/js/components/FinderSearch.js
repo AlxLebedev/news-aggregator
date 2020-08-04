@@ -28,21 +28,31 @@ export default class FinderSearch {
 
     const localData = this.dataStorage.getLocalStorageData(request);
     if (localData) {
-      console.log('showing old news')
       this.renderLocalData(localData);
+      this.updateNews(request);
     } else {
       this.getNews(request);
     }
   }
 
+  async updateNews(request) {
+    this.resultsContainer.showUpdater();
+    const news = await this.newsApi.fetchNews(request);
+    this.resultsContainer.hideUpdater();
+    this.resultsContainer.unbind();
+    this.checkNews(news, request);
+  }
+
   async getNews(request) {
-    console.log('start fetching news')
     this.error.hide();
     this.resultsContainer.unbind();
     this.preloader.show();
     const news = await this.newsApi.fetchNews(request);
     this.preloader.hide();
+    this.checkNews(news, request);
+  }
 
+  checkNews(news, request) {
     switch(news) {
       case 'not-found':
         this.error.show('not-found');
@@ -81,6 +91,7 @@ export default class FinderSearch {
     if (!document.querySelector('.results__contentainer')) {
       this.resultsContainer.bindToDom();
     }
+    this.articles.clear();
     this.articles.render(localData.articles);
 
     if (document.querySelector('.results__button')) {

@@ -1,6 +1,7 @@
 import '../img/svg/common/arrow.svg';
 import '../img/svg/common/fb.svg';
 import '../img/svg/common/github.svg';
+import '../img/svg/index/three-dots.svg';
 
 import '../scss/styles-page-index.scss';
 

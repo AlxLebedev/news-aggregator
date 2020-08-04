@@ -15,4 +15,18 @@ export default class ResultsContainer {
       resultsContainer.remove();
     }
   }
+
+  showUpdater() {
+    const resultsUpdater = document.querySelector('.results__updater');
+    if (!resultsUpdater.classList.contains('results__updater--active')) {
+      resultsUpdater.classList.add('results__updater--active');
+    }
+  }
+
+  hideUpdater() {
+    const resultsUpdater = document.querySelector('.results__updater');
+    if (resultsUpdater.classList.contains('results__updater--active')) {
+      resultsUpdater.classList.remove('results__updater--active');
+    }
+  }
 }

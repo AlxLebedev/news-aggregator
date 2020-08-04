@@ -37,4 +37,11 @@ export default class Articles {
       }
     }
   }
+
+  clear() {
+    const articlesContainer = document.querySelector('.results__articles');
+    while(articlesContainer.firstChild) {
+      articlesContainer.removeChild(articlesContainer.firstChild);
+    }
+  }
 }

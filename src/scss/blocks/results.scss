@@ -1,5 +1,6 @@
 .results {
   &__contentainer {
+    position: relative;
     background-color: $color-gray-default;
     padding: 32px 16px 44px;
 
@@ -12,15 +13,41 @@
     }
   }
 
+  &__updater {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+
+    @media($tablet) {
+      top: 80px;
+    }
+
+    @media($desktop) {
+      top: 90px;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__updater-image {
+    margin: auto;
+    position: absolute;
+    top: 15px; left: 0; bottom: 0; right: 0;
+  }
+
   &__header {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
 
     @media ($tablet) {
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 1000px;
-      margin: 0 auto 35px;
+      margin: 0 auto 55px;
     }
 
     @media ($desktop) {
