@@ -19,15 +19,21 @@ const dataStorage = new DataStorage();
 
 const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
-console.log(request);
 const localData = dataStorage.getLocalStorageData(request);
+
+console.log(request);
 console.log(localData);
 
-const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
-internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+// if (request) {
+//   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+//   internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+// }
 
 
 if (localData) {
+  const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+  internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+
   const statistic = new Statistic(request, localData, getMentionsInTitles);
   const graph = new Graph(request, localData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
   statistic.init();

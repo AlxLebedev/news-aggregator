@@ -17,8 +17,8 @@ export default class ResultsContainer {
   }
 
   addLinkParameters(param) {
-    const link = document.querySelector('.results__link');
-    link.href = `${link.href}?request=${param}`;
+    const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+    internalsLinks.map( link => link.href = `${link.href}?request=${param}`);
   }
 
   showUpdater() {

@@ -38,11 +38,10 @@ finderSearch.init();
 
 const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
-console.log(request);
 const localData = dataStorage.getLocalStorageData(request);
+
+console.log(request);
 console.log(localData);
-
-
 
 if (localData) {
   document.querySelector('.finder__input').value = request;
@@ -50,6 +49,11 @@ if (localData) {
 
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
   internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+
+  // if (request) {
+  //   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+  //   internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+  // }
 
   articles.render(localData.articles);
   if (document.querySelector('.results__button')) {

@@ -16,10 +16,14 @@ import Commits from './components/Commits';
 
 const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
-console.log(request);
 
-const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
-internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+if (request) {
+
+  console.log(request);
+  
+  const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+  internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+}
 
 const gitApi = new Gitapi();
 const slider = new Slider();
