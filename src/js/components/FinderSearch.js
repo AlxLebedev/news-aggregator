@@ -78,6 +78,8 @@ export default class FinderSearch {
     this.dataStorage.setData('request', request);
 
     this.resultsContainer.bindToDom();
+    this.resultsContainer.addLinkParameters(request);
+    
     this.articles.render(news.articles);
     if (document.querySelector('.results__button')) {
       this.showMoreButton.init(news.articles);

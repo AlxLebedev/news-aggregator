@@ -36,13 +36,23 @@ const showMoreButton = new ShowMoreButton(articles);
 const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
 finderSearch.init();
 
-if (sessionStorage.newsData) {
-  const request = dataStorage.getData('request');
-  const newsData = dataStorage.getData('newsData');
+const urlParameters = new URL(location.href).searchParams;
+const request = urlParameters.get('request');
+console.log(request);
+const localData = dataStorage.getLocalStorageData(request);
+console.log(localData);
+
+
+
+if (localData) {
   document.querySelector('.finder__input').value = request;
   resultsContainer.bindToDom();
-  articles.render(newsData.articles);
+
+  const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+  internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+
+  articles.render(localData.articles);
   if (document.querySelector('.results__button')) {
-    showMoreButton.init(newsData.articles);
+    showMoreButton.init(localData.articles);
   }
 }

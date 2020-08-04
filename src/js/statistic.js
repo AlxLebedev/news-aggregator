@@ -17,11 +17,19 @@ import getReferencesByDays from './utils/get-references-by-days';
 
 const dataStorage = new DataStorage();
 
-if (sessionStorage.newsData) {
-  const request = dataStorage.getData('request');
-  const newsData = dataStorage.getData('newsData');
-  const statistic = new Statistic(request, newsData, getMentionsInTitles);
-  const graph = new Graph(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
+const urlParameters = new URL(location.href).searchParams;
+const request = urlParameters.get('request');
+console.log(request);
+const localData = dataStorage.getLocalStorageData(request);
+console.log(localData);
+
+const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+internalsLinks.map( link => link.href = `${link.href}?request=${request}`);
+
+
+if (localData) {
+  const statistic = new Statistic(request, localData, getMentionsInTitles);
+  const graph = new Graph(request, localData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
   statistic.init();
   graph.init();
 }

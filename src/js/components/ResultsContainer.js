@@ -16,6 +16,11 @@ export default class ResultsContainer {
     }
   }
 
+  addLinkParameters(param) {
+    const link = document.querySelector('.results__link');
+    link.href = `${link.href}?request=${param}`;
+  }
+
   showUpdater() {
     const resultsUpdater = document.querySelector('.results__updater');
     if (!resultsUpdater.classList.contains('results__updater--active')) {
