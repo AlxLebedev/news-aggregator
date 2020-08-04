@@ -25,11 +25,12 @@ const localData = dataStorage.getLocalStorageData(request);
 console.log(request);
 console.log(localData);
 
-
-if (localData) {
+if (request) {
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
   addParamsToLinks(internalsLinks, request);
+}
 
+if (localData) {
   const statistic = new Statistic(request, localData, getMentionsInTitles);
   const graph = new Graph(request, localData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
   statistic.init();
