@@ -1,7 +1,7 @@
 export default class Statistic {
   constructor(request, newsData, getMentionsInTitles) {
     this.request = request;
-    this.news = newsData;
+    this.news = newsData.data;
     this.getMentionsInTitles = getMentionsInTitles;
   }
 

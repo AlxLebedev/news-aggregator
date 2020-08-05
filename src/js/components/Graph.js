@@ -1,7 +1,7 @@
 export default class Graph {
   constructor(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays) {
     this.request = request;
-    this.news = newsData;
+    this.news = newsData.data;
     this.getRequestDates = getRequestDates;
     this.getDatesRange = getDatesRange;
     this.getRequestMonth = getRequestMonth;

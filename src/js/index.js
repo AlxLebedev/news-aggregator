@@ -48,9 +48,9 @@ if (localData) {
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
   addParamsToLinks(internalsLinks, request);
 
-  articles.render(localData.articles);
+  articles.render(localData.data.articles);
 
   if (document.querySelector('.results__button')) {
-    showMoreButton.init(localData.articles);
+    showMoreButton.init(localData.data.articles);
   }
 }

@@ -32,14 +32,14 @@ export default class FinderSearch {
   checkLocalData(request) {
     const localData = this.dataStorage.getLocalStorageData(request);
     if (localData) {
-      this.renderLocalData(localData, request);
+      this.renderLocalData(localData.data, request);
       this.updateNews(request);
     } else {
       this.getNews(request);
     }
   }
 
-  renderLocalData(localData, request) {
+  renderLocalData(news, request) {
     if (document.querySelector('.error')) {
       this.error.hide();
     }
@@ -51,10 +51,10 @@ export default class FinderSearch {
     this.addParamsToLinks(internalsLinks, request);
 
     this.articles.clear();
-    this.articles.render(localData.articles);
+    this.articles.render(news.articles);
 
     if (document.querySelector('.results__button')) {
-      this.showMoreButton.init(localData.articles);
+      this.showMoreButton.init(news.articles);
     }
   }
 
