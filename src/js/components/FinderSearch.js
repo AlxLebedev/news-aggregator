@@ -26,13 +26,35 @@ export default class FinderSearch {
       this.finderInput.showHint();
       return;
     }
+    this.checkLocalData(request);
+  }
 
+  checkLocalData(request) {
     const localData = this.dataStorage.getLocalStorageData(request);
     if (localData) {
-      this.renderLocalData(localData);
+      this.renderLocalData(localData, request);
       this.updateNews(request);
     } else {
       this.getNews(request);
+    }
+  }
+
+  renderLocalData(localData, request) {
+    if (document.querySelector('.error')) {
+      this.error.hide();
+    }
+    if (!document.querySelector('.results__contentainer')) {
+      this.resultsContainer.bindToDom();
+    }
+
+    const internalsLinks = document.querySelectorAll('.internals-links');
+    this.addParamsToLinks(internalsLinks, request);
+
+    this.articles.clear();
+    this.articles.render(localData.articles);
+
+    if (document.querySelector('.results__button')) {
+      this.showMoreButton.init(localData.articles);
     }
   }
 
@@ -74,7 +96,10 @@ export default class FinderSearch {
 
   utiliseNews(news, request) {
     this.dataStorage.addToLocalStorage(request, news);
-    this.resultsContainer.bindToDom();
+    
+    if (!document.querySelector('.results__contentainer')) {
+      this.resultsContainer.bindToDom();
+    }
 
     const internalsLinks = document.querySelectorAll('.internals-links');
     this.addParamsToLinks(internalsLinks, request);
@@ -82,21 +107,6 @@ export default class FinderSearch {
     this.articles.render(news.articles);
     if (document.querySelector('.results__button')) {
       this.showMoreButton.init(news.articles);
-    }
-  }
-
-  renderLocalData(localData) {
-    if (document.querySelector('.error')) {
-      this.error.hide();
-    }
-    if (!document.querySelector('.results__contentainer')) {
-      this.resultsContainer.bindToDom();
-    }
-    this.articles.clear();
-    this.articles.render(localData.articles);
-
-    if (document.querySelector('.results__button')) {
-      this.showMoreButton.init(localData.articles);
     }
   }
 }

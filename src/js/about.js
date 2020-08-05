@@ -19,7 +19,6 @@ const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
 
 if (request) {
-  console.log(request);
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
   addParamsToLinks(internalsLinks, request);
 }

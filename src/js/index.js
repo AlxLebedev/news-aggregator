@@ -33,7 +33,6 @@ const dataStorage = new DataStorage();
 const articles = new Articles(formatDate);
 const showMoreButton = new ShowMoreButton(articles);
 
-
 const finderSearch = new FinderSearch(validateRequest, addParamsToLinks, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
 finderSearch.init();
 
@@ -41,17 +40,16 @@ const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
 const localData = dataStorage.getLocalStorageData(request);
 
-console.log(request);
-console.log(localData);
-
 if (localData) {
   document.querySelector('.finder__input').value = request;
+  
   resultsContainer.bindToDom();
 
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
   addParamsToLinks(internalsLinks, request);
 
   articles.render(localData.articles);
+
   if (document.querySelector('.results__button')) {
     showMoreButton.init(localData.articles);
   }
