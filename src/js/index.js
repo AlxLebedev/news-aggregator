@@ -49,9 +49,10 @@ if (localData) {
   const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
   addParamsToLinks(internalsLinks, request);
 
-  articles.render(localData.data.articles);
-
-  if (document.querySelector('.results__button')) {
-    showMoreButton.init(localData.data.articles);
+  if (validateLocalData(localData)) {
+    finderSearch.renderLocalData(localData.data, request);
+  } else {
+    finderSearch.renderLocalData(localData.data, request);
+    finderSearch.updateNews(request);
   }
 }
