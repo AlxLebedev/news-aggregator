@@ -1,7 +1,8 @@
 export default class FinderSearch {
-  constructor(validateRequest, addParamsToLinks, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton) {
+  constructor(validateRequest, addParamsToLinks, validateLocalData, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton) {
     this.validateRequest = validateRequest;
     this.addParamsToLinks = addParamsToLinks;
+    this.validateLocalData = validateLocalData;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
@@ -32,8 +33,13 @@ export default class FinderSearch {
   checkLocalData(request) {
     const localData = this.dataStorage.getLocalStorageData(request);
     if (localData) {
-      this.renderLocalData(localData.data, request);
-      this.updateNews(request);
+      this.resultsContainer.unbind();
+      if (this.validateLocalData(localData)) {
+        this.renderLocalData(localData.data, request);
+      } else {
+        this.renderLocalData(localData.data, request);
+        this.updateNews(request);
+      }
     } else {
       this.getNews(request);
     }

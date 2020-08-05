@@ -13,6 +13,7 @@ import badResponsePic from '../img/static/bad-response.png';
 import validateRequest from './utils/validate-request';
 import addParamsToLinks from './utils/add-params-to-links';
 import getRequestDates from './utils/get-request-dates';
+import validateLocalData from './utils/validate-localData';
 import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
 import Error from './components/Error';
@@ -33,7 +34,7 @@ const dataStorage = new DataStorage();
 const articles = new Articles(formatDate);
 const showMoreButton = new ShowMoreButton(articles);
 
-const finderSearch = new FinderSearch(validateRequest, addParamsToLinks, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
+const finderSearch = new FinderSearch(validateRequest, addParamsToLinks, validateLocalData, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
 finderSearch.init();
 
 const urlParameters = new URL(location.href).searchParams;

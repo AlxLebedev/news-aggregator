@@ -2,7 +2,7 @@ export default class DataStorage {
   constructor() {}
 
   addToLocalStorage(name, data) {
-    const currentDate = new Date();
+    const currentDate = Date.now();
     const localData = {
       date: currentDate,
       data: data
@@ -13,7 +13,6 @@ export default class DataStorage {
   getLocalStorageData(name) {
     try {
       const data = JSON.parse(localStorage.getItem(name));
-      console.log(data);
       return data;
     } catch(e) {
       console.log(e);
