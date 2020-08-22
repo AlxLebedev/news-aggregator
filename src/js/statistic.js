@@ -26,24 +26,33 @@ const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
 const localData = dataStorage.getLocalStorageData(request);
 
-checkLocalData(localData);
-
-async function checkLocalData(localData) {
-  if (localData) {
+async function checkLocalData(storageData) {
+  if (storageData) {
     const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
     addParamsToLinks(internalsLinks, request);
-  
+
     let actlualData = null;
-  
-    if (validateLocalData(localData)) {
-      actlualData = localData.data;
+
+    if (validateLocalData(storageData)) {
+      actlualData = storageData.data;
     } else {
       actlualData = await newsApi.fetchNews(request);
     }
 
     const statistic = new Statistic(request, actlualData, getMentionsInTitles);
-    const graph = new Graph(request, actlualData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays);
+    const graph = new Graph(
+      request,
+      actlualData,
+      getRequestDates,
+      getDatesRange,
+      getRequestMonth,
+      getRequestDays,
+      sortArticlesByDays,
+      getReferencesByDays,
+    );
     statistic.init();
     graph.init();
   }
 }
+
+checkLocalData(localData);

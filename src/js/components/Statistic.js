@@ -3,6 +3,8 @@ export default class Statistic {
     this.request = request;
     this.news = newsData;
     this.getMentionsInTitles = getMentionsInTitles;
+    this.statisticRequestElement = null;
+    this.statisticNewsPerWeekElement = null;
   }
 
   init() {
@@ -12,13 +14,13 @@ export default class Statistic {
   }
 
   renderRequest(request) {
-    const statisticRequestElement = document.querySelector('.statistic__request');
-    statisticRequestElement.innerText = `«${request}»`;
+    this.statisticRequestElement = document.querySelector('.statistic__request');
+    this.statisticRequestElement.innerText = `«${request}»`;
   }
 
   renderNewsPerWeek(newsQuantity) {
-    const statisticNewsPerWeekElement = document.getElementById('statistic-news-per-week');
-    statisticNewsPerWeekElement.innerText = newsQuantity;
+    this.statisticNewsPerWeekElement = document.getElementById('statistic-news-per-week');
+    this.statisticNewsPerWeekElement.innerText = newsQuantity;
   }
 
   renderMentionsInTitles(request, articles) {

@@ -7,6 +7,6 @@ export default function getRequestDates() {
 
   const fromDate = formatter.format(lastDate);
   const toDate = formatter.format(currentDate);
-  
+
   return [fromDate, toDate];
 }

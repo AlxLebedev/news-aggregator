@@ -6,5 +6,5 @@ export default function validateLocalData(localData) {
   const millisecondsPerMinute = 60000;
   const lifeCycleOfLocalData = millisecondsPerMinute * minutesInLifeCycle;
 
-  return localDataAge > lifeCycleOfLocalData ? false : true;
+  return !(localDataAge > lifeCycleOfLocalData);
 }

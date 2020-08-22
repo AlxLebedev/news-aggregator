@@ -1,5 +1,17 @@
 export default class FinderSearch {
-  constructor(validateRequest, addParamsToLinks, validateLocalData, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton) {
+  constructor(
+    validateRequest,
+    addParamsToLinks,
+    validateLocalData,
+    newsApi,
+    preloader,
+    error,
+    resultsContainer,
+    finderInput,
+    dataStorage,
+    articles,
+    showMoreButton,
+  ) {
     this.validateRequest = validateRequest;
     this.addParamsToLinks = addParamsToLinks;
     this.validateLocalData = validateLocalData;
@@ -17,9 +29,9 @@ export default class FinderSearch {
     const finderInput = document.querySelector('.finder__input');
     const finderButton = document.querySelector('.finder__button');
 
-    finderInput.addEventListener( 'keypress', ( event ) => { if (event.key === 'Enter') this.checkRequest(finderInput.value) } );
-    finderInput.addEventListener( 'input', () => this.finderInput.hideHint() );
-    finderButton.addEventListener( 'click', () => this.checkRequest(finderInput.value) );
+    finderInput.addEventListener('keypress', (event) => { if (event.key === 'Enter') this.checkRequest(finderInput.value); });
+    finderInput.addEventListener('input', () => this.finderInput.hideHint());
+    finderButton.addEventListener('click', () => this.checkRequest(finderInput.value));
   }
 
   checkRequest(request) {
@@ -65,9 +77,9 @@ export default class FinderSearch {
   }
 
   async updateNews(request) {
-    this.resultsContainer.showUpdater();
+    this.preloader.showUpdater();
     const news = await this.newsApi.fetchNews(request);
-    this.resultsContainer.hideUpdater();
+    this.preloader.hideUpdater();
     this.resultsContainer.unbind();
     this.checkNews(news, request);
   }
@@ -82,7 +94,7 @@ export default class FinderSearch {
   }
 
   checkNews(news, request) {
-    switch(news) {
+    switch (news) {
       case 'not-found':
         this.error.show('not-found');
         return;
@@ -102,14 +114,14 @@ export default class FinderSearch {
 
   utiliseNews(news, request) {
     this.dataStorage.addToLocalStorage(request, news);
-    
+
     if (!document.querySelector('.results__contentainer')) {
       this.resultsContainer.bindToDom();
     }
 
     const internalsLinks = document.querySelectorAll('.internals-links');
     this.addParamsToLinks(internalsLinks, request);
-    
+
     this.articles.render(news.articles);
     if (document.querySelector('.results__button')) {
       this.showMoreButton.init(news.articles);

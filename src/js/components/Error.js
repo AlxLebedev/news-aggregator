@@ -5,12 +5,13 @@ export default class Error {
     this.serverErrorPic = serverErrorPic;
     this.badRequestPic = badRequestPic;
     this.badResponsePic = badResponsePic;
+    this.errorElement = null;
   }
 
   show(type) {
     const error = this.errorTemplate.content.cloneNode(true);
 
-    switch(type) {
+    switch (type) {
       case 'not-found':
         error.querySelector('.error__image').src = this.notFoundPic;
         error.querySelector('.error__warning').innerText = 'Ничего не найдено';
@@ -42,9 +43,9 @@ export default class Error {
   }
 
   hide() {
-    const errorElement = document.querySelector('.error');
-    if (errorElement) {
-      errorElement.remove();
+    this.errorElement = document.querySelector('.error');
+    if (this.errorElement) {
+      this.errorElement.remove();
     }
   }
 }

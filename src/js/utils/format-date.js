@@ -1,9 +1,9 @@
 export default function formatDate(date) {
   const currentDate = new Date(date);
-  
+
   const formatterOptions = {
-    day: "2-digit",
-    month: "long"
+    day: '2-digit',
+    month: 'long',
   };
   const formatter = new Intl.DateTimeFormat('ru-RU', formatterOptions);
 

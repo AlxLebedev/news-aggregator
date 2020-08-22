@@ -1,19 +1,21 @@
 export default class Api {
-  constructor() {}
+  constructor() {
+    this.response = null;
+  }
 
   async fetchData(url, param) {
     try {
-      let response = param === undefined ? await fetch(url) : await fetch(url, param);
-      if (response.ok) {
+      this.response = param === undefined ? await fetch(url) : await fetch(url, param);
+      if (this.response.ok) {
         try {
-          return await response.json();
-        } catch(e) {
+          return await this.response.json();
+        } catch (e) {
           return 'bad-response';
         }
       } else {
-        return response.status;
+        return this.response.status;
       }
-    } catch(e) {
+    } catch (e) {
       return 'server-error';
     }
   }
