@@ -1,8 +1,8 @@
 // link reset
 
 @mixin reset-styles-link {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 // list reset
@@ -16,11 +16,11 @@
 // visually-hidden
 
 @mixin visually-hidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
   border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
-  width: 1px;
   overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

@@ -1,8 +1,8 @@
 .results {
   &__contentainer {
-    position: relative;
     background-color: $color-gray-default;
     padding: 32px 16px 44px;
+    position: relative;
 
     @media ($tablet) {
       padding: 40px;
@@ -14,11 +14,11 @@
   }
 
   &__updater {
-    position: absolute;
-    top: 110px;
     left: 0;
-    right: 0;
     opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 110px;
 
     @media($tablet) {
       top: 80px;
@@ -33,21 +33,23 @@
     }
   }
 
-  &__updater-image {
+  &__updater-image { bottom: 0;
+    left: 0;
     margin: auto;
     position: absolute;
-    top: 15px; left: 0; bottom: 0; right: 0;
+    right: 0;
+    top: 15px;
   }
 
   &__header {
     margin-bottom: 45px;
 
     @media ($tablet) {
+      align-items: center;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
       margin: 0 auto 55px;
+      max-width: 1000px;
     }
 
     @media ($desktop) {
@@ -73,8 +75,8 @@
 
   &__link {
     @include reset-styles-link;
-    display: flex;
     align-items: center;
+    display: flex;
     font-size: 18px;
     font-weight: 500;
     transition: color 0.3s, opacity 0.3s;
@@ -103,8 +105,8 @@
     justify-content: center;
 
     @media ($desktop) {
-      max-width: 1230px;
       margin: auto;
+      max-width: 1230px;
     }
   }
 
@@ -122,9 +124,9 @@
   }
 
   &__button {
-    width: 100%;
     background-color: $color-white;
     margin-top: 13px;
+    width: 100%;
 
     &:hover {
       background-color: $color-gray-dark;
@@ -139,8 +141,8 @@
     }
 
     @media ($desktop) {
+      margin: 64px auto 80px;
       width: 288px;
-      margin: 64px auto 80px
     }
   }
 }

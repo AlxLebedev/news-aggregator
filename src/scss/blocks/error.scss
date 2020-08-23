@@ -20,21 +20,21 @@
   }
 
   &__image {
-    width: 70px;
     height: 70px;
     margin: auto;
+    width: 70px;
 
     @media($desktop) {
-      width: 96px;
       height: 96px;
+      width: 96px;
     }
   }
 
   &__warning {
     font-family: $font-robotoslab;
     line-height: 1;
+    margin: 10px auto;
     text-align: center;
-    margin: 10px auto 10px;
 
     @media($desktop) {
       font-size: 26px;
@@ -45,10 +45,10 @@
 
   &__message {
     color: $color-gray-havy-dark;
-    text-align: center;
+    margin: auto;
     max-width: 356px;
     padding: 0 30px;
-    margin: auto;
+    text-align: center;
 
     @media($desktop) {
       font-size: 18px;

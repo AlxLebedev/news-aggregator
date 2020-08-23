@@ -1,17 +1,17 @@
 .header {
-  width: 100%;
   border-bottom: 1px solid $color-gray-dark;
+  width: 100%;
 
   &--page-index {
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 16px 16px;
+    padding: 16px;
 
     @media ($tablet) {
       padding: 22px 40px 18px;

@@ -29,13 +29,13 @@
     }
 
     &--active {
-      color: $color-black;
       border-bottom: 4px solid $color-black;
+      color: $color-black;
     }
 
     &--index-active {
-      color: $color-white;
       border-bottom: 4px solid $color-white;
+      color: $color-white;
     }
 
     @media ($tablet) {

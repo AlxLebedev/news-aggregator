@@ -1,23 +1,23 @@
 // fonts
 
-$font-roboto: "Roboto", "Arial", "Helvetica", sans-serif;
-$font-robotoslab: "Robotoslab", "Arial", "Helvetica", sans-serif;
+$font-roboto: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+$font-robotoslab: 'Robotoslab', 'Arial', 'Helvetica', sans-serif;
 
 // colors
 
-$color-black: #000000;
-$color-white: #ffffff;
-$color-gray-default: #F5F6F7;
+$color-black: #000;
+$color-white: #fff;
+$color-gray-default: #f5f6f7;
 $color-gray-dark: #e8e8e9;
 $color-gray-havy-dark: #b6bcbf;
-$color-blue-light: #347EFF;
-$color-blue: #2F71E5;
-$color-blue-dark: #2A65CC;
+$color-blue-light: #347eff;
+$color-blue: #2f71e5;
+$color-blue-dark: #2a65cc;
 $color-red: #fd0000;
 
 // pixel density
 
-$media-retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+$media-retina: '(min-resolution: 144dpi), (min-resolution: 1.5dppx)';
 
 // screen sizes
 
@@ -27,5 +27,5 @@ $width-desktop: 1440px;
 
 // media queries
 
-$tablet: "min-width: #{$width-tablet}";
-$desktop: "min-width: #{$width-desktop}";
+$tablet: 'min-width: #{$width-tablet}';
+$desktop: 'min-width: #{$width-desktop}';

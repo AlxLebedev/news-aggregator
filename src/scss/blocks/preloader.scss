@@ -1,10 +1,10 @@
 .preloader {
-  position: relative;
+  background-color: $color-gray-default;
   display: flex;
   flex-direction: column;
-  background-color: $color-gray-default;
-  padding-bottom: 20px;
   height: 150px;
+  padding-bottom: 20px;
+  position: relative;
 
   @media($tablet) {
     height: 200px;
@@ -17,28 +17,28 @@
   }
 
   &__element {
-    display: block;
-    width: 50px;
-    height: 50px;
+    
+    animation: spin 0.75s infinite linear;
     border: 2px solid $color-gray-havy-dark;
     border-bottom-color: $color-gray-default;
     
     border-radius: 50%;
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
+    display: block;
+    height: 50px;
+    left: 0;
     margin: auto;
     
-    animation: spin .75s infinite linear;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
   }
 
   &__message {
     color: $color-gray-havy-dark;
-    text-align: center;
     margin: auto 0 0;
+    text-align: center;
   }
 }
 

@@ -16,11 +16,11 @@
   }
 
   &__title {
-    margin: 0;
     font-family: $font-robotoslab;
     font-size: 30px;
-    width: 60%;
+    margin: 0;
     padding: 0 16px 16px;
+    width: 60%;
 
     @media ($tablet) {
       padding: 0 0 40px 32px;
@@ -35,14 +35,14 @@
   }
 
   &__button-box {
-    width: 100%;
-    padding: 0 16px;
     order: 2;
+    padding: 0 16px;
+    width: 100%;
 
     @media ($tablet) {
-      width: auto;
       order: initial;
-      padding: 0 40px 0;
+      padding: 0 40px;
+      width: auto;
     }
 
     @media ($desktop) {
@@ -52,10 +52,10 @@
 
   &__button {
     @include reset-styles-link;
-    padding: 15px 67px;
-    margin-top: 24px;
-    border: 1px solid $color-black;
     background-color: $color-gray-default;
+    border: 1px solid $color-black;
+    margin-top: 24px;
+    padding: 15px 67px;
 
     &:hover {
       background-color: $color-gray-dark;
@@ -66,15 +66,15 @@
     }
 
     @media ($tablet) {
-      margin-top: 0;
-      border: none;
-      padding: 0;
       align-items: flex-start;
+      border: 0;
       height: auto;
+      margin-top: 0;
+      padding: 0;
 
       &:hover {
-        opacity: 0.6;
         background-color: transparent;
+        opacity: 0.6;
       }
     }
   }

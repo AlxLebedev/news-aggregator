@@ -11,17 +11,17 @@
     &__link {
       @include reset-styles-link;
       transition: opacity 0.2s;
+    }
+
+    &__link:hover {
+      opacity: 0.6;
+    }
+
+    &__link--active {
+      color: $color-gray-havy-dark;
 
       &:hover {
-        opacity: 0.6;
-      }
-
-      &--active {
-        color: $color-gray-havy-dark;
-
-        &:hover {
-          opacity: initial;
-        }
+        opacity: initial;
       }
     }
   }

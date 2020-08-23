@@ -7,7 +7,9 @@
     "start": "cross-env  NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "build": "cross-env  NODE_ENV=production rimraf dist && webpack --mode production",
     "show:dist": "live-server dist",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "stylelint": "stylelint \"src/scss/**/*.scss\" --syntax scss",
+    "stylelint:fix": "stylelint \"src/scss/**/*.scss\" --syntax scss --fix"
   },
   "browserslist": [
     "Chrome >= 49",
@@ -37,6 +39,9 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
     "live-server": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {

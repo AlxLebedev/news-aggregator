@@ -1,14 +1,15 @@
 .slider {
+  margin: auto;
   overflow: hidden;
   width: 90%;
-  margin: auto;
 
   .slider__swiper-container {
-    max-width: 1980px;
     height: 264px;
+    max-width: 1980px;
   }
 
-  .slider__swiper-button-prev, .slider__swiper-button-next {
+  .slider__swiper-button-prev,
+  .slider__swiper-button-next {
     display: none;
   }
 
@@ -22,17 +23,19 @@
   }
   
   @media ($desktop) {
-    .slider__swiper-button-prev, .slider__swiper-button-next {
-      display: flex;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .slider__swiper-button-prev,
+    .slider__swiper-button-next {
       background-color: $color-black;
+      border-radius: 50%;
+      display: flex;
+      height: 40px;
+      width: 40px;
     }
   
-    .slider__swiper-button-next::after, .slider__swiper-button-prev::after {
-      font-size: 12px;
+    .slider__swiper-button-next::after,
+    .slider__swiper-button-prev::after {
       color: $color-white;
+      font-size: 12px;
     }
   }
 }

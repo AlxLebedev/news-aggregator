@@ -1,9 +1,9 @@
 .finder {
-  color: $color-white;
   background-image: url('../img/backgrounds/main-background-mobile@x1.png');
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  color: $color-white;
 
   @media ($tablet) {
     background-image: url('../img/backgrounds/main-background-tablet@x1.png');
@@ -30,10 +30,10 @@
   }
 
   &__title {
-    margin: 0;
     font-family: $font-robotoslab;
     font-size: 36px;
     line-height: 40px;
+    margin: 0;
 
     @media ($desktop) {
       font-size: 60px;
@@ -45,8 +45,8 @@
     margin-bottom: 64px;
 
     @media ($tablet) {
-      max-width: 700px;
       margin: 0 auto 24px;
+      max-width: 700px;
     }
 
     @media ($desktop) {
@@ -55,9 +55,9 @@
   }
 
   &__explanation {
-    margin: 16px 0 0;
     font-size: 20px;
     line-height: 26px;
+    margin: 16px 0 0;
 
     @media ($tablet) {
       font-size: 18px;
@@ -70,16 +70,16 @@
   }
 
   &__search {
-    position: relative;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
-    background-color: transparent;
 
     @media ($tablet) {
-      max-width: 700px;
       justify-content: space-between;
       margin: auto;
+      max-width: 700px;
     }
   }
 
@@ -87,21 +87,21 @@
     position: relative;
 
     &::before {
-      position: absolute;
+      align-items: center;
+      background-color: $color-red;
+      border-radius: 30px;
       content: 'Нужно ввести ключевое слово';
       display: flex;
-      align-items: center;
-      width: 220px;
-      height: 30px;
-      top: -50px;
-      left: 0;
       font-size: 14px;
-      text-align: center;
-      padding: 5px;
-      border-radius: 30px;
-      background-color: red;
-      transition: opacity 0.5s;
+      height: 30px;
+      left: 0;
       opacity: 0;
+      padding: 5px;
+      position: absolute;
+      text-align: center;
+      top: -50px;
+      transition: opacity 0.5s;
+      width: 220px;
     }
 
     &--invalid::before {
@@ -111,29 +111,29 @@
     @media($tablet) {
       &::before {
         height: 20px;
-        top: 65px;
         left: calc(35% - 110px);
+        top: 65px;
       }
     }
 
     @media($desktop) {
       &::before {
         height: 40px;
-        top: 70px;
         left: calc(40% - 110px);
+        top: 70px;
       }
     }
   }
 
   &__input {
-    font-size: 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    margin: auto;
-    height: 56px;
+    border: 0;
     border-radius: 30px;
+    font-size: 16px;
+    height: 56px;
+    margin: auto;
+    outline: none;
     padding: 0 20px;
+    width: 100%;
 
     &::placeholder {
       font-size: 16px;
@@ -145,10 +145,10 @@
   }
 
   &__button {
-    width: 100%;
-    color: $color-white;
     background-color: $color-blue;
+    color: $color-white;
     margin-top: 10px;
+    width: 100%;
 
     &:hover {
       background-color: $color-blue-light;
@@ -159,11 +159,11 @@
     }
 
     @media ($tablet) {
+      left: calc(100% - 159px);
+      margin: 0;
       position: absolute;
       top: 0;
-      left: calc(100% - 159px);
       width: 160px;
-      margin: 0;
     }
   }
 }
