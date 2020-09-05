@@ -1,43 +1,42 @@
 .preloader {
-  background-color: $color-gray-default;
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 150px;
   padding-bottom: 20px;
-  position: relative;
-
-  @media($tablet) {
+  height: 150px;
+  background-color: $color-gray-default;
+  
+  @media ($tablet) {
     height: 200px;
     padding-bottom: 40px;
   }
 
-  @media($desktop) {
+  @media ($desktop) {
     height: 250px;
     padding-bottom: 60px;
   }
 
   &__element {
-    
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+
     animation: spin 0.75s infinite linear;
     border: 2px solid $color-gray-havy-dark;
     border-bottom-color: $color-gray-default;
-    
     border-radius: 50%;
-    bottom: 0;
-    display: block;
-    height: 50px;
-    left: 0;
-    margin: auto;
-    
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50px;
   }
 
   &__message {
-    color: $color-gray-havy-dark;
     margin: auto 0 0;
+    color: $color-gray-havy-dark;
     text-align: center;
   }
 }

@@ -8,8 +8,8 @@
     padding: 30px 16px;
 
     @media ($tablet) {
-      align-items: center;
       padding: 21px 40px;
+      align-items: center;
     }
 
     @media ($desktop) {
@@ -18,21 +18,21 @@
   }
 
   &__copyright {
-    color: $color-gray-havy-dark;
-    margin: 0;
-    order: 2;
     width: 100%;
+    margin: 0;
+    color: $color-gray-havy-dark;
+    order: 2;
 
     @media ($tablet) {
-      order: initial;
       width: 140px;
+      order: initial;
     }
   }
 
   &__social {
     margin-top: -10px;
 
-    @media($tablet) {
+    @media ($tablet) {
       margin-top: 0;
     }
   }
@@ -46,8 +46,8 @@
   }
 
   &__nav-item {
-    color: $color-black;
     margin-bottom: 30px;
+    color: $color-black;
 
     &:first-child {
       margin-top: 8px;

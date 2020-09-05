@@ -65,7 +65,7 @@ export default class FinderSearch {
       this.resultsContainer.bindToDom();
     }
 
-    const internalsLinks = document.querySelectorAll('.internals-links');
+    const internalsLinks = document.querySelectorAll('.nav__link--internal');
     this.addParamsToLinks(internalsLinks, request);
 
     this.articles.clear();
@@ -119,7 +119,7 @@ export default class FinderSearch {
       this.resultsContainer.bindToDom();
     }
 
-    const internalsLinks = document.querySelectorAll('.internals-links');
+    const internalsLinks = document.querySelectorAll('.nav__link--internal');
     this.addParamsToLinks(internalsLinks, request);
 
     this.articles.render(news.articles);

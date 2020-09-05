@@ -1,10 +1,10 @@
 .header {
-  border-bottom: 1px solid $color-gray-dark;
   width: 100%;
+  border-bottom: 1px solid $color-gray-dark;
 
   &--page-index {
-    left: 0;
     position: absolute;
+    left: 0;
     top: 0;
   }
 

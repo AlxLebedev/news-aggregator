@@ -4,10 +4,10 @@
   }
 
   &__site {
-    background-color: $color-white;
     padding: 16px;
+    background-color: $color-white;
 
-    @media($tablet) {
+    @media ($tablet) {
       padding: 30px 40px;
     }
 
@@ -17,10 +17,10 @@
   }
 
   &__site-title {
+    margin: 0 0 16px;
     font-family: $font-robotoslab;
     font-size: 30px;
     font-weight: 400;
-    margin: 0 0 16px;
 
     @media ($tablet) {
       line-height: 1;

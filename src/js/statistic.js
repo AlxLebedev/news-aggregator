@@ -28,7 +28,7 @@ const localData = dataStorage.getLocalStorageData(request);
 
 async function checkLocalData(storageData) {
   if (storageData) {
-    const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+    const internalsLinks = document.querySelectorAll('.nav__link--internal');
     addParamsToLinks(internalsLinks, request);
 
     let actlualData = null;

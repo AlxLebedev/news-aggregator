@@ -1,7 +1,8 @@
 export default function addParamsToLinks(links, param) {
-  const linksArray = Array.from(links);
+  const linksArr = Array.from(links);
 
-  linksArray.map((link) => link.href = link.href.split('?')[0]);
-
-  linksArray.map((link) => link.href = `${link.href}?request=${param}`);
+  linksArr.map((link) => {
+    const initialLinkAddress = link.href.split('?')[0];
+    link.href = `${initialLinkAddress}?request=${param}`;
+  });
 }

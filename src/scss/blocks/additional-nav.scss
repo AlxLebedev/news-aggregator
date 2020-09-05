@@ -3,32 +3,30 @@
 
   @media ($tablet) {
     display: inline;
+  }
 
-    &__wrapper {
-      padding: 32px 40px;
-    }
+  &__wrapper {
+    padding: 32px 40px;
 
-    &__link {
-      @include reset-styles-link;
-      transition: opacity 0.2s;
-    }
-
-    &__link:hover {
-      opacity: 0.6;
-    }
-
-    &__link--active {
-      color: $color-gray-havy-dark;
-
-      &:hover {
-        opacity: initial;
-      }
+    @media ($desktop) {
+      padding: 40px 104px;
     }
   }
 
-  @media ($desktop) {
-    &__wrapper {
-      padding: 40px 104px;
+  &__link {
+    @include reset-styles-link;
+    transition: opacity 0.2s;
+  }
+
+  &__link:hover {
+    opacity: 0.6;
+  }
+
+  &__link--active {
+    color: $color-gray-havy-dark;
+
+    &:hover {
+      opacity: initial;
     }
   }
 }

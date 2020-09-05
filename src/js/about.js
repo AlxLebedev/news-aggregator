@@ -19,7 +19,7 @@ const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
 
 if (request) {
-  const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+  const internalsLinks = document.querySelectorAll('.nav__link--internal');
   addParamsToLinks(internalsLinks, request);
 }
 

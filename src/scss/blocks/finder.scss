@@ -1,16 +1,28 @@
 .finder {
-  background-image: url('../img/backgrounds/main-background-mobile@x1.png');
+  color: $color-white;
+  background-image: url('../img/backgrounds/main-background-mobile@x1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: $color-white;
+
+  @media #{$media-retina} {
+    background-image: url("../img/backgrounds/main-background-mobile@x2.jpg");
+  }
 
   @media ($tablet) {
-    background-image: url('../img/backgrounds/main-background-tablet@x1.png');
+    background-image: url('../img/backgrounds/main-background-tablet@x1.jpg');
+
+    @media #{$media-retina} {
+      background-image: url("../img/backgrounds/main-background-tablet@x2.jpg");
+    }
   }
 
   @media ($desktop) {
-    background-image: url('../img/backgrounds/main-background-desktop@x1.png');
+    background-image: url('../img/backgrounds/main-background-desktop@x1.jpg');
+
+    @media #{$media-retina} {
+      background-image: url("../img/backgrounds/main-background-desktop@x2.jpg");
+    }
   }
 
   &__heading {
@@ -30,10 +42,10 @@
   }
 
   &__title {
+    margin: 0;
     font-family: $font-robotoslab;
     font-size: 36px;
     line-height: 40px;
-    margin: 0;
 
     @media ($desktop) {
       font-size: 60px;
@@ -45,8 +57,8 @@
     margin-bottom: 64px;
 
     @media ($tablet) {
-      margin: 0 auto 24px;
       max-width: 700px;
+      margin: 0 auto 24px;
     }
 
     @media ($desktop) {
@@ -55,9 +67,9 @@
   }
 
   &__explanation {
+    margin: 16px 0 0;
     font-size: 20px;
     line-height: 26px;
-    margin: 16px 0 0;
 
     @media ($tablet) {
       font-size: 18px;
@@ -70,16 +82,16 @@
   }
 
   &__search {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
 
     @media ($tablet) {
-      justify-content: space-between;
-      margin: auto;
       max-width: 700px;
+      margin: auto;
+      justify-content: space-between;
     }
   }
 
@@ -87,21 +99,21 @@
     position: relative;
 
     &::before {
+      content: 'Нужно ввести ключевое слово';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      display: flex;
       align-items: center;
+      width: 220px;
+      height: 30px;
+      padding: 5px;
+      font-size: 14px;
+      text-align: center;
       background-color: $color-red;
       border-radius: 30px;
-      content: 'Нужно ввести ключевое слово';
-      display: flex;
-      font-size: 14px;
-      height: 30px;
-      left: 0;
-      opacity: 0;
-      padding: 5px;
-      position: absolute;
-      text-align: center;
-      top: -50px;
       transition: opacity 0.5s;
-      width: 220px;
+      opacity: 0;
     }
 
     &--invalid::before {
@@ -111,30 +123,30 @@
     @media($tablet) {
       &::before {
         height: 20px;
-        left: calc(35% - 110px);
         top: 65px;
+        left: calc(35% - 110px);
       }
     }
 
     @media($desktop) {
       &::before {
         height: 40px;
-        left: calc(40% - 110px);
         top: 70px;
+        left: calc(40% - 110px);
       }
     }
   }
 
   &__input {
-    border: 0;
-    border-radius: 30px;
-    font-size: 16px;
+    width: 100%;
     height: 56px;
     margin: auto;
-    outline: none;
     padding: 0 20px;
-    width: 100%;
-
+    font-size: 16px;
+    border: 0;
+    border-radius: 30px;
+    outline: none;
+    
     &::placeholder {
       font-size: 16px;
     }
@@ -145,10 +157,10 @@
   }
 
   &__button {
-    background-color: $color-blue;
-    color: $color-white;
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
+    color: $color-white;
+    background-color: $color-blue;
 
     &:hover {
       background-color: $color-blue-light;
@@ -159,11 +171,11 @@
     }
 
     @media ($tablet) {
-      left: calc(100% - 159px);
-      margin: 0;
       position: absolute;
       top: 0;
+      left: calc(100% - 159px);
       width: 160px;
+      margin: 0;
     }
   }
 }

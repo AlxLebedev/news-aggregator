@@ -6,10 +6,11 @@
 
     @media ($tablet) {
       display: flex;
-      margin: auto;
       max-width: 1000px;
+      margin: auto;
       padding: 40px 40px 48px;
     }
+    
     @media ($desktop) {
       max-width: 1980px;
       padding: 80px 104px;
@@ -30,9 +31,9 @@
   }
 
   &__photo {
-    border-radius: 50%;
     margin: auto;
     width: 272px;
+    border-radius: 50%;
 
     @media ($tablet) {
       width: 232px;
@@ -45,30 +46,30 @@
 
   &__description {
     @media ($desktop) {
-      padding-right: 216px;
       padding-top: 51px;
+      padding-right: 216px;
     }
   }
 
   &__title {
+    margin-top: 24px;
+    margin-bottom: 16px;
     font-family: $font-robotoslab;
     font-size: 30px;
-    margin-bottom: 16px;
-    margin-top: 24px;
 
     @media ($tablet) {
       margin-top: 0;
     }
 
     @media ($desktop) {
+      margin-bottom: 24px;
       font-size: 40px;
       line-height: 1;
-      margin-bottom: 24px;
     }
   }
 
   &__bio {
-    font-size: 18px;
     margin: 0;
+    font-size: 18px;
   }
 }

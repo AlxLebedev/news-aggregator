@@ -58,7 +58,7 @@ if (localData) {
 
   resultsContainer.bindToDom();
 
-  const internalsLinks = Array.from(document.querySelectorAll('.internals-links'));
+  const internalsLinks = document.querySelectorAll('.nav__link--internal');
   addParamsToLinks(internalsLinks, request);
 
   if (validateLocalData(localData)) {

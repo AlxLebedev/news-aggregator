@@ -18,8 +18,8 @@
 
   &__link {
     @include reset-styles-link;
-    color: $color-gray-havy-dark;
     padding-bottom: 14px;
+    color: $color-gray-havy-dark;
     transition: opacity 0.2s;
 
     &[href] {
@@ -39,9 +39,9 @@
     }
 
     @media ($tablet) {
+      padding-bottom: 16px;
       font-size: 18px;
       line-height: 1.5;
-      padding-bottom: 16px;
     }
 
     @media ($desktop) {

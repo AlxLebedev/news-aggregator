@@ -1,6 +1,6 @@
 .graph {
-  border-collapse: collapse;
   width: 100%;
+  border-collapse: collapse;
 
   &__title {
     color: $color-gray-havy-dark;
@@ -10,8 +10,8 @@
   }
 
   &__title-date {
-    border-bottom: 2px solid $color-gray-havy-dark;
     padding-bottom: 8px;
+    border-bottom: 2px solid $color-gray-havy-dark;
   }
 
   &__title-quantity {
@@ -33,16 +33,16 @@
   &__bar-values {
     @media ($tablet) {
       display: flex;
-      margin-bottom: 8px;
       margin-top: 16px;
+      margin-bottom: 8px;
     }
   }
 
   &__bar-value {
     @media ($tablet) {
-      color: $color-gray-havy-dark;
-      font-size: 12px;
       width: 25%;
+      font-size: 12px;
+      color: $color-gray-havy-dark;
 
       &:last-child {
         width: auto;
@@ -51,13 +51,13 @@
   }
   
   &__day {
-    font-size: 18px;
-    padding-top: 18px;
     width: 96px;
+    padding-top: 18px;
+    font-size: 18px;
 
     @media ($tablet) {
-      padding-top: 56px;
       width: 102px;
+      padding-top: 56px;
 
       &--first {
         padding-top: 0;
@@ -78,16 +78,16 @@
   }
 
   &__value {
-    background-color: $color-blue;
-    color: $color-white;
-    font-size: 12px;
-    height: 24px;
-    min-width: 12px;
-    padding: 3px;
-    transition: width 0.5s;
     width: 12px;
-
-    @media($tablet) {
+    min-width: 12px;
+    height: 24px;
+    padding: 3px;
+    font-size: 12px;
+    color: $color-white;
+    background-color: $color-blue;
+    transition: width 0.5s;
+    
+    @media ($tablet) {
       padding: 4px;
     }
   }
