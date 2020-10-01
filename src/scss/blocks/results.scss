@@ -1,7 +1,8 @@
 .results {
   &__contentainer {
-    background-color: $color-gray-default;
+    position: relative;
     padding: 32px 16px 44px;
+    background-color: $color-gray-default;
 
     @media ($tablet) {
       padding: 40px;
@@ -12,28 +13,57 @@
     }
   }
 
+  &__updater {
+    position: absolute;
+    top: 110px;
+    right: 0;
+    left: 0;
+    opacity: 0;
+
+    @media ($tablet) {
+      top: 80px;
+    }
+
+    @media ($desktop) {
+      top: 90px;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__updater-image {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
   &__header {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
 
     @media ($tablet) {
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 1000px;
-      margin: 0 auto 35px;
+      margin: 0 auto 55px;
     }
 
     @media ($desktop) {
-      margin: 0 auto 64px;
       max-width: 1980px;
+      margin: 0 auto 64px;
     }
   }
 
   &__title {
+    margin: 0 0 16px;
     font-family: $font-robotoslab;
     font-size: 30px;
     line-height: 1;
-    margin: 0 0 16px;
 
     @media ($tablet) {
       margin: 0;
@@ -76,7 +106,7 @@
     justify-content: center;
 
     @media ($desktop) {
-      max-width: 1230px;
+      display: flex;
       margin: auto;
     }
   }
@@ -85,8 +115,8 @@
     margin: 0 5px 8px;
 
     @media ($tablet) {
-      min-width: 224px;
       width: calc((100% / 3) - 10px);
+      min-width: 224px;
     }
 
     @media ($desktop) {
@@ -96,8 +126,8 @@
 
   &__button {
     width: 100%;
-    background-color: $color-white;
     margin-top: 13px;
+    background-color: $color-white;
 
     &:hover {
       background-color: $color-gray-dark;
@@ -112,8 +142,8 @@
     }
 
     @media ($desktop) {
+      margin: 64px auto 80px;
       width: 288px;
-      margin: 64px auto 80px
     }
   }
 }

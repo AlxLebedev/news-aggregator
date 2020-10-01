@@ -6,13 +6,14 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const { merge } = require('webpack-merge');
 const dev = require('./webpack.dev.conf');
 const prod = require('./webpack.prod.conf');
+
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = merge({
   entry: {
     index: './src/js/index.js',
     about: './src/js/about.js',
-    stat: './src/js/statistic.js'
+    stat: './src/js/statistic.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -47,8 +48,8 @@ module.exports = merge({
       favicon: './src/static/favicon.ico',
     }),
     new MiniCssExtractPlugin({
-      filename: "styles/[name][chunkhash].css",
-    })
+      filename: 'styles/[name][chunkhash].css',
+    }),
   ],
   module: {
     rules: [
@@ -59,20 +60,20 @@ module.exports = merge({
             loader: 'file-loader',
             options: {
               name: 'img/[name].[ext]',
-            }
-          } : 
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'img/[name].[ext]',
-            }
-          },
+            },
+          }
+            : {
+              loader: 'file-loader',
+              options: {
+                name: 'img/[name].[ext]',
+              },
+            },
           {
             loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 85
+                quality: 85,
               },
               // optipng.enabled: false will disable optipng
               optipng: {
@@ -80,15 +81,15 @@ module.exports = merge({
               },
               pngquant: {
                 quality: [0.65, 0.90],
-                speed: 4
+                speed: 4,
               },
               gifsicle: {
                 interlaced: false,
               },
               svgo: {
                 removeViewBox: false,
-              }
-            }
+              },
+            },
           },
         ],
       },
@@ -96,8 +97,8 @@ module.exports = merge({
         test: /\.svg$/,
         use: [
           'svg-sprite-loader',
-          'svgo-loader'
-        ]
+          'svgo-loader',
+        ],
       },
       {
         test: /\.js$/,
@@ -114,26 +115,26 @@ module.exports = merge({
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: '../',
-            }
+            },
           },
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           }, {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: './postcss.config.js' } }
+            options: { sourceMap: true, config: { path: './postcss.config.js' } },
           }, {
             loader: 'sass-loader',
-            options: { sourceMap: true }
-          }
-        ]
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: 'fonts/[name].[ext]'
-        }
+          name: 'fonts/[name].[ext]',
+        },
       },
     ],
   },

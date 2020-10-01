@@ -3,15 +3,15 @@
   border-collapse: collapse;
 
   &__title {
+    color: $color-gray-havy-dark;
     font-size: 12px;
     line-height: 1.5;
-    color: $color-gray-havy-dark;
     vertical-align: top;
   }
 
   &__title-date {
-    border-bottom: 2px solid $color-gray-havy-dark;
     padding-bottom: 8px;
+    border-bottom: 2px solid $color-gray-havy-dark;
   }
 
   &__title-quantity {
@@ -40,9 +40,9 @@
 
   &__bar-value {
     @media ($tablet) {
+      width: 25%;
       font-size: 12px;
       color: $color-gray-havy-dark;
-      width: 25%;
 
       &:last-child {
         width: auto;
@@ -51,13 +51,13 @@
   }
   
   &__day {
-    font-size: 18px;
-    padding-top: 18px;
     width: 96px;
+    padding-top: 18px;
+    font-size: 18px;
 
     @media ($tablet) {
-      padding-top: 56px;
       width: 102px;
+      padding-top: 56px;
 
       &--first {
         padding-top: 0;
@@ -78,16 +78,17 @@
   }
 
   &__value {
+    width: 12px;
+    min-width: 12px;
+    height: 24px;
+    padding: 3px;
     font-size: 12px;
     color: $color-white;
     background-color: $color-blue;
-    padding: 3px 3px;
-    min-width: 12px;
-    height: 24px;
     transition: width 0.5s;
-
-    @media($tablet) {
-      padding: 4px 4px;
+    
+    @media ($tablet) {
+      padding: 4px;
     }
   }
 }

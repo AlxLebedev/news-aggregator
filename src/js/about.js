@@ -9,12 +9,21 @@ import '../img/svg/about/webpack.svg';
 import 'swiper/swiper-bundle.css';
 import '../scss/styles-page-about.scss';
 
-import Gitapi from './Modules/GitApi';
+import GitApi from './Modules/GitApi';
 import Slider from './components/Slider';
 import formatDate from './utils/format-date';
 import Commits from './components/Commits';
+import addParamsToLinks from './utils/add-params-to-links';
 
-const gitApi = new Gitapi();
+const urlParameters = new URL(location.href).searchParams;
+const request = urlParameters.get('request');
+
+if (request) {
+  const internalsLinks = document.querySelectorAll('.nav__link--internal');
+  addParamsToLinks(internalsLinks, request);
+}
+
+const gitApi = new GitApi();
 const slider = new Slider();
 
 const commits = new Commits(gitApi, slider, formatDate);

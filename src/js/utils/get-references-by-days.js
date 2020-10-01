@@ -1,11 +1,29 @@
-export default function referencesByDays(sorteredArticles, request) {
+export default function getReferencesByDays(sorteredArticles, request) {
+  function extractArticles(articles) {
+    const extractedArticles = [];
+
+    for (const articlesArray of articles) {
+      if (articlesArray.length === 0) {
+        extractedArticles.push([]);
+        continue;
+      }
+
+      const result = [];
+      articlesArray.map((article) => result.push(article.title, article.description));
+
+      extractedArticles.push(result);
+    }
+
+    return extractedArticles;
+  }
+
   const regExp = new RegExp(request.toLowerCase(), 'g');
   const extractedArticles = extractArticles(sorteredArticles);
-  
+
   const referencesByDays = [];
-  for (let item of extractedArticles) {
-    let references = String(item).toLowerCase().match(regExp);
-    
+  for (const item of extractedArticles) {
+    const references = String(item).toLowerCase().match(regExp);
+
     if (!references) {
       referencesByDays.push(0);
       continue;
@@ -15,22 +33,4 @@ export default function referencesByDays(sorteredArticles, request) {
   }
 
   return referencesByDays;
-}
-
-function extractArticles(articles) {
-  const extractedArticles = [];
-
-  for (let articlesArray of articles) {
-    if (articlesArray.length === 0) {
-      extractedArticles.push([]);
-      continue;
-    }
-
-    let result = [];
-    articlesArray.map( article => result.push(article.title, article.description) );
-
-    extractedArticles.push(result);
-  }
-
-  return extractedArticles;
 }

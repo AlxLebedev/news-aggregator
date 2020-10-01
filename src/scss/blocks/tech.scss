@@ -15,9 +15,9 @@
   }
 
   &__title {
+    margin: 0 0 40px;
     font-family: $font-robotoslab;
     font-size: 30px;
-    margin: 0 0 40px;
 
     @media ($desktop) {
       margin: 0 178px 0 0;
@@ -35,9 +35,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 18px;
     width: 120px;
     margin-bottom: 33px;
+    font-size: 18px;
 
     @media ($tablet) {
       margin-bottom: 0;

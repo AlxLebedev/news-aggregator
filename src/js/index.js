@@ -1,6 +1,7 @@
 import '../img/svg/common/arrow.svg';
 import '../img/svg/common/fb.svg';
 import '../img/svg/common/github.svg';
+import '../img/svg/index/three-dots.svg';
 
 import '../scss/styles-page-index.scss';
 
@@ -10,7 +11,9 @@ import badRequestPic from '../img/static/bad-request.png';
 import badResponsePic from '../img/static/bad-response.png';
 
 import validateRequest from './utils/validate-request';
+import addParamsToLinks from './utils/add-params-to-links';
 import getRequestDates from './utils/get-request-dates';
+import validateLocalData from './utils/validate-localData';
 import NewsApi from './Modules/NewsApi';
 import Preloader from './components/Preloader';
 import Error from './components/Error';
@@ -31,17 +34,37 @@ const dataStorage = new DataStorage();
 const articles = new Articles(formatDate);
 const showMoreButton = new ShowMoreButton(articles);
 
-
-const finderSearch = new FinderSearch(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton);
+const finderSearch = new FinderSearch(
+  validateRequest,
+  addParamsToLinks,
+  validateLocalData,
+  newsApi,
+  preloader,
+  error,
+  resultsContainer,
+  finderInput,
+  dataStorage,
+  articles,
+  showMoreButton,
+);
 finderSearch.init();
 
-if (sessionStorage.newsData) {
-  const request = dataStorage.getData('request');
-  const newsData = dataStorage.getData('newsData');
+const urlParameters = new URL(location.href).searchParams;
+const request = urlParameters.get('request');
+const localData = dataStorage.getLocalStorageData(request);
+
+if (localData) {
   document.querySelector('.finder__input').value = request;
+
   resultsContainer.bindToDom();
-  articles.render(newsData.articles);
-  if (document.querySelector('.results__button')) {
-    showMoreButton.init(newsData.articles);
+
+  const internalsLinks = document.querySelectorAll('.nav__link--internal');
+  addParamsToLinks(internalsLinks, request);
+
+  if (validateLocalData(localData)) {
+    finderSearch.renderLocalData(localData.data, request);
+  } else {
+    finderSearch.renderLocalData(localData.data, request);
+    finderSearch.updateNews(request);
   }
 }

@@ -2,12 +2,13 @@ export default class Articles {
   constructor(formatDate) {
     this.formatDate = formatDate;
     this.articleTemplate = document.getElementById('article-template');
+    this.articlesContainer = null;
   }
 
   render(articles) {
     const articlesArray = articles;
     const articlesArrayLength = articlesArray.length;
-  
+
     const firstArticle = 0;
     const lastArticle = articlesArrayLength < 3 ? articlesArrayLength - 1 : 2;
 
@@ -22,12 +23,12 @@ export default class Articles {
       article.querySelector('.article__owner').innerText = articlesArray[i].source.name;
       article.querySelector('.article__link').href = articlesArray[i].url;
 
-      article.querySelector('.article__image').onerror = function() {
+      article.querySelector('.article__image').onerror = function () {
         this.remove();
-      }
+      };
 
-      const articlesContainer = document.querySelector('.results__articles');
-      articlesContainer.append(article);
+      this.articlesContainer = document.querySelector('.results__articles');
+      this.articlesContainer.append(article);
     }
 
     if (articlesArrayLength <= 3) {
@@ -35,6 +36,13 @@ export default class Articles {
       if (showMoreButton) {
         showMoreButton.remove();
       }
+    }
+  }
+
+  clear() {
+    this.articlesContainer = document.querySelector('.results__articles');
+    while (this.articlesContainer.firstChild) {
+      this.articlesContainer.removeChild(this.articlesContainer.firstChild);
     }
   }
 }

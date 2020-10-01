@@ -16,11 +16,11 @@
   }
 
   &__title {
+    margin: 0 0 16px;
     font-family: $font-robotoslab;
     font-size: 30px;
-    line-height: 1;
     font-weight: normal;
-    margin: 0 0 16px;
+    line-height: 1;
 
     @media ($tablet) {
       margin: 0 0 24px;
@@ -53,8 +53,8 @@
   }
 
   &__list-value {
+    margin-left: 5px;
     font-size: 18px;
     font-weight: bold;
-    margin-left: 5px;
   }
 }

@@ -15,7 +15,7 @@ export default class Slider {
           spaceBetween: 8,
           slidesPerView: 1.2,
         },
-        768:{
+        768: {
           spaceBetween: 8,
           slidesPerView: 2.2,
         },
@@ -27,7 +27,7 @@ export default class Slider {
           centeredSlides: true,
           spaceBetween: 8,
           slidesPerView: 3.3,
-        }
+        },
       },
       pagination: {
         el: '.swiper-pagination',

@@ -4,14 +4,14 @@
 
   &--page-index {
     position: absolute;
-    top: 0;
     left: 0;
+    top: 0;
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 16px 16px;
+    padding: 16px;
 
     @media ($tablet) {
       padding: 22px 40px 18px;

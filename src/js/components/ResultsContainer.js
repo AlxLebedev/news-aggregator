@@ -1,18 +1,19 @@
 export default class ResultsContainer {
   constructor() {
     this.resultsTemplate = document.getElementById('results-template');
+    this.resultsContainer = null;
   }
 
   bindToDom() {
-    const resultsContainer = this.resultsTemplate.content.cloneNode(true);
+    this.resultsContainer = this.resultsTemplate.content.cloneNode(true);
     const resultsBlock = document.querySelector('.results');
-    resultsBlock.append(resultsContainer);
+    resultsBlock.append(this.resultsContainer);
   }
 
   unbind() {
-    const resultsContainer = document.querySelector('.results__contentainer');
-    if (resultsContainer) {
-      resultsContainer.remove();
+    this.resultsContainer = document.querySelector('.results__contentainer');
+    if (this.resultsContainer) {
+      this.resultsContainer.remove();
     }
   }
 }

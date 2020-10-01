@@ -6,9 +6,9 @@ export default class NewsApi extends Api {
     this.getRequestDates = getRequestDates;
     this.param = {
       headers: {
-        'X-Api-Key': '7c22611ba74c47b9bb7bab94a85a00f9'
-      }
-    }
+        'X-Api-Key': '7c22611ba74c47b9bb7bab94a85a00f9',
+      },
+    };
   }
 
   async fetchNews(request) {

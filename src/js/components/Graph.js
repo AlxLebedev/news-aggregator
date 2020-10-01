@@ -1,5 +1,14 @@
 export default class Graph {
-  constructor(request, newsData, getRequestDates, getDatesRange, getRequestMonth, getRequestDays, sortArticlesByDays, getReferencesByDays) {
+  constructor(
+    request,
+    newsData,
+    getRequestDates,
+    getDatesRange,
+    getRequestMonth,
+    getRequestDays,
+    sortArticlesByDays,
+    getReferencesByDays,
+  ) {
     this.request = request;
     this.news = newsData;
     this.getRequestDates = getRequestDates;
@@ -44,12 +53,14 @@ export default class Graph {
 
     const sortedArticles = this.sortArticlesByDays(this.news.articles, this.datesRange);
     const referencesByDays = this.getReferencesByDays(sortedArticles, this.request);
-    const totalReferences = referencesByDays.reduce( (sum, current) => sum + current );
+    const totalReferences = referencesByDays.reduce((sum, current) => sum + current);
     const quarterOfTotalReferences = totalReferences / 4;
 
     let counter = null;
-    for (let value of topBarValues) {
-      value.innerText = totalReferences <= 10 ? (counter + quarterOfTotalReferences).toFixed(1) : Math.round(counter + quarterOfTotalReferences);
+    for (const value of topBarValues) {
+      value.innerText = totalReferences <= 10
+        ? (counter + quarterOfTotalReferences).toFixed(1)
+        : Math.round(counter + quarterOfTotalReferences);
       counter += quarterOfTotalReferences;
     }
 
@@ -58,7 +69,7 @@ export default class Graph {
     }
 
     for (let i = 0; i < referencesValuesElements.length; i += 1) {
-      referencesValuesElements[i].innerText = `${referencesByDays[i] === 0 ? `0` : referencesByDays[i]}`;
+      referencesValuesElements[i].innerText = `${referencesByDays[i] === 0 ? '0' : referencesByDays[i]}`;
       referencesValuesElements[i].style.width = `${referencesByDays[i] === 0 ? '12px' : `${(referencesByDays[i] / totalReferences) * 100}%`}`;
     }
   }

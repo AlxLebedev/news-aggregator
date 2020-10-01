@@ -1,6 +1,20 @@
 export default class FinderSearch {
-  constructor(validateRequest, newsApi, preloader, error, resultsContainer, finderInput, dataStorage, articles, showMoreButton) {
+  constructor(
+    validateRequest,
+    addParamsToLinks,
+    validateLocalData,
+    newsApi,
+    preloader,
+    error,
+    resultsContainer,
+    finderInput,
+    dataStorage,
+    articles,
+    showMoreButton,
+  ) {
     this.validateRequest = validateRequest;
+    this.addParamsToLinks = addParamsToLinks;
+    this.validateLocalData = validateLocalData;
     this.newsApi = newsApi;
     this.preloader = preloader;
     this.error = error;
@@ -15,23 +29,72 @@ export default class FinderSearch {
     const finderInput = document.querySelector('.finder__input');
     const finderButton = document.querySelector('.finder__button');
 
-    finderInput.addEventListener( 'keypress', ( event ) => { if (event.key === 'Enter') this.getNews(finderInput.value) } );
-    finderInput.addEventListener( 'input', () => this.finderInput.hideHint() );
-    finderButton.addEventListener( 'click', () => this.getNews(finderInput.value) );
+    finderInput.addEventListener('keypress', (event) => { if (event.key === 'Enter') this.checkRequest(finderInput.value); });
+    finderInput.addEventListener('input', () => this.finderInput.hideHint());
+    finderButton.addEventListener('click', () => this.checkRequest(finderInput.value));
   }
 
-  async getNews(request) {
+  checkRequest(request) {
     if (!this.validateRequest(request)) {
       this.finderInput.showHint();
       return;
     }
+    this.checkLocalData(request);
+  }
+
+  checkLocalData(request) {
+    const localData = this.dataStorage.getLocalStorageData(request);
+    if (localData) {
+      this.resultsContainer.unbind();
+      if (this.validateLocalData(localData)) {
+        this.renderLocalData(localData.data, request);
+      } else {
+        this.renderLocalData(localData.data, request);
+        this.updateNews(request);
+      }
+    } else {
+      this.getNews(request);
+    }
+  }
+
+  renderLocalData(news, request) {
+    if (document.querySelector('.error')) {
+      this.error.hide();
+    }
+    if (!document.querySelector('.results__contentainer')) {
+      this.resultsContainer.bindToDom();
+    }
+
+    const internalsLinks = document.querySelectorAll('.nav__link--internal');
+    this.addParamsToLinks(internalsLinks, request);
+
+    this.articles.clear();
+    this.articles.render(news.articles);
+
+    if (document.querySelector('.results__button')) {
+      this.showMoreButton.init(news.articles);
+    }
+  }
+
+  async updateNews(request) {
+    this.preloader.showUpdater();
+    const news = await this.newsApi.fetchNews(request);
+    this.preloader.hideUpdater();
+    this.resultsContainer.unbind();
+    this.checkNews(news, request);
+  }
+
+  async getNews(request) {
     this.error.hide();
     this.resultsContainer.unbind();
     this.preloader.show();
     const news = await this.newsApi.fetchNews(request);
     this.preloader.hide();
+    this.checkNews(news, request);
+  }
 
-    switch(news) {
+  checkNews(news, request) {
+    switch (news) {
       case 'not-found':
         this.error.show('not-found');
         return;
@@ -50,10 +113,15 @@ export default class FinderSearch {
   }
 
   utiliseNews(news, request) {
-    this.dataStorage.setData('newsData', news);
-    this.dataStorage.setData('request', request);
+    this.dataStorage.addToLocalStorage(request, news);
 
-    this.resultsContainer.bindToDom();
+    if (!document.querySelector('.results__contentainer')) {
+      this.resultsContainer.bindToDom();
+    }
+
+    const internalsLinks = document.querySelectorAll('.nav__link--internal');
+    this.addParamsToLinks(internalsLinks, request);
+
     this.articles.render(news.articles);
     if (document.querySelector('.results__button')) {
       this.showMoreButton.init(news.articles);

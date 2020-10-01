@@ -1,20 +1,21 @@
 .slider {
-  overflow: hidden;
   width: 90%;
   margin: auto;
+  overflow: hidden;
 
   .slider__swiper-container {
     max-width: 1980px;
     height: 264px;
   }
 
-  .slider__swiper-button-prev, .slider__swiper-button-next {
+  .slider__swiper-button-prev,
+  .slider__swiper-button-next {
     display: none;
   }
 
   .swiper-slide {
-    background-color: $color-white;
     height: 85%;
+    background-color: $color-white;
   }
 
   .swiper-pagination-bullet-active {
@@ -22,15 +23,17 @@
   }
   
   @media ($desktop) {
-    .slider__swiper-button-prev, .slider__swiper-button-next {
+    .slider__swiper-button-prev,
+    .slider__swiper-button-next {
       display: flex;
-      width: 40px;
       height: 40px;
-      border-radius: 50%;
+      width: 40px;
       background-color: $color-black;
+      border-radius: 50%;
     }
   
-    .slider__swiper-button-next::after, .slider__swiper-button-prev::after {
+    .slider__swiper-button-next::after,
+    .slider__swiper-button-prev::after {
       font-size: 12px;
       color: $color-white;
     }

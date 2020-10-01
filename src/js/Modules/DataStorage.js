@@ -1,12 +1,25 @@
 export default class DataStorage {
-  constructor() {}
-
-  setData(name, data) {
-    typeof data === 'String' ? sessionStorage.setItem(name, data) : sessionStorage.setItem( name, JSON.stringify(data) );
+  constructor() {
+    this.currentDate = null;
+    this.data = null;
   }
 
-  getData(name) {
-    const data = typeof sessionStorage.getItem(name) === 'String' ? sessionStorage.getItem(name) : JSON.parse( sessionStorage.getItem(name) );
-    return data;
+  addToLocalStorage(name, data) {
+    this.currentDate = Date.now();
+    const localData = {
+      date: this.currentDate,
+      data,
+    };
+    localStorage.setItem(name, JSON.stringify(localData));
+  }
+
+  getLocalStorageData(name) {
+    try {
+      this.data = JSON.parse(localStorage.getItem(name));
+      return this.data;
+    } catch (e) {
+      console.log(e);
+      return 'Error parse JSON from LocalStorage';
+    }
   }
 }

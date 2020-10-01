@@ -24,33 +24,33 @@
     height: 70px;
     margin: auto;
 
-    @media($desktop) {
+    @media ($desktop) {
       width: 96px;
       height: 96px;
     }
   }
 
   &__warning {
+    margin: 10px auto;
     font-family: $font-robotoslab;
     line-height: 1;
     text-align: center;
-    margin: 10px auto 10px;
 
-    @media($desktop) {
+    @media ($desktop) {
+      margin: 24px auto 16px;
       font-size: 26px;
       line-height: 1;
-      margin: 24px auto 16px;
     }
   }
 
   &__message {
+    max-width: 356px;
+    margin: auto;
+    padding: 0 30px;
     color: $color-gray-havy-dark;
     text-align: center;
-    max-width: 356px;
-    padding: 0 30px;
-    margin: auto;
 
-    @media($desktop) {
+    @media ($desktop) {
       font-size: 18px;
     }
   }
