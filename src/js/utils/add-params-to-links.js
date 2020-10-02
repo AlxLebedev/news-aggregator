@@ -1,7 +1,7 @@
 /**
- * Function-helper. Adds get-parameter to page address with user request
- * @param {NodeList} links All internal links which provedes inside the site
- * @param {String} param User request, entered in finder field
+ * Function-helper. Добавляет get-параметр с запросом пользователя в адрес внутренних ссылок
+ * @param {NodeList} links Коллекция внутренних ссылок (ведущих на страницы внутри сайта)
+ * @param {string} param Запрос пользователя
  */
 
 export default function addParamsToLinks(links, param) {
