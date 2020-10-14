@@ -24,7 +24,7 @@ export default class NewsApi extends Api {
    * Получает новости от сервиса NewsApi по указанному адресу с определенными параметрами
    * @async
    * @param {string} request Запрос пользователя
-   * @returns {Object | string} Возвращает или ответ сервера или сообщение об ошибке 
+   * @returns {Object | string} Возвращает или ответ сервера (Object) или сообщение об ошибке (string) 
    */
 
   async fetchNews(request) {

@@ -1,4 +1,15 @@
+/**
+ * Class Error показывает или скрывает сообщение об ошибке, которая появляется в ответ на новостной запрос пользователя, если полечен ответ от сервера, отличный от кода 200
+ */
+
 export default class Error {
+  /**
+   * В параметры передаются картинки, соответствующие каждой предусмотренной ошибке
+   * @param {File} notFoundPic Файл в формате PNG, соответствующий проблеме "По запросу ничего не найдено"
+   * @param {File} serverErrorPic Файл в формате PNG, соответствующий проблеме "Ошибка на сервере"
+   * @param {File} badRequestPic Файл в формате PNG, соответствующий проблеме "Сервер не может обработать введенный запрос"
+   * @param {File} badResponsePic Файл в формате PNG, соответствующий проблеме "Не корректный ответ сервера"
+   */
   constructor(notFoundPic, serverErrorPic, badRequestPic, badResponsePic) {
     this.errorTemplate = document.getElementById('error-template');
     this.notFoundPic = notFoundPic;
@@ -7,6 +18,11 @@ export default class Error {
     this.badResponsePic = badResponsePic;
     this.errorElement = null;
   }
+
+  /**
+   * Метод наполняет шаблон ошибки данными в зависимости от ее типа и выводит сообщение об ошибке на страницу
+   * @param {string} type Строка с типом ошибки 
+   */
 
   show(type) {
     const error = this.errorTemplate.content.cloneNode(true);
@@ -41,6 +57,10 @@ export default class Error {
     const resultsBlock = document.querySelector('.results');
     resultsBlock.append(error);
   }
+
+  /**
+   * Метод скрывает сообщение об ошибке, если оно выведено на страницу
+   */
 
   hide() {
     this.errorElement = document.querySelector('.error');

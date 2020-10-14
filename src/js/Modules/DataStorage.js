@@ -27,7 +27,7 @@ export default class DataStorage {
   /**
    * Извлекает данные из localStorage
    * @param {string} name Ключ localStorage, соответствующий поисковому запросу пользователя 
-   * @returns {Object} Объект, хранящийся в localStorage по указанному ключу
+   * @returns {Object | string} Объект, хранящийся в localStorage по указанному ключу или сообщение об ошибке в виде строки
    */
 
   getLocalStorageData(name) {
@@ -35,7 +35,6 @@ export default class DataStorage {
       this.data = JSON.parse(localStorage.getItem(name));
       return this.data;
     } catch (e) {
-      console.log(e);
       return 'Error parse JSON from LocalStorage';
     }
   }

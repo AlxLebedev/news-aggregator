@@ -1,9 +1,21 @@
+/**
+ * Class Articles рендерит (или очищает) карточки с новостями, полученными с сервера
+ */
+
 export default class Articles {
+  /**
+   * @param {Function} formatDate Принимает функцию форматирования даты 
+   */
   constructor(formatDate) {
     this.formatDate = formatDate;
     this.articleTemplate = document.getElementById('article-template');
     this.articlesContainer = null;
   }
+
+  /**
+   * Наполняет контейнер с новостями карточками
+   * @param {Object[]} articles 
+   */
 
   render(articles) {
     const articlesArray = articles;
@@ -38,6 +50,10 @@ export default class Articles {
       }
     }
   }
+
+  /**
+   * Очищает контейнер с новостями от карточек
+   */
 
   clear() {
     this.articlesContainer = document.querySelector('.results__articles');

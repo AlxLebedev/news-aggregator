@@ -1,4 +1,14 @@
+/**
+ * Класс Commits получает пречень коммитов и отрисовывает их на странице в виде слайдера
+ */
+
 export default class Commits {
+  /**
+   * 
+   * @param {Class} gitApi Класс, отвечающий за получение переченя коммитов 
+   * @param {Class} slider Класс, отвечающий за инициализацию слайдера
+   * @param {Function} formatDate Функция, форматирующая дату, полученную с сервера, в соответствии с представлением в дизайне
+   */
   constructor(gitApi, slider, formatDate) {
     this.gitApi = gitApi;
     this.slider = slider;
@@ -6,10 +16,19 @@ export default class Commits {
     this.slideTemplate = document.getElementById('swiper-slide-template');
   }
 
+  /**
+   * Метод получает коммиты и передает их методу render()
+   */
+
   async init() {
     const commits = await this.gitApi.fetchCommits();
     this.render(commits);
   }
+
+  /**
+   * Метод, отрисовывающий перечень коммитов на странице в виде слайдера
+   * @param {Object[]} commits Массив объектов коммитов, пришедших с сервера 
+   */
 
   render(commits) {
     const commitArray = commits;

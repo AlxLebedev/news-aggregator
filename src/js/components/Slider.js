@@ -1,9 +1,17 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 
+/**
+ * Class Slider инициализирует слайдер с определенными конфигурациями
+ */
+
 export default class Slider {
   constructor() {
     this.mySwiper = null;
   }
+
+  /**
+   * Метод конфгурирует и создает слайдер на основе импортированного Swiper
+   */
 
   init() {
     Swiper.use([Navigation, Pagination]);
