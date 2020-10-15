@@ -26,6 +26,13 @@ const urlParameters = new URL(location.href).searchParams;
 const request = urlParameters.get('request');
 const localData = dataStorage.getLocalStorageData(request);
 
+
+/**
+ * Функция проверяет актуальность новостей по запросу пользователя, хранящиеся в локальном хранилище
+ * Если новости устарели, запрашивает новые
+ * Передает актуальные новости в классы Statistic и Graph для отрисовки данных на странице статистики
+ * @param {Object} storageData объект с данными из локального хранилища 
+ */
 async function checkLocalData(storageData) {
   if (storageData) {
     const internalsLinks = document.querySelectorAll('.nav__link--internal');
