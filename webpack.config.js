@@ -110,7 +110,7 @@ module.exports = merge({
       {
         test: /\.(scss|css)$/,
         use: [
-          'style-loader',
+          // 'style-loader',
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
