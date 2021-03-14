@@ -1,7 +1,7 @@
 /**
- * Formats the string with date from JSON file to format within design
- * @param {String} date Date of news publication (string from JSON file)
- * @returns {String} Date of news publication within design format
+ * Форматирует дату, полученную с сервера, в соответствии с представлением в дизайне
+ * @param {string} date Дата публикации конкретной новости (строка, полученная из JSON)
+ * @returns {string} Дата в формате "22 апреля, 2020"
  */
 
 export default function formatDate(date) {

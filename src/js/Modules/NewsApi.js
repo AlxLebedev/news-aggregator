@@ -1,6 +1,15 @@
 import Api from './Api';
 
+/**
+ * Class NewsApi получает данные с сервера на основании запроса пользователя и текущей даты
+ * @extends Api
+ */
+
 export default class NewsApi extends Api {
+  /**
+   * В параметр конструктора передаем функцию getRequestDates
+   * @param {function} getRequestDates 
+   */
   constructor(getRequestDates) {
     super();
     this.getRequestDates = getRequestDates;
@@ -10,6 +19,13 @@ export default class NewsApi extends Api {
       },
     };
   }
+
+  /**
+   * Получает новости от сервиса NewsApi по указанному адресу с определенными параметрами
+   * @async
+   * @param {string} request Запрос пользователя
+   * @returns {Object | string} Возвращает или ответ сервера (Object) или сообщение об ошибке (string) 
+   */
 
   async fetchNews(request) {
     const [fromDate, toDate] = this.getRequestDates();
